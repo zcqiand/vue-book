@@ -1,0 +1,34 @@
+<!-- src/components/FlakyChild.vue -->
+<template>
+  <div class="flaky-child">
+    <p>FlakyChild 已挂载shouldFail = {{ shouldFail }}</p>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { onMounted } from 'vue'
+
+const props = defineProps<{
+  shouldFail: boolean
+}>()
+
+// 组件挂载时检查 shouldFail，如果为 true 则主动抛出错误
+// 这个错误会被父组件的 ErrorBoundary 的 onErrorCaptured 捕获
+onMounted(() => {
+  if (props.shouldFail) {
+    throw new Error('FlakyChild: 渲染错误演示——shouldFail 为 true')
+  }
+})
+</script>
+
+<style scoped>
+.flaky-child {
+  margin-top: 12px;
+  padding: 16px;
+  background-color: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #92400e;
+}
+</style>

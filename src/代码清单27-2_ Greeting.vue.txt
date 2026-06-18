@@ -1,0 +1,6 @@
+<script setup lang="ts">
+defineProps<{ name?: string }>()
+</script>
+<template>
+  <div>你好，{{ name ?? '陌生人' }}！</div>
+</template>

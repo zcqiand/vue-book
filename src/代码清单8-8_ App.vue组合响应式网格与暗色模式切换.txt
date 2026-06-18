@@ -1,0 +1,60 @@
+<!-- src/App.vue -->
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import UserCard from '@/components/UserCard.vue'
+
+interface User {
+  id: number
+  title: string
+  description: string
+}
+
+const users: User[] = [
+  { id: 1, title: '王五', description: '全栈工程师，5 年经验' },
+  { id: 2, title: '赵六', description: '专注于 Vue 和 TypeScript' },
+  { id: 3, title: '孙七', description: '前端架构师' },
+]
+
+const isDark = ref<boolean>(false)
+
+// ❶ 加载时恢复主题
+onMounted(() => {
+  isDark.value = localStorage.getItem('theme') === 'dark'
+  document.documentElement.classList.toggle('dark', isDark.value)
+})
+
+// ❷ 点击切换主题：翻转状态、同步根元素类、持久化
+function toggleTheme(): void {
+  isDark.value = !isDark.value
+  document.documentElement.classList.toggle('dark', isDark.value)
+  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+}
+</script>
+
+<template>
+  <!-- ❸ 整页背景与文字色成对配置明暗；min-h-screen 撑满视口高度 -->
+  <div class="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <header class="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
+      <h1 class="text-xl font-bold">团队成员</h1>
+      <button
+        type="button"
+        class="rounded-lg bg-gray-100 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+        @click="toggleTheme"
+      >
+        {{ isDark ? '亮色' : '暗色' }}
+      </button>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- ❹ 响应式网格：手机单列、md 双列、lg 三列 -->
+      <div class="grid grid-cols-1 gap-6 pb-12 md:grid-cols-2 lg:grid-cols-3">
+        <UserCard
+          v-for="user in users"
+          :key="user.id"
+          :title="user.title"
+          :description="user.description"
+        />
+      </div>
+    </main>
+  </div>
+</template>

@@ -1,0 +1,80 @@
+<!-- src/components/InputFocus.vue -->
+<template>
+  <div class="input-focus">
+    <!-- 旧写法：ref 属性值需要和 script 中变量名一致 -->
+    <!-- useTemplateRef 新写法：ref 属性值作为字符串参数传入 -->
+    <input ref="input-el" type="text" placeholder="点击按钮自动聚焦" class="text-input" />
+
+    <button @click="focus" class="btn-focus">聚焦输入框</button>
+    <button @click="blur" class="btn-blur">失焦输入框</button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useTemplateRef } from 'vue'
+
+// useTemplateRef<HTMLInputElement>('input-el')
+// 参数 'input-el' 必须和模板中 ref="input-el" 的值完全一致
+// 返回 Ref<HTMLInputElement | null>，指向模板中的 input DOM 节点
+const inputRef = useTemplateRef<HTMLInputElement>('input-el')
+
+function focus(): void {
+  // inputRef.value 是 Ref，直接访问 .value 获取 DOM 节点
+  inputRef.value?.focus()
+}
+
+function blur(): void {
+  inputRef.value?.blur()
+}
+</script>
+
+<style scoped>
+.input-focus {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.text-input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 240px;
+  outline: none;
+}
+
+.text-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-focus {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+}
+
+.btn-focus:hover {
+  background-color: #2563eb;
+}
+
+.btn-blur {
+  background-color: #fff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.btn-blur:hover {
+  background-color: #f3f4f6;
+}
+</style>

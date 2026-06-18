@@ -1,0 +1,11 @@
+<!-- ItemList.vue -->
+<script setup>
+defineProps<{ items: string[] }>()
+</script>
+<template>
+  <ul>
+    <li v-for="item in items" :key="item">
+      <slot :item="item">{{ item }}</slot>
+    </li>
+  </ul>
+</template>

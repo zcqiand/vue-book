@@ -1,0 +1,11 @@
+<template>
+  <!-- computed 版：依赖没变，只执行一次 -->
+  <p>{{ fullNameComputed }}</p>
+  <p>{{ fullNameComputed }}</p>
+  <p>{{ fullNameComputed }}</p>
+
+  <!-- method 版：每次调用都执行 -->
+  <p>{{ fullNameMethod() }}</p>
+  <p>{{ fullNameMethod() }}</p>
+  <p>{{ fullNameMethod() }}</p>
+</template>

@@ -1,0 +1,13 @@
+<script setup lang="ts">
+// 方案一：onMounted（SSR 阶段不执行）
+onMounted(() => {
+  console.log(window.localStorage.getItem('token'))
+})
+
+// 方案二：<ClientOnly> 包裹
+</script>
+<template>
+  <ClientOnly>
+    <HeavyClientLib />
+  </ClientOnly>
+</template>

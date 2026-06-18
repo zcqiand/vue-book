@@ -1,0 +1,36 @@
+<!-- src/components/UserSwitcher.vue -->
+<script setup lang="ts">
+import { ref } from 'vue'
+
+interface User {
+  id: number
+  name: string
+  role: 'admin' | 'member'
+}
+
+// ref 包对象：既能改单个字段，也能整体替换为新用户
+const currentUser = ref<User>({
+  id: 1,
+  name: '管理员',
+  role: 'admin',
+})
+
+function switchTo(id: number, name: string, role: User['role']): void {
+  // 整体替换：.value 指向全新对象，模板里的所有绑定一次性刷新
+  currentUser.value = { id, name, role }
+}
+
+function rename(name: string): void {
+  // 单字段修改：经 .value 进入内部对象再改属性
+  currentUser.value.name = name
+}
+</script>
+
+<template>
+  <div>
+    <p>当前用户：{{ currentUser.name }}（角色：{{ currentUser.role }}）</p>
+    <button @click="switchTo(1, '管理员', 'admin')">切到管理员</button>
+    <button @click="switchTo(2, '普通成员', 'member')">切到普通成员</button>
+    <button @click="rename('匿名用户')">改名</button>
+  </div>
+</template>

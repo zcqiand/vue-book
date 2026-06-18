@@ -1,0 +1,118 @@
+<!-- src/components/ModalTransition.vue -->
+<template>
+  <div class="modal-demo">
+    <button @click="show = !show" class="btn-toggle">
+      {{ show ? '关闭模态框' : '打开模态框' }}
+    </button>
+
+    <!-- Transition: v-if 为 true 时添加 .fade-enter-from，
+         1 frame 后切换到 .fade-enter-active，
+         进入动画完成后移除 -->
+    <Transition name="fade">
+      <div v-if="show" class="modal-overlay">
+        <div class="modal">
+          <h3>模态框标题</h3>
+          <p>这是模态框的内容，带有淡入淡出动画。</p>
+          <button @click="show = false" class="btn-close">关闭</button>
+        </div>
+      </div>
+    </Transition>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const show = ref<boolean>(false)
+</script>
+
+<style scoped>
+.modal-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.btn-toggle {
+  padding: 8px 16px;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-toggle:hover {
+  background-color: #2563eb;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 320px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.modal h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.modal p {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.btn-close {
+  padding: 6px 12px;
+  background-color: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-close:hover {
+  background-color: #dc2626;
+}
+
+/* Transition 过渡类名（name="fade" 时的前缀）*/
+/* 进入动画 */
+.fade-enter-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+}
+
+/* 离开动画 */
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

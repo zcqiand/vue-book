@@ -1,0 +1,137 @@
+<!-- src/components/LocaleProvider.vue -->
+<template>
+  <div class="locale-demo">
+    <!-- 模拟多语言切换场景 -->
+    <div class="locale-selector">
+      <button
+        v-for="loc in ['zh-CN', 'en-US', 'ja-JP']"
+        :key="loc"
+        :class="{ active: currentLocale === loc }"
+        @click="setLocale(loc)"
+      >
+        {{ loc }}
+      </button>
+    </div>
+
+    <!-- 显示当前语言环境下的内容 -->
+    <div class="locale-content">
+      <p>当前语言：{{ currentLocale }}</p>
+      <p>问候语：{{ t('greeting') }}</p>
+      <p>描述：{{ t('description') }}</p>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, provide, inject } from 'vue'
+import type { InjectionKey } from 'vue'
+
+// ============================================================
+// locale 注入的 key 与类型
+// ============================================================
+
+// InjectionKey 方式：类型安全，推荐用于项目级共享
+const localeKey: InjectionKey<string> = Symbol('locale')
+
+// ============================================================
+// 语言包定义
+// ============================================================
+
+interface Translations {
+  greeting: string
+  description: string
+}
+
+const translations: Record<string, Translations> = {
+  'zh-CN': { greeting: '你好，世界！', description: '这是中文内容。' },
+  'en-US': { greeting: 'Hello, World!', description: 'This is English content.' },
+  'ja-JP': { greeting: 'こんにちは、世界！', description: 'これは日本語の内容です。' },
+}
+
+// ============================================================
+// LocaleProvider：提供当前语言环境
+// ============================================================
+
+const currentLocale = ref<string>('zh-CN')
+
+function setLocale(loc: string): void {
+  if (translations[loc]) {
+    currentLocale.value = loc
+  }
+}
+
+provide(localeKey, currentLocale)
+
+// ============================================================
+// 子组件：inject 带默认值的 locale
+// ============================================================
+
+// 本组件同时扮演"不提供 locale 的子组件"角色，演示默认值
+// 实际项目中，翻译函数通常抽到 composables 中
+
+const t = (key: keyof Translations): string => {
+  // inject 第三个参数提供默认值 'zh-CN'
+  // 如果祖先组件通过 localeKey 提供了值，则使用提供的值
+  const locale = inject(localeKey, 'zh-CN')
+  return translations[locale.value ?? locale][key]
+}
+
+// ============================================================
+// 演示：inject 不使用 InjectionKey 的字符串 key 写法
+// ============================================================
+
+// 使用字符串 key 时，inject 需要手动指定泛型类型
+const themeFromInject = inject<string>('theme', 'light')
+
+// 也可以用 as const 提供字面量类型默认值
+type Locale = 'zh-CN' | 'en-US' | 'ja-JP'
+const localeOrDefault = inject<Locale>('user-locale', 'zh-CN')
+</script>
+
+<style scoped>
+.locale-demo {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.locale-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.locale-selector button {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.locale-selector button:hover {
+  border-color: #3b82f6;
+}
+
+.locale-selector button.active {
+  background-color: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+}
+
+.locale-content {
+  padding: 16px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+}
+
+.locale-content p {
+  margin: 0 0 8px;
+}
+
+.locale-content p:last-child {
+  margin-bottom: 0;
+}
+</style>

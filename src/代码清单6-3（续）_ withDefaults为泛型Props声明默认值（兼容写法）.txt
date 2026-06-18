@@ -1,0 +1,19 @@
+<!-- src/components/StatBadge2.vue -->
+<script setup lang="ts">
+// withDefaults 接收两个参数：defineProps 的返回结果和一个默认值对象
+withDefaults(
+  defineProps<{
+    label: string
+    variant?: 'default' | 'success' | 'danger'
+    size?: 'sm' | 'md' | 'lg'
+  }>(),
+  {
+    variant: 'default',
+    size: 'md',
+  },
+)
+</script>
+
+<template>
+  <span :class="['badge', `badge-${variant}`]">{{ label }}</span>
+</template>

@@ -1,0 +1,45 @@
+<template>
+  <button
+    class="themed-btn"
+    :style="{ backgroundColor: themeConfig?.['--accent-color'] ?? '#3b82f6' }"
+    @click="handleClick"
+  >
+    <slot />
+  </button>
+</template>
+
+<script setup lang="ts">
+import { inject, type ComputedRef } from 'vue'
+
+// 从上层组件注入主题配置
+const themeConfig = inject<ComputedRef<Record<string, string>>>('themeConfig')
+
+// 注入切换主题的方法
+const switchTheme = inject<(name: 'light' | 'dark' | 'ocean') => void>('switchTheme')
+
+function handleClick(): void {
+  // 按钮点击时切换到下一个主题（演示用）
+  if (switchTheme) {
+    const themes: ('light' | 'dark' | 'ocean')[] = ['light', 'dark', 'ocean']
+    const current = inject<string>('themeName', 'light')
+    const nextIndex = (themes.indexOf(current as 'light' | 'dark' | 'ocean') + 1) % themes.length
+    switchTheme(themes[nextIndex])
+  }
+}
+</script>
+
+<style scoped>
+.themed-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.themed-btn:hover {
+  opacity: 0.85;
+}
+</style>

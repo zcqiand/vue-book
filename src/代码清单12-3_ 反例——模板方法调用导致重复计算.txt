@@ -1,0 +1,39 @@
+<!-- src/components/MethodInTemplateBug.vue -->
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const firstName = ref<string>('李')
+const lastName = ref<string>('四')
+
+// 模拟一个"慢"计算：遍历 10000 次才返回结果
+function slowConcat(): string {
+  let result = ''
+  for (let i = 0; i < 10000; i++) {
+    result += `${firstName.value} ${lastName.value}`
+  }
+  return result.slice(0, 50) // 只取前50字符，避免内存浪费
+}
+
+// 只读不写，但每次渲染都重算——没有缓存可用
+function getFullName(): string {
+  console.count('getFullName 重算')
+  return `${firstName.value} ${lastName.value}`
+}
+
+function updateFirstName(): void {
+  firstName.value = '王'
+}
+</script>
+
+<template>
+  <div>
+    <p>当前姓名：{{ getFullName() }}</p>
+    <!-- 模板里三处调用 getFullName()，每次渲染重算 3 次 -->
+    <p>确认姓名：{{ getFullName() }}</p>
+    <p>用于提交：{{ getFullName() }}</p>
+
+    <button @click="updateFirstName">改名</button>
+    <!-- 每次点击改名按钮，模板重新渲染，上述三处 getFullName() 全部重算 -->
+    <!-- 对比：computed 在多处使用时只执行一次，结果被复用 -->
+  </div>
+</template>

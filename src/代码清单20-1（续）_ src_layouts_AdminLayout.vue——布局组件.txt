@@ -1,0 +1,65 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { RouterLink, RouterView } from 'vue-router'
+
+const activeMenu = ref<string>('dashboard')
+
+function handleMenuClick(menuName: string): void {
+  activeMenu.value = menuName
+}
+</script>
+
+<template>
+  <div class="min-h-screen bg-gray-50">
+    <!-- 顶部导航栏 -->
+    <header class="fixed top-0 left-0 right-0 h-14 bg-indigo-600 text-white flex items-center px-6 shadow-md z-50">
+      <h1 class="text-lg font-semibold">管理后台</h1>
+      <nav class="ml-auto flex gap-4">
+        <RouterLink
+          to="/admin/dashboard"
+          class="px-3 py-1 rounded hover:bg-indigo-500 transition-colors"
+          :class="{ 'bg-indigo-500': activeMenu === 'dashboard' }"
+        >
+          控制台
+        </RouterLink>
+        <RouterLink
+          to="/admin/users"
+          class="px-3 py-1 rounded hover:bg-indigo-500 transition-colors"
+          :class="{ 'bg-indigo-500': activeMenu === 'users' }"
+        >
+          用户管理
+        </RouterLink>
+        <RouterLink
+          to="/admin/settings"
+          class="px-3 py-1 rounded hover:bg-indigo-500 transition-colors"
+          :class="{ 'bg-indigo-500': activeMenu === 'settings' }"
+        >
+          系统设置
+        </RouterLink>
+      </nav>
+    </header>
+
+    <!-- 左侧菜单 -->
+    <aside class="fixed top-14 left-0 w-48 bg-white border-r border-gray-200 h-[calc(100vh-3.5rem)] overflow-y-auto">
+      <nav class="p-4 space-y-1">
+        <button
+          v-for="menu in ['dashboard', 'users', 'settings']"
+          :key="menu"
+          type="button"
+          class="w-full text-left px-3 py-2 rounded text-sm transition-colors"
+          :class="activeMenu === menu ? 'bg-indigo-50 text-indigo-600' : 'text-gray-700 hover:bg-gray-100'"
+          @click="handleMenuClick(menu)"
+        >
+          {{ menu === 'dashboard' ? '控制台' : menu === 'users' ? '用户管理' : '系统设置' }}
+        </button>
+      </nav>
+    </aside>
+
+    <!-- 主内容区：RouterView 是子路由出口 -->
+    <main class="ml-48 pt-14 min-h-screen">
+      <div class="p-6">
+        <RouterView />
+      </div>
+    </main>
+  </div>
+</template>

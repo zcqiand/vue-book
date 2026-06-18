@@ -1,0 +1,2 @@
+<input v-model="fullName" />
+<p>姓：{{ firstName }} 名：{{ lastName }}</p>

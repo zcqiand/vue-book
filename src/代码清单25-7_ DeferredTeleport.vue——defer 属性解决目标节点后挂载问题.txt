@@ -1,0 +1,92 @@
+<!-- src/components/DeferredTeleport.vue -->
+<template>
+  <div class="deferred-teleport-demo">
+    <p class="hint">点击按钮后，defer Teleport 的内容会被传送到下方的目标容器中。</p>
+
+    <button @click="show = !show" class="btn-toggle">
+      {{ show ? '移除内容' : '传送内容（defer）' }}
+    </button>
+
+    <!-- defer Teleport：等到 #later-target 渲染后再执行传送 -->
+    <!-- 如果不用 defer，#later-target 尚未渲染则传送失败，内容消失 -->
+    <Teleport defer to="#later-target">
+      <div v-if="show" class="deferred-content">
+        <span class="content-badge">这是 defer Teleport 传送来的内容</span>
+      </div>
+    </Teleport>
+
+    <!-- 目标容器：Teleport 之后才渲染 -->
+    <div id="later-target" class="target-container">
+      <span v-if="!show" class="placeholder">目标容器（等待内容传送）</span>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const show = ref<boolean>(false)
+</script>
+
+<style scoped>
+.deferred-teleport-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hint {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.btn-toggle {
+  padding: 8px 16px;
+  background-color: #f59e0b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-toggle:hover {
+  background-color: #d97706;
+}
+
+.target-container {
+  min-height: 48px;
+  width: 100%;
+  max-width: 400px;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.placeholder {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.deferred-content {
+  background-color: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.content-badge {
+  font-size: 13px;
+  color: #92400e;
+  font-weight: 500;
+}
+</style>

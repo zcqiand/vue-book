@@ -1,0 +1,13 @@
+<script setup lang="ts" generic="T">
+// generic 属性告诉编译器，这个脚本里有一个泛型参数 T
+import { defineProps } from 'vue'
+
+defineProps<{
+  items: T[]
+  selectedId?: number
+}>()
+
+defineEmits<{
+  (e: 'select', item: T): void
+}>()
+</script>

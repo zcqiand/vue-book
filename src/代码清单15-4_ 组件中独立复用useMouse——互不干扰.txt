@@ -1,0 +1,14 @@
+<!-- src/components/MouseReporterA.vue -->
+<script setup lang="ts">
+import { useMouse } from '../composables/useMouse'
+
+// 每次调用 useMouse() 都创建一个全新的 { x, y } ref 对
+const { x, y } = useMouse()
+</script>
+
+<template>
+  <div>
+    <h3>组件 A</h3>
+    <p>X: {{ x }} / Y: {{ y }}</p>
+  </div>
+</template>

@@ -1,0 +1,52 @@
+<!-- src/components/ContentPanel.vue -->
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const isDark = ref<boolean>(false)
+
+// ❷ 页面加载时读取本地存储，恢复用户上次的主题偏好
+onMounted(() => {
+  const stored = localStorage.getItem('theme')
+  isDark.value = stored === 'dark'
+  document.documentElement.classList.toggle('dark', isDark.value)
+})
+
+// ❸ 点击切换：翻转 isDark，同步根元素的 dark 类并持久化
+function toggleTheme(): void {
+  isDark.value = !isDark.value
+  document.documentElement.classList.toggle('dark', isDark.value)
+  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+}
+</script>
+
+<template>
+  <!--
+    ❹ 容器：移动端单列、md 双列、lg 三列
+       bg-white dark:bg-gray-800、text-gray-900 dark:text-gray-100 成对配置明暗
+       px-4 sm:px-6 lg:px-8 响应式内边距，屏幕越宽留白越大
+  -->
+  <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mb-6 flex items-center justify-between">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white">内容面板</h2>
+      <button
+        type="button"
+        class="rounded-lg bg-gray-100 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+        @click="toggleTheme"
+      >
+        {{ isDark ? '切换到亮色' : '切换到暗色' }}
+      </button>
+    </div>
+
+    <!-- ❺ 响应式网格 + 暗色背景/文字成对出现 -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div
+        v-for="n in 3"
+        :key="n"
+        class="rounded-xl bg-white p-6 shadow-md dark:bg-gray-800 dark:shadow-black/30"
+      >
+        <p class="text-gray-900 dark:text-gray-100">区块 {{ n }}</p>
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">说明文字示例</p>
+      </div>
+    </div>
+  </section>
+</template>

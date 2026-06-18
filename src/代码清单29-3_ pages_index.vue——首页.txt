@@ -1,0 +1,7 @@
+<!-- pages/index.vue——首页 -->
+<template>
+  <div>
+    <h1>首页</h1>
+    <NuxtLink to="/users/1">用户详情</NuxtLink>
+  </div>
+</template>

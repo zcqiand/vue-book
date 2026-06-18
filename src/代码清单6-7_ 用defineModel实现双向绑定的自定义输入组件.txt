@@ -1,0 +1,14 @@
+<!-- src/components/CustomInput.vue -->
+<script setup lang="ts">
+// defineModel 一行声明：返回一个 ref，类型为 string
+// 读取 model.value 得到父组件传入的值；给 model.value 赋值会自动抛 update 事件
+const model = defineModel<string>()
+</script>
+
+<template>
+  <input
+    type="text"
+    :value="model"
+    @input="model = ($event.target as HTMLInputElement).value"
+  />
+</template>

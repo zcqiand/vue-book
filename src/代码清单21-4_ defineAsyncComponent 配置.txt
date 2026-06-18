@@ -1,0 +1,29 @@
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue'
+
+const UserListAsync = defineAsyncComponent({
+  // 异步加载的组件
+  loader: () => import('./UserList.vue'),
+  // 加载中显示的组件
+  loadingComponent: {
+    template: '<div class="loading-msg">加载中...</div>',
+  },
+  // 加载失败显示的组件
+  errorComponent: {
+    template: '<div class="error-msg">加载失败，请稍后重试</div>',
+  },
+  // 超时时间（ms）
+  timeout: 5000,
+})
+</script>
+
+<template>
+  <Suspense>
+    <template #default>
+      <UserListAsync />
+    </template>
+    <template #fallback>
+      <div>页面加载中...</div>
+    </template>
+  </Suspense>
+</template>

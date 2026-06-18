@@ -1,0 +1,31 @@
+<!-- src/components/UserProfile.vue -->
+<script setup lang="ts">
+import { ref } from 'vue'
+
+interface User {
+  id: number
+  name: string
+  email: string
+}
+
+// 组件 setup 是 async 函数（顶层 await），Suspense 会等待其完成
+const user = ref<User | null>(null)
+
+// 顶层 await：setup 在此暂停，等待 Promise resolve 后才继续渲染
+const response = await fetch('/api/users/1')
+if (response.ok) {
+  user.value = await response.json()
+}
+</script>
+
+<template>
+  <div class="p-4 bg-white border border-gray-200 rounded shadow-sm">
+    <template v-if="user">
+      <h3 class="font-semibold text-gray-800">{{ user.name }}</h3>
+      <p class="text-gray-500 text-sm">{{ user.email }}</p>
+    </template>
+    <template v-else>
+      <p class="text-gray-400">加载中……</p>
+    </template>
+  </div>
+</template>

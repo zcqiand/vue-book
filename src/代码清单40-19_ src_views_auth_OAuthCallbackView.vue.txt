@@ -1,0 +1,37 @@
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { useOAuth } from '@/composables/useOAuth'
+import type { OAuthProvider } from '@/types/auth'
+
+const route = useRoute()
+const router = useRouter()
+const errorMessage = ref('')
+
+function readProvider(): OAuthProvider {
+  const provider = route.params.provider
+
+  if (provider === 'github' || provider === 'google') {
+    return provider
+  }
+
+  throw new Error('不支持的 OAuth provider')
+}
+
+onMounted(async () => {
+  try {
+    const oauth = useOAuth(readProvider())
+    await oauth.handleOAuthCallback(route, router)
+  } catch (error) {
+    errorMessage.value = error instanceof Error ? error.message : 'OAuth 登录失败'
+  }
+})
+</script>
+
+<template>
+  <section class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="text-lg font-semibold">正在处理 OAuth 授权码回调</h2>
+    <p v-if="errorMessage.length === 0" class="mt-2 text-sm text-slate-600">正在通过后端 exchange 接口换取本系统 token。</p>
+    <p v-else class="mt-2 rounded-lg bg-red-50 p-3 text-sm text-red-700">{{ errorMessage }}</p>
+  </section>
+</template>

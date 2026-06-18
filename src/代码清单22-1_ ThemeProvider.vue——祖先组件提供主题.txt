@@ -1,0 +1,46 @@
+<!-- src/components/ThemeProvider.vue -->
+<template>
+  <div class="theme-provider" :class="theme">
+    <!-- 具名插槽，传入当前主题内容 -->
+    <slot :theme="theme" :switch-theme="switchTheme" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 主题类型：只支持 'light' | 'dark' 两种
+type Theme = 'light' | 'dark'
+
+// 响应式主题状态，初始为 'light'
+const theme = ref<Theme>('light')
+
+// 切换主题的函数
+function switchTheme(): void {
+  theme.value = theme.value === 'light' ? 'dark' : 'light'
+}
+
+// 向所有后代组件提供 theme ref 和 switchTheme 函数
+// provide 的第一个参数是注入的 key（字符串），第二个是实际值
+// 提供的是一个响应式 ref，所有 inject 方都能响应主题变化
+provide('theme', theme)
+provide('switchTheme', switchTheme)
+</script>
+
+<style scoped>
+.theme-provider {
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-provider.light {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+.theme-provider.dark {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+</style>

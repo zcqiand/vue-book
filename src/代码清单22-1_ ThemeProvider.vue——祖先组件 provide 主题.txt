@@ -1,0 +1,20 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+type Theme = 'light' | 'dark'
+
+const theme = ref<Theme>('light')
+
+function switchTheme(newTheme: Theme): void {
+  theme.value = newTheme
+}
+
+provide('theme', theme)
+provide('switchTheme', switchTheme)
+</script>
+
+<template>
+  <div class="theme-provider">
+    <slot />
+  </div>
+</template>

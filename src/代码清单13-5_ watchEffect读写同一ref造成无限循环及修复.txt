@@ -1,0 +1,53 @@
+<!-- src/components/InfiniteLoopTrap.vue -->
+<script setup lang="ts">
+import { ref, watchEffect } from 'vue'
+
+const count = ref<number>(0)
+
+// 反例：在 watchEffect 里同时读取和写入同一个 ref
+// 流程：count.value 读取(0) → 回调执行 → count.value = 1 → 触发回调
+// → count.value 读取(1) → 回调执行 → count.value = 2 → ... 无限循环
+// watchEffect(
+//   () => {
+//     console.log('count 变为:', count.value)
+//     count.value++ // 永远不要在 watchEffect 回调里写入它自己监听的 ref
+//   }
+// )
+
+// 修复方案一：将写操作分离到 watchEffect 外部
+// watchEffect 只负责读取和副作用，读写分离打破循环链
+watchEffect(() => {
+  // 只读取 count，不写入
+  console.log('[安全写法] count 读取到:', count.value)
+})
+
+// 写入操作在普通函数里执行，不会触发 watchEffect
+function increment(): void {
+  count.value++
+}
+
+// 修复方案二：改用 watch，明确分离读写逻辑
+import { watch } from 'vue'
+
+watch(
+  count,
+  (newVal: number) => {
+    console.log('[watch] count 变化为:', newVal)
+    // watch 的回调里可以写入 count，不会造成循环
+    // 因为 watch 只在「同步代码写入」后才检测变化，不会在回调执行期间重复触发
+  }
+)
+
+function decrement(): void {
+  count.value--
+}
+</script>
+
+<template>
+  <div>
+    <p>计数器：{{ count }}</p>
+    <button @click="increment">+1（安全写入）</button>
+    <button @click="decrement">-1（通过 watch）</button>
+    <p>打开控制台观察：increment 不会触发无限循环，watch 回调里的写入也不会</p>
+  </div>
+</template>

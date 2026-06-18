@@ -1,0 +1,32 @@
+<!-- src/components/CounterSwitch.vue -->
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 泛型显式标注状态类型：count 是 number，isOpen 是 boolean
+const count = ref<number>(0)
+const isOpen = ref<boolean>(false)
+
+function increment(): void {
+  // setup 中读写必须经过 .value，否则改的是包装对象引用本身
+  count.value++
+}
+
+function toggle(): void {
+  // 布尔开关同理：脚本里走 .value
+  isOpen.value = !isOpen.value
+}
+</script>
+
+<template>
+  <div>
+    <!-- 模板里 ref 自动解包：直接写 count，等价于 count.value -->
+    <p>当前计数：{{ count }}</p>
+    <button @click="increment">加 1</button>
+
+    <!-- 内联事件里也能直接用解包后的名字：count++ 等价于 count.value++ -->
+    <button @click="count++">内联加 1</button>
+
+    <p>面板状态：{{ isOpen ? '已展开' : '已收起' }}</p>
+    <button @click="toggle">切换面板</button>
+  </div>
+</template>

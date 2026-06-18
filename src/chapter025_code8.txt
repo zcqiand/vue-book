@@ -1,0 +1,3 @@
+<KeepAlive :include="['UserList', 'UserDetail']">
+  <component :is="currentComponent" />
+</KeepAlive>

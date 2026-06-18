@@ -1,0 +1,33 @@
+<script setup lang="ts">
+import ThemeProvider from './ThemeProvider.vue'
+import ThemedButton from './ThemedButton.vue'
+import UserCard from './UserCard.vue'
+</script>
+
+<template>
+  <ThemeProvider>
+    <div class="demo-area">
+      <h2>主题演示</h2>
+      <p>点击按钮可在亮色/暗色/海洋主题间切换</p>
+
+      <ThemedButton>切换主题</ThemedButton>
+
+      <div class="card-group">
+        <UserCard :user="{ id: 1, name: '李明', role: '前端工程师', avatar: 'https://picsum.photos/seed/1/48' }" />
+      </div>
+    </div>
+  </ThemeProvider>
+</template>
+
+<style scoped>
+.demo-area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.card-group {
+  margin-top: 8px;
+}
+</style>

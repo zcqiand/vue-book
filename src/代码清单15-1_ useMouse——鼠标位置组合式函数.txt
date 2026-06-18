@@ -1,0 +1,26 @@
+<!-- src/composables/useMouse.ts -->
+import { ref, onMounted, onUnmounted } from 'vue'
+
+// 命名规范：以 use 前缀开头，返回响应式状态
+export function useMouse() {
+  const x = ref<number>(0)
+  const y = ref<number>(0)
+
+  function update(e: MouseEvent): void {
+    // 事件回调里直接改 .value 即可触发响应式更新
+    x.value = e.clientX
+    y.value = e.clientY
+  }
+
+  onMounted(() => {
+    // 组合式函数内部同样可以调用生命周期钩子
+    window.addEventListener('mousemove', update)
+  })
+
+  onUnmounted(() => {
+    // 组件卸载时必须清理副作用，否则会导致内存泄漏
+    window.removeEventListener('mousemove', update)
+  })
+
+  return { x, y }
+}

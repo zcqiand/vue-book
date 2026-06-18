@@ -1,0 +1,9 @@
+<!-- pages/users/[id].vue——动态路由用户详情 -->
+<script setup lang="ts">
+// useRoute() 在 Nuxt 中自动导入
+const route = useRoute()
+const userId = route.params.id as string
+</script>
+<template>
+  <div>用户 ID：{{ userId }}</div>
+</template>

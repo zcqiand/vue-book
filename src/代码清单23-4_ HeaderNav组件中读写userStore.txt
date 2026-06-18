@@ -1,0 +1,70 @@
+<!-- src/views/HeaderNav.vue -->
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useUserStore } from '@/stores/user'
+
+const userStore = useUserStore()
+
+// 用于演示登录的临时表单状态（不属于 store）
+const username = ref('')
+const password = ref('')
+
+async function handleLogin() {
+  try {
+    await userStore.login(username.value, password.value)
+    // 登录成功后清空表单
+    username.value = ''
+    password.value = ''
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+function handleLogout() {
+  userStore.logout()
+}
+</script>
+
+<template>
+  <header class="header-nav">
+    <nav>
+      <!-- 根据登录状态条件渲染不同内容 -->
+      <template v-if="userStore.isLoggedIn">
+        <span class="username">{{ userStore.userInfo?.username }}</span>
+        <button type="button" @click="handleLogout">退出登录</button>
+      </template>
+      <template v-else>
+        <!-- 登录表单 -->
+        <form @submit.prevent="handleLogin" class="login-form">
+          <input
+            v-model="username"
+            type="text"
+            placeholder="用户名"
+            autocomplete="username"
+          />
+          <input
+            v-model="password"
+            type="password"
+            placeholder="密码"
+            autocomplete="current-password"
+          />
+          <button type="submit">登录</button>
+        </form>
+      </template>
+    </nav>
+  </header>
+</template>
+
+<style scoped>
+.header-nav {
+  padding: 12px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.login-form {
+  display: flex;
+  gap: 8px;
+}
+.username {
+  margin-right: 12px;
+}
+</style>

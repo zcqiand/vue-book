@@ -1,0 +1,43 @@
+<!-- src/components/SearchInput.vue -->
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+// ref 变量的类型是模板元素的实际 DOM 接口
+// HTMLInputElement | null 处理了模板尚未渲染时的初始值
+const inputEl = ref<HTMLInputElement | null>(null)
+
+onMounted(() => {
+  // onMounted 阶段 DOM 已渲染完成，可以安全地操作元素
+  inputEl.value?.focus()
+  console.log('[SearchInput] 输入框已聚焦')
+})
+
+function clearInput(): void {
+  if (inputEl.value) {
+    inputEl.value.value = ''
+    inputEl.value.focus()
+  }
+}
+
+function logSelection(): void {
+  if (inputEl.value) {
+    console.log('[SearchInput] 当前选中文字:', inputEl.value.selectionStart, '~', inputEl.value.selectionEnd)
+  }
+}
+</script>
+
+<template>
+  <div>
+    <input
+      ref="inputEl"
+      type="text"
+      placeholder="页面加载后自动聚焦，请输入搜索词"
+      style="padding: 8px; width: 300px"
+    />
+
+    <button @click="clearInput">清空并重新聚焦</button>
+    <button @click="logSelection">打印选中区域</button>
+
+    <p>打开页面后观察：输入框立即获得焦点，可直接输入文字</p>
+  </div>
+</template>

@@ -1,0 +1,138 @@
+<script setup lang="ts">
+import { computed, onMounted, shallowRef, ref } from 'vue'
+import { useUserStore, type AuditLog } from '@/stores/user'
+import { useVirtualList } from '@/composables/useVirtualList'
+
+const userStore = useUserStore()
+const logs = shallowRef<AuditLog[]>([])
+const selectedLog = ref<AuditLog | null>(null)
+const loading = ref(false)
+const error = ref('')
+
+const virtualList = useVirtualList(logs, {
+  itemHeight: 88,
+  containerHeight: 520,
+  overscan: 6
+})
+
+const drawerVisible = computed(() => selectedLog.value !== null)
+
+async function loadLogs(): Promise<void> {
+  loading.value = true
+  error.value = ''
+  try {
+    const nextLogs = await userStore.fetchAuditLogs()
+    // shallowRef 只追踪 .value 的替换；这里整体替换数组，避免让上万条日志都进入深层代理。
+    logs.value = nextLogs
+  } catch (caught) {
+    error.value = caught instanceof Error ? caught.message : '加载审计日志失败'
+  } finally {
+    loading.value = false
+  }
+}
+
+function openDetail(log: AuditLog): void {
+  selectedLog.value = log
+}
+
+function closeDetail(): void {
+  selectedLog.value = null
+}
+
+function formatJson(value: Record<string, unknown> | null): string {
+  return value ? JSON.stringify(value, null, 2) : '无'
+}
+
+function actionText(action: AuditLog['action']): string {
+  const map: Record<AuditLog['action'], string> = {
+    create: '创建用户',
+    update: '更新用户',
+    delete: '删除用户',
+    assignRoles: '分配角色',
+    toggleStatus: '启用/禁用'
+  }
+  return map[action]
+}
+
+function replaceFirstLogActorForDemo(): void {
+  if (!logs.value[0]) {
+    return
+  }
+  const [first, ...rest] = logs.value
+  // shallowRef 不追踪 first.actor = '...' 这种内部字段修改；需要创建新对象并整体替换 .value。
+  logs.value = [{ ...first, actor: 'auditor@tenant-a.local' }, ...rest]
+}
+
+onMounted(() => {
+  void loadLogs()
+})
+</script>
+
+<template>
+  <section class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+    <div class="mb-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-xl font-semibold text-slate-900">审计日志</h1>
+        <p class="text-sm text-slate-500">记录用户创建、编辑、角色分配、启用禁用等关键操作。</p>
+      </div>
+      <div class="space-x-2">
+        <button type="button" class="rounded-lg border px-4 py-2 text-sm" @click="replaceFirstLogActorForDemo">整体替换示例</button>
+        <button type="button" class="rounded-lg bg-slate-900 px-4 py-2 text-sm text-white" @click="loadLogs">刷新</button>
+      </div>
+    </div>
+
+    <p v-if="error" class="mb-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{{ error }}</p>
+    <p v-if="loading" class="mb-3 rounded-lg bg-blue-50 px-3 py-2 text-sm text-blue-700">正在加载审计日志...</p>
+
+    <div :style="virtualList.containerStyle" class="rounded-xl border border-slate-200" @scroll="virtualList.onScroll">
+      <div :style="virtualList.spacerStyle">
+        <button
+          v-for="row in virtualList.virtualItems"
+          :key="row.item.id"
+          type="button"
+          class="absolute left-0 right-0 grid w-full grid-cols-[160px_120px_1fr_190px] gap-3 border-b border-slate-100 px-4 py-3 text-left text-sm hover:bg-slate-50"
+          :style="{ transform: `translateY(${row.top}px)`, height: '88px' }"
+          @click="openDetail(row.item)"
+        >
+          <span class="font-medium text-slate-900">{{ actionText(row.item.action) }}</span>
+          <span class="text-slate-600">{{ row.item.targetName }}</span>
+          <span class="truncate text-slate-500">操作人：{{ row.item.actor }}</span>
+          <time class="text-slate-500">{{ new Date(row.item.createdAt).toLocaleString() }}</time>
+        </button>
+      </div>
+    </div>
+
+    <aside v-if="drawerVisible" class="fixed inset-y-0 right-0 z-50 w-full max-w-xl overflow-y-auto border-l border-slate-200 bg-white p-5 shadow-2xl">
+      <div class="mb-4 flex items-start justify-between gap-4">
+        <div>
+          <h2 class="text-lg font-semibold text-slate-900">日志详情</h2>
+          <p class="text-sm text-slate-500">{{ selectedLog?.id }}</p>
+        </div>
+        <button type="button" class="rounded-lg border px-3 py-1 text-sm" @click="closeDetail">关闭</button>
+      </div>
+
+      <dl v-if="selectedLog" class="grid gap-3 text-sm">
+        <div class="rounded-lg bg-slate-50 p-3">
+          <dt class="text-slate-500">操作人</dt>
+          <dd class="font-medium text-slate-900">{{ selectedLog.actor }}</dd>
+        </div>
+        <div class="rounded-lg bg-slate-50 p-3">
+          <dt class="text-slate-500">时间</dt>
+          <dd class="font-medium text-slate-900">{{ new Date(selectedLog.createdAt).toLocaleString() }}</dd>
+        </div>
+        <div class="rounded-lg bg-slate-50 p-3">
+          <dt class="text-slate-500">操作</dt>
+          <dd class="font-medium text-slate-900">{{ actionText(selectedLog.action) }}</dd>
+        </div>
+        <div>
+          <dt class="mb-2 font-medium text-slate-900">变更前</dt>
+          <dd><pre class="overflow-auto rounded-lg bg-slate-950 p-3 text-xs text-slate-100">{{ formatJson(selectedLog.before) }}</pre></dd>
+        </div>
+        <div>
+          <dt class="mb-2 font-medium text-slate-900">变更后</dt>
+          <dd><pre class="overflow-auto rounded-lg bg-slate-950 p-3 text-xs text-slate-100">{{ formatJson(selectedLog.after) }}</pre></dd>
+        </div>
+      </dl>
+    </aside>
+  </section>
+</template>

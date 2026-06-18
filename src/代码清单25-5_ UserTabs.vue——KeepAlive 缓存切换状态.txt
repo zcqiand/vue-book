@@ -1,0 +1,82 @@
+<!-- src/components/UserTabs.vue -->
+<template>
+  <div class="user-tabs">
+    <!-- Tab 切换按钮 -->
+    <div class="tab-bar">
+      <button
+        v-for="tab in tabs"
+        :key="tab"
+        :class="['tab-btn', { active: currentTab === tab }]"
+        @click="currentTab = tab"
+      >
+        {{ tab }}
+      </button>
+    </div>
+
+    <!-- KeepAlive: 只有 include 命中的组件名才会被缓存 -->
+    <!-- 切走时组件状态被冻结，切回时完全恢复 -->
+    <KeepAlive :include="['UserList', 'UserDetail']">
+      <component :is="currentComponent" />
+    </KeepAlive>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+import UserList from './UserList.vue'
+import UserDetail from './UserDetail.vue'
+import UserSettings from './UserSettings.vue'
+
+const tabs = ['UserList', 'UserDetail', 'UserSettings'] as const
+type TabName = typeof tabs[number]
+
+const currentTab = ref<TabName>('UserList')
+
+// currentComponent 会随着 currentTab 变化而变化
+// KeepAlive 感知到组件类型在 include 列表中，会缓存其状态
+const currentComponent = computed(() => {
+  switch (currentTab.value) {
+    case 'UserList':
+      return UserList
+    case 'UserDetail':
+      return UserDetail
+    case 'UserSettings':
+      return UserSettings
+  }
+})
+</script>
+
+<style scoped>
+.user-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tab-bar {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tab-btn {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+
+.tab-btn:hover {
+  color: #3b82f6;
+}
+
+.tab-btn.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+  font-weight: 500;
+}
+</style>

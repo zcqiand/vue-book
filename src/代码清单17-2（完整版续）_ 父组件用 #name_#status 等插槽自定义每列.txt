@@ -1,0 +1,76 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import TableList from './TableList.vue'
+
+const columns = ref([
+  { key: 'name', label: '姓名' },
+  { key: 'role', label: '职位' },
+  { key: 'status', label: '状态' },
+  { key: 'joinedAt', label: '入职日期' },
+])
+
+const users = ref([
+  { id: 1, name: '李明', role: '前端工程师', status: 'active', joinedAt: '2023-01-15' },
+  { id: 2, name: '王芳', role: '产品经理', status: 'active', joinedAt: '2023-03-22' },
+  { id: 3, name: '赵强', role: '后端工程师', status: 'inactive', joinedAt: '2022-11-08' },
+])
+
+const statusConfig: Record<string, { label: string; cls: string }> = {
+  active: { label: '在职', cls: 'status-active' },
+  inactive: { label: '离职', cls: 'status-inactive' },
+}
+</script>
+
+<template>
+  <TableList :columns="columns" :items="users">
+    <!-- #name 插槽：自定义姓名列，加粗显示 -->
+    <template #name="{ row }">
+      <strong class="user-name">{{ row.name }}</strong>
+    </template>
+
+    <!-- #role 插槽：职位列保持默认，这里省略即用后备内容 -->
+
+    <!-- #status 插槽：把状态字段渲染成彩色徽章 -->
+    <template #status="{ row }">
+      <span :class="['badge', statusConfig[row.status as string]?.cls ?? 'badge-default']">
+        {{ statusConfig[row.status as string]?.label ?? row.status }}
+      </span>
+    </template>
+
+    <!-- #joinedAt 插槽：把日期格式化为 YYYY年MM月DD日 -->
+    <template #joinedAt="{ row }">
+      <span class="date">{{ row.joinedAt }}</span>
+    </template>
+  </TableList>
+</template>
+
+<style scoped>
+.user-name { color: #111827; }
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-active {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-inactive {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-default {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.date {
+  color: #6b7280;
+}
+</style>

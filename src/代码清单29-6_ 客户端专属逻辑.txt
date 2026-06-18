@@ -1,0 +1,14 @@
+<script setup lang="ts">
+const isClient = ref(false)
+
+onMounted(() => {
+  isClient.value = true
+  const stored = localStorage.getItem('token')
+  if (stored) token.value = stored
+})
+</script>
+<template>
+  <div>
+    <p v-if="isClient">客户端专属内容（localStorage 已读取）</p>
+  </div>
+</template>

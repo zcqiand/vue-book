@@ -1,0 +1,7 @@
+<div
+  v-for="item in list"
+  :key="item.id"
+  v-memo="[item.id, item.selected]"
+>
+  {{ item.name }}
+</div>

@@ -1,0 +1,55 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import { RouterLink, RouterView } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
+import { useTenantStore } from '@/stores/tenant'
+
+const authStore = useAuthStore()
+const tenantStore = useTenantStore()
+
+const userLabel = computed(() => authStore.user?.name ?? '未登录')
+
+function logout(): void {
+  authStore.logout()
+}
+</script>
+
+<template>
+  <div class="min-h-screen">
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        <div>
+          <p class="text-sm text-slate-500">第40章示例</p>
+          <h1 class="text-xl font-semibold">统一认证与 RBAC</h1>
+        </div>
+
+        <nav class="flex items-center gap-4 text-sm">
+          <RouterLink class="text-blue-700 hover:underline" to="/">控制台</RouterLink>
+          <RouterLink class="text-blue-700 hover:underline" to="/admin/users">用户管理</RouterLink>
+          <RouterLink class="text-blue-700 hover:underline" to="/login">登录</RouterLink>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-6 py-8">
+      <section class="mb-6 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div class="grid gap-2 text-sm md:grid-cols-4">
+          <p><span class="text-slate-500">用户：</span>{{ userLabel }}</p>
+          <p><span class="text-slate-500">租户：</span>{{ tenantStore.selectedTenant?.name ?? '未选择' }}</p>
+          <p><span class="text-slate-500">角色：</span>{{ authStore.roles.join(', ') || '无' }}</p>
+          <p><span class="text-slate-500">权限数：</span>{{ authStore.permissions.length }}</p>
+        </div>
+        <button
+          v-if="authStore.isAuthenticated"
+          class="mt-4 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white"
+          type="button"
+          @click="logout"
+        >
+          退出登录
+        </button>
+      </section>
+
+      <RouterView />
+    </main>
+  </div>
+</template>

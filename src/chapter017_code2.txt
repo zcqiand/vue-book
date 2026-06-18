@@ -1,0 +1,5 @@
+<Modal>
+  <h2>确认删除？</h2>
+  <p>此操作不可撤销</p>
+  <button @click="confirm">删除</button>
+</Modal>

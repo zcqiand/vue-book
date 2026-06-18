@@ -1,0 +1,144 @@
+<!-- src/components/ReactiveVsStatic.vue -->
+<template>
+  <div class="comparison-demo">
+    <h3>provide 响应式 vs 静态值对比</h3>
+
+    <div class="demo-grid">
+      <!-- 左侧：响应式注入 -->
+      <div class="demo-card reactive-card">
+        <h4>响应式注入（provide ref）</h4>
+        <p class="value-display">计数：{{ reactiveCount }}</p>
+        <button @click="incrementReactive" class="btn-increment">
+          +1（响应式）
+        </button>
+      </div>
+
+      <!-- 右侧：静态值注入 -->
+      <div class="demo-card static-card">
+        <h4>静态值注入（provide 字符串）</h4>
+        <p class="value-display">静态值：{{ staticValue }}</p>
+        <button @click="tryUpdateStatic" class="btn-increment">
+          尝试修改
+        </button>
+        <p class="hint">静态值在 provide 时快照，后续修改不反映</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, provide, reactive } from 'vue'
+
+// ---------- 响应式注入 ----------
+// 提供一个响应式 ref
+const reactiveCount = ref(0)
+
+// provide 响应式 ref 时，inject 方拿到的仍是响应式的
+// 修改 reactiveCount.value 会触发所有消费方更新
+provide('reactiveCounter', reactiveCount)
+
+function incrementReactive(): void {
+  reactiveCount.value++
+}
+
+// ---------- 静态值注入 ----------
+// 提供一个静态字符串
+const staticValue = 'hello'
+
+// provide 静态字符串时，inject 方拿到的是字符串的快照（值拷贝）
+// 后续修改 staticValue 不会影响已注入的副本
+provide('staticMessage', staticValue)
+
+// 演示：修改静态变量不会影响已注入的值
+function tryUpdateStatic(): void {
+  // 修改变量本身，不影响已注入的快照
+  // （因为 provide 在 setup 时执行，早已捕获当时的值）
+  console.log('静态值已修改，但 inject 方不会感知')
+  // 强制触发生成物更新以演示
+  location.reload()
+}
+
+// ---------- 响应式对象注入 ----------
+// 也可以 provide 一个 reactive 对象
+const userInfo = reactive({
+  name: 'Alice',
+  age: 28,
+})
+
+// provide reactive 对象时，inject 方拿到的是同一个响应式代理的引用
+// 修改 userInfo.name 会触发所有消费方更新
+provide('user', userInfo)
+</script>
+
+<style scoped>
+.comparison-demo {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.demo-card {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.reactive-card {
+  background-color: #eff6ff;
+}
+
+.static-card {
+  background-color: #f3f4f6;
+}
+
+h4 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.value-display {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.btn-increment {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.reactive-card .btn-increment {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.static-card .btn-increment {
+  background-color: #6b7280;
+  color: #fff;
+}
+
+.btn-increment:hover {
+  opacity: 0.85;
+}
+
+.hint {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+</style>

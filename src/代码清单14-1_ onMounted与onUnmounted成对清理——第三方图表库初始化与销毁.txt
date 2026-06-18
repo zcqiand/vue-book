@@ -1,0 +1,99 @@
+<!-- src/components/ChartWidget.vue -->
+<script setup lang="ts">
+import { onMounted, onUnmounted, ref } from 'vue'
+
+// 模拟第三方图表库的实例类型
+interface ChartInstance {
+  setData: (data: number[]) => void
+  onResize: (callback: () => void) => void
+  offResize: (callback: () => void) => void
+  dispose: () => void
+}
+
+function createChartInstance(container: HTMLElement): ChartInstance {
+  console.log('[Chart] 创建图表实例，容器:', container.id)
+  const listeners: Array<() => void> = []
+
+  return {
+    setData: (data: number[]) => {
+      console.log('[Chart] 更新数据:', data)
+    },
+    onResize: (callback: () => void) => {
+      console.log('[Chart] 注册 resize 监听')
+      listeners.push(callback)
+    },
+    offResize: (callback: () => void) => {
+      console.log('[Chart] 移除 resize 监听')
+      const idx = listeners.indexOf(callback)
+      if (idx !== -1) listeners.splice(idx, 1)
+    },
+    dispose: () => {
+      console.log('[Chart] 销毁图表实例，清理所有监听器')
+      listeners.splice(0, listeners.length)
+    },
+  }
+}
+
+const chartContainer = ref<HTMLDivElement | null>(null)
+const dataReady = ref<boolean>(false)
+const chartData = ref<number[]>([42, 58, 73, 91, 65])
+
+let chartInstance: ChartInstance | null = null
+
+// handleResize 必须在 setup 层声明，让 onMounted 和 onUnmounted 共用同一引用
+// 如果各自定义一次，removeEventListener 移除的是另一个函数，监听不会被清除
+const handleResize = (): void => {
+  console.log('[Window] resize 事件触发，图表执行自适应')
+  chartInstance?.setData(chartData.value)
+}
+
+// onMounted：组件 DOM 渲染完成后执行，适合做第三方库的初始化
+onMounted(() => {
+  if (chartContainer.value === null) return
+
+  chartInstance = createChartInstance(chartContainer.value)
+  chartInstance.setData(chartData.value)
+
+  window.addEventListener('resize', handleResize)
+  chartInstance.onResize(handleResize)
+
+  dataReady.value = true
+  console.log('[Chart] 初始化完成，图表已挂载到 DOM')
+})
+
+// onUnmounted：组件卸载完成后调用，此时组件实例仍存在但 DOM 已被移除
+// 必须与 onMounted 配对：创建了什么就要销毁什么，注册了什么就要移除什么
+onUnmounted(() => {
+  if (chartInstance === null) return
+
+  window.removeEventListener('resize', handleResize)
+  chartInstance.offResize(handleResize)
+
+  chartInstance.dispose()
+  chartInstance = null
+  dataReady.value = false
+
+  console.log('[Chart] 清理完成，实例已销毁')
+})
+
+function updateData(): void {
+  chartData.value = chartData.value.map((v) => Math.floor(v * (0.8 + Math.random() * 0.4)))
+  chartInstance?.setData(chartData.value)
+}
+</script>
+
+<template>
+  <div>
+    <div
+      id="main-chart"
+      ref="chartContainer"
+      style="width: 100%; height: 200px; background: #f0f0f0; border: 1px solid #ccc"
+    >
+      <p v-if="!dataReady">图表加载中...</p>
+      <p v-else>图表已就绪（查看控制台观察生命周期）</p>
+    </div>
+
+    <button @click="updateData">更新数据（观察控制台日志）</button>
+    <p>组件卸载后打开控制台，确认无残留日志输出</p>
+  </div>
+</template>

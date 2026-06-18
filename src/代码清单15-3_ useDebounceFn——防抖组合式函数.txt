@@ -1,0 +1,32 @@
+<!-- src/composables/useDebounceFn.ts -->
+import { ref, onUnmounted } from 'vue'
+
+export function useDebounceFn<T extends (...args: unknown[]) => unknown>(
+  fn: T,
+  delay: number = 300
+): T {
+  // 用 ref 持有定时器 ID，支持在 onUnmounted 时清理
+  const timer = ref<ReturnType<typeof setTimeout> | null>(null)
+
+  function debounced(...args: Parameters<T>): void {
+    // 每次调用先清除之前的计时器，实现「防抖」效果
+    if (timer.value !== null) {
+      clearTimeout(timer.value)
+    }
+    timer.value = setTimeout(() => {
+      fn(...args)
+      timer.value = null
+    }, delay)
+  }
+
+  onUnmounted(() => {
+    // 组件卸载时若定时器还在走，则清除它避免副作用残留
+    if (timer.value !== null) {
+      clearTimeout(timer.value)
+      timer.value = null
+    }
+  })
+
+  // 返回类型为 T（原始函数类型），调用方无需感知内部实现
+  return debounced as T
+}

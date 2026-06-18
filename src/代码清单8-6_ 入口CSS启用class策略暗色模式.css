@@ -1,0 +1,5 @@
+/* src/assets/main.css */
+@import "tailwindcss";
+
+/* ❶ 把 dark: 前缀从默认的 prefers-color-scheme 改为"祖先带 dark 类时生效" */
+@custom-variant dark (&:where(.dark, .dark *));

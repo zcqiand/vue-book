@@ -1,0 +1,62 @@
+<script setup lang="ts">
+// 引入子组件（本文件同目录下）
+import Card from './Card.vue'
+</script>
+
+<template>
+  <Card>
+    <!-- #header 是 v-slot:header 的简写 -->
+    <template #header>
+      <div class="custom-header">
+        <h2>用户管理</h2>
+        <button class="btn-add">新增用户</button>
+      </div>
+    </template>
+
+    <!-- 默认插槽内容：直接写在组件标签内即为 #default -->
+    <div class="user-list">
+      <p>李明 - 前端工程师</p>
+      <p>王芳 - 产品经理</p>
+      <p>赵强 - 后端工程师</p>
+    </div>
+
+    <!-- #footer 是 v-slot:footer 的简写 -->
+    <template #footer>
+      <span class="footer-text">共 3 条记录</span>
+    </template>
+  </Card>
+</template>
+
+<style scoped>
+.custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-add {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3b82f6;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.user-list p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.footer-text {
+  font-size: 13px;
+  color: #6b7280;
+}
+</style>

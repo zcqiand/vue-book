@@ -1,0 +1,8 @@
+<!-- Modal.vue -->
+<template>
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <slot></slot>
+    </div>
+  </div>
+</template>

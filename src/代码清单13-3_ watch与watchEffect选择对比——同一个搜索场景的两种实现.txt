@@ -1,0 +1,64 @@
+<!-- src/components/SearchComparison.vue -->
+<script setup lang="ts">
+import { ref, watch, watchEffect } from 'vue'
+
+const query = ref<string>('')
+const status = ref<string>('idle')
+
+// 方式一：watch——显式声明依赖，query 是唯一追踪目标
+// 当 query 变化时才执行，结果完全由 query 决定
+// 适合场景：依赖关系明确，只关心特定值的变化
+watch(
+  query,
+  (newVal: string) => {
+    if (!newVal.trim()) {
+      status.value = 'idle'
+      return
+    }
+    status.value = 'searching'
+    // 模拟异步搜索
+    setTimeout(() => {
+      status.value = `找到关于"${newVal}"的结果`
+    }, 300)
+  },
+  { immediate: true }
+)
+
+// 方式二：watchEffect——自动收集依赖，回调内读取的所有 ref/reactive 都是依赖
+// 回调体读取了 query 和 status，所以这两个变量变化都会触发回调
+// 适合场景：副作用逻辑依赖多个响应式变量，依赖关系复杂或可能变化
+watchEffect(() => {
+  // 自动追踪 query 和 status 的读取
+  console.log(`[watchEffect] query="${query.value}", status="${status.value}"`)
+  if (!query.value.trim()) {
+    console.log('查询条件为空，无需搜索')
+  } else {
+    console.log(`准备搜索："${query.value}"`)
+  }
+})
+
+// watchEffect 的 immediate 行为
+// watchEffect 默认在组件创建时立即执行一次（自动 immediate）
+// watch 则需要显式写 { immediate: true }
+
+function setQuery(val: string): void {
+  query.value = val
+}
+
+function reset(): void {
+  query.value = ''
+  status.value = 'idle'
+}
+</script>
+
+<template>
+  <div>
+    <input v-model="query" type="text" placeholder="输入搜索词" />
+    <button @click="setQuery('Vue')">快捷：Vue</button>
+    <button @click="setQuery('TypeScript')">快捷：TypeScript</button>
+    <button @click="reset">重置</button>
+
+    <p>状态：{{ status }}</p>
+    <p>打开控制台，观察两种写法的执行时机差异</p>
+  </div>
+</template>

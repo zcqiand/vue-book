@@ -1,0 +1,45 @@
+<script setup lang="ts">
+// 无需额外导入，vue-router 会自动全局注册 RouterLink 和 RouterView
+</script>
+
+<template>
+  <div class="min-h-screen bg-gray-50">
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="flex items-center h-14 gap-6">
+          <span class="text-lg font-semibold text-indigo-600">我的应用</span>
+          <div class="flex gap-4">
+            <RouterLink
+              to="/"
+              class="text-gray-600 hover:text-indigo-600 transition-colors"
+              active-class="text-indigo-600 font-medium"
+              exact-active-class="text-indigo-600 font-medium"
+            >
+              首页
+            </RouterLink>
+            <RouterLink
+              to="/users"
+              class="text-gray-600 hover:text-indigo-600 transition-colors"
+              active-class="text-indigo-600 font-medium"
+              exact-active-class="text-indigo-600 font-medium"
+            >
+              用户列表
+            </RouterLink>
+            <RouterLink
+              to="/about"
+              class="text-gray-600 hover:text-indigo-600 transition-colors"
+              active-class="text-indigo-600 font-medium"
+              exact-active-class="text-indigo-600 font-medium"
+            >
+              关于
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+      <RouterView />
+    </main>
+  </div>
+</template>

@@ -1,0 +1,39 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const currentTab = ref<string>('tab-a')
+const tabAData = ref<string[]>([])
+const tabBData = ref<string[]>([])
+
+// 错误写法（注释掉）：
+// function switchTab(tab: string) {
+//   currentTab.value = tab
+//   fetch(`/api/${tab}`).then(res => res.json()).then(data => {
+//     // 如果用户快速切换 Tab，这里写入的可能是旧请求的结果
+//     if (tab === 'tab-a') tabAData.value = data
+//     else tabBData.value = data
+//   })
+// }
+
+// 正确写法：AbortController 在新请求前取消旧请求
+let controller: AbortController | null = null
+
+async function switchTab(tab: string): Promise<void> {
+  if (controller) controller.abort()
+  controller = new AbortController()
+  currentTab.value = tab
+
+  try {
+    const response = await fetch(`/api/${tab}`, {
+      signal: controller.signal,
+    })
+    const data = await response.json()
+    if (tab === 'tab-a') tabAData.value = data
+    else tabBData.value = data
+  } catch (err) {
+    if (err instanceof Error && err.name === 'AbortError') {
+      // 主动取消，不处理
+    }
+  }
+}
+</script>

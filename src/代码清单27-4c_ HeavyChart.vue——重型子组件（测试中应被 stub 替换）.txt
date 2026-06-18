@@ -1,0 +1,13 @@
+<!-- src/components/HeavyChart.vue -->
+<script setup lang="ts">
+defineProps<{
+  data: number[]
+}>()
+</script>
+
+<template>
+  <!-- 此组件为模拟重型依赖，实际项目可能包含复杂的 ECharts/D3 逻辑 -->
+  <div class="heavy-chart">
+    <span v-for="(val, i) in data" :key="i">{{ val }}</span>
+  </div>
+</template>

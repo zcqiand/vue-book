@@ -1,0 +1,50 @@
+<!-- src/components/UserPanel.vue -->
+<script setup lang="ts">
+import { ref } from 'vue'
+
+interface User {
+  id: number
+  name: string
+  email: string
+  avatar?: string
+}
+
+// 反例：初值为 null 时不写泛型，TypeScript 推断类型为 null（而非 T | null）
+// const badUser = ref(null)
+// badUser.value.name  // 编译错误：Object is possibly 'null'
+
+// 正例：初值为 null 时，手动指定泛型为 User | null
+const currentUser = ref<User | null>(null)
+
+const loading = ref<boolean | null>(null)
+const errorMsg = ref<string | null>(null)
+const lastFetchedAt = ref<Date | null>(null)
+
+function login(): void {
+  currentUser.value = { id: 1, name: 'Bob', email: 'bob@example.com' }
+}
+
+function logout(): void {
+  currentUser.value = null
+}
+
+function getGreeting(): string {
+  if (currentUser.value === null) {
+    return '请登录'
+  }
+  return `你好，${currentUser.value.name}`
+}
+</script>
+
+<template>
+  <div>
+    <p>当前用户：{{ getGreeting() }}</p>
+    <button @click="login">登录为 Bob</button>
+    <button @click="logout">退出登录</button>
+
+    <div v-if="currentUser !== null">
+      <p>ID: {{ currentUser.id }}</p>
+      <p>邮箱：{{ currentUser.email }}</p>
+    </div>
+  </div>
+</template>

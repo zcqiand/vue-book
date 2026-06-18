@@ -1,0 +1,57 @@
+<!-- src/components/UserProfile.vue -->
+<script setup lang="ts">
+import { reactive, watch } from 'vue'
+
+interface User {
+  name: string
+  age: number
+  email: string
+}
+
+// 整个 user 是一个响应式 reactive 对象
+const user = reactive<User>({
+  name: '张三',
+  age: 28,
+  email: 'zhangsan@example.com',
+})
+
+// 监听 user.name 的变化，必须用 getter 函数 () => user.name
+// 否则 watch 会直接传 user.name 的当前值（字符串"张三"），而不是响应式依赖
+watch(
+  () => user.name,
+  (newName: string, oldName: string) => {
+    console.log(`姓名变化：${oldName} → ${newName}`)
+  }
+)
+
+watch(
+  () => user.age,
+  (newAge: number, oldAge: number) => {
+    console.log(`年龄变化：${oldAge} → ${newAge}`)
+  }
+)
+
+function updateName(): void {
+  user.name = '李四'
+}
+
+function updateAge(): void {
+  user.age = 30
+}
+
+function updateEmail(): void {
+  user.email = 'lisi@example.com'
+}
+</script>
+
+<template>
+  <div>
+    <p>姓名：{{ user.name }}</p>
+    <p>年龄：{{ user.age }}</p>
+    <p>邮箱：{{ user.email }}</p>
+
+    <button @click="updateName">改姓名</button>
+    <button @click="updateAge">改年龄</button>
+    <button @click="updateEmail">改邮箱</button>
+  </div>
+</template>

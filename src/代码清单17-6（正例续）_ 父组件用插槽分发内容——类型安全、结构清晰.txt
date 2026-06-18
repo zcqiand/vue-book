@@ -1,0 +1,29 @@
+<script setup lang="ts">
+import ContentBox from './ContentBox.vue'
+
+const userName = '李明'
+const userRole = '前端工程师'
+</script>
+
+<template>
+  <ContentBox>
+    <!-- 插槽内容是 Vue 模板，编译器检查合法性 -->
+    <div class="user-info">
+      <strong>{{ userName }}</strong>
+      <span class="role">{{ userRole }}</span>
+    </div>
+  </ContentBox>
+</template>
+
+<style scoped>
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.role {
+  color: #6b7280;
+  font-size: 14px;
+}
+</style>

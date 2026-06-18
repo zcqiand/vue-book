@@ -1,0 +1,170 @@
+<!-- src/pages/ProfileEdit.vue -->
+<template>
+  <div class="profile-edit">
+    <h2>编辑个人资料</h2>
+
+    <form @submit.prevent="handleSubmit" class="form-container">
+      <!-- 用户名 -->
+      <InputField
+        v-model="form.username"
+        label="用户名"
+        type="text"
+        placeholder="请输入用户名"
+        :rules="[required, minLength(4)]"
+        autocomplete="username"
+      />
+
+      <!-- 邮箱 -->
+      <InputField
+        v-model="form.email"
+        label="邮箱"
+        type="email"
+        placeholder="example@domain.com"
+        :rules="[required, emailFormat]"
+        autocomplete="email"
+      />
+
+      <!-- 个人简介（textarea） -->
+      <InputField
+        v-model="form.bio"
+        label="个人简介"
+        type="textarea"
+        placeholder="介绍一下你自己（可选）"
+        :rules="[maxLength(200)]"
+      />
+
+      <!-- 提交按钮 -->
+      <button type="submit" class="btn-submit" :disabled="hasErrors">
+        保存修改
+      </button>
+    </form>
+
+    <!-- 调试信息 -->
+    <details class="debug-info">
+      <summary>调试：表单数据</summary>
+      <pre>{{ JSON.stringify(form, null, 2) }}</pre>
+    </details>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { reactive } from 'vue'
+import InputField from '../components/InputField.vue'
+import { useValidation, type validatorFn } from '../composables/useValidation'
+
+// ---- 验证规则 ----
+
+const required: validatorFn = (value: unknown): string | null => {
+  if (value === null || value === undefined || (typeof value === 'string' && value.trim() === '')) {
+    return '此字段为必填项'
+  }
+  return null
+}
+
+const minLength = (min: number): validatorFn => (value: unknown): string | null => {
+  const str = value as string
+  if (str.length < min) {
+    return `至少需要 ${min} 个字符`
+  }
+  return null
+}
+
+const emailFormat: validatorFn = (value: unknown): string | null => {
+  const str = value as string
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(str)) {
+    return '请输入有效的邮箱格式'
+  }
+  return null
+}
+
+const maxLength = (max: number): validatorFn => (value: unknown): string | null => {
+  const str = value as string
+  if (str.length > max) {
+    return `最多 ${max} 个字符，当前 ${str.length} 个`
+  }
+  return null
+}
+
+// ---- 表单数据 ----
+
+const form = reactive({
+  username: '',
+  email: '',
+  bio: '',
+})
+
+// ---- 调用 useValidation（本表单复用验证逻辑） ----
+
+const { errors, validate, hasErrors } = useValidation(form, {
+  username: [required, minLength(4)],
+  email: [required, emailFormat],
+  bio: [maxLength(200)],
+})
+
+// ---- 提交处理 ----
+
+function handleSubmit(): void {
+  if (validate()) {
+    console.log('资料保存成功:', form)
+    alert('保存成功！')
+  } else {
+    console.log('表单有错误')
+  }
+}
+</script>
+
+<style scoped>
+.profile-edit {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-submit {
+  margin-top: 8px;
+  padding: 10px 16px;
+  background-color: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #059669;
+}
+
+.btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.debug-info {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.debug-info pre {
+  background-color: #f3f4f6;
+  padding: 12px;
+  border-radius: 6px;
+  overflow: auto;
+}
+</style>

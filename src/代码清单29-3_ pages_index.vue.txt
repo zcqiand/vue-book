@@ -1,0 +1,11 @@
+<script setup lang="ts">
+// useFetch 在 SSR 阶段预取数据
+const { data } = await useFetch('/api/hello')
+</script>
+<template>
+  <div>
+    <h1>首页</h1>
+    <NuxtLink to="/users/1">用户详情</NuxtLink>
+    <p>{{ data?.message }}</p>
+  </div>
+</template>

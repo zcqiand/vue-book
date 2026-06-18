@@ -1,0 +1,50 @@
+<!-- src/components/ReactiveDestructureBug.vue -->
+<script setup lang="ts">
+import { reactive, toRefs } from 'vue'
+
+interface State {
+  name: string
+  age: number
+  city: string
+}
+
+const state = reactive<State>({
+  name: '张三',
+  age: 28,
+  city: '北京',
+})
+
+// 失误：直接解构 —— name、age、city 变成普通值，脱离响应式代理
+// 后续改 state.name，页面上 {{ name }} 不会更新
+const { name, age, city } = state
+
+// 正确做法：用 toRefs 包裹后再解构
+// toRefs 会把每个属性转成 ref，解构出的变量仍是响应式的 ref
+const stateRefs = toRefs(state)
+const { name: nameFixed, age: ageFixed, city: cityFixed } = stateRefs
+
+function updateName(): void {
+  // 改 state.name —— reactive 属性变更，视图应该更新
+  state.name = '李四'
+  // 但上面解构出的 name 已断开连接，{{ name }} 不会同步
+}
+
+function updateNameFixed(): void {
+  // 通过 toRefs 解构出的 ref 访问，需要 .value
+  nameFixed.value = '李四'
+  // 现在视图里的 {{ nameFixed }} 会正确更新
+}
+</script>
+
+<template>
+  <div>
+    <h3>直接解构（失效）</h3>
+    <p>姓名：{{ name }}</p>
+    <!-- 改 state.name 后，这个 {{ name }} 不会变——已失去响应式连接 -->
+    <button @click="updateName">改为李四（失效）</button>
+
+    <h3>toRefs 解构（正确）</h3>
+    <p>姓名：{{ nameFixed }}</p>
+    <button @click="updateNameFixed">改为李四（生效）</button>
+  </div>
+</template>

@@ -1,0 +1,1 @@
+const user = ref(null)  // 推断为 Ref<null>，而不是 Ref<User | null>

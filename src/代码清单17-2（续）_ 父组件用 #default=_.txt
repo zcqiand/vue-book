@@ -1,0 +1,44 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import TableList from './TableList.vue'
+
+// 表格列定义
+const columns = ref([
+  { key: 'name', label: '姓名' },
+  { key: 'role', label: '职位' },
+  { key: 'status', label: '状态' },
+  { key: 'joinedAt', label: '入职日期' },
+])
+
+// 表格数据
+const users = ref([
+  { id: 1, name: '李明', role: '前端工程师', status: 'active', joinedAt: '2023-01-15' },
+  { id: 2, name: '王芳', role: '产品经理', status: 'active', joinedAt: '2023-03-22' },
+  { id: 3, name: '赵强', role: '后端工程师', status: 'inactive', joinedAt: '2022-11-08' },
+])
+
+// 状态徽章样式映射
+const statusMap: Record<string, { label: string; className: string }> = {
+  active: { label: '在职', className: 'badge-active' },
+  inactive: { label: '离职', className: 'badge-inactive' },
+}
+</script>
+
+<template>
+  <TableList :columns="columns" :items="users">
+    <!--
+      #default 是 v-slot:default 的简写
+      解构获取 row（当前行数据）和 index（行索引）
+    -->
+    <template #default="{ row, index }">
+      <!-- 第 1 列（name）：原样显示 -->
+      <span>{{ row.name }}</span>
+    </template>
+
+    <!--
+      注意：这里用了两个 #default？不，上面的写法是简化的示意。
+      实际应该用动态列或条件渲染来区分不同列的插槽内容。
+      正确做法是 TableList 支持 col-key 插槽名称：
+    -->
+  </TableList>
+</template>

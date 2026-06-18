@@ -1,0 +1,22 @@
+<script setup lang="ts">
+import { inject, computed } from 'vue'
+
+const theme = inject<{ value: 'light' | 'dark' }>('theme')
+const switchTheme = inject<(newTheme: 'light' | 'dark') => void>('switchTheme')
+
+const isDark = computed(() => theme?.value === 'dark')
+
+function toggle(): void {
+  switchTheme?.(isDark.value ? 'light' : 'dark')
+}
+</script>
+
+<template>
+  <button
+    class="themed-btn"
+    :class="{ 'dark': isDark }"
+    @click="toggle"
+  >
+    切换为 {{ isDark ? '浅色' : '深色' }}模式
+  </button>
+</template>

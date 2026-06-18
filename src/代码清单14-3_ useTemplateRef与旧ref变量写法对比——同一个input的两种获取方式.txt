@@ -1,0 +1,46 @@
+<!-- src/components/RefComparison.vue -->
+<script setup lang="ts">
+import { ref, useTemplateRef, onMounted } from 'vue'
+
+// 旧写法：需要先声明 ref 变量，模板中用 ref="xxx" 绑定
+const inputByRef = ref<HTMLInputElement | null>(null)
+
+// 新写法：useTemplateRef 直接通过字符串名称获取，无需在 script 开头声明变量
+const inputByUseTemplateRef = useTemplateRef<HTMLInputElement>('tmpl-input')
+
+onMounted(() => {
+  console.log('[旧写法] inputByRef:', inputByRef.value?.tagName)
+  console.log('[新写法] useTemplateRef:', inputByUseTemplateRef.value?.tagName)
+  inputByUseTemplateRef.value?.focus()
+})
+
+function logBothValues(): void {
+  console.log('[旧写法] inputByRef2 value:', inputByRef.value?.value)
+  console.log('[新写法] useTemplateRef2 value:', inputByUseTemplateRef.value?.value)
+}
+</script>
+
+<template>
+  <div>
+    <h3>旧写法（ref 变量声明）</h3>
+    <input
+      ref="inputByRef"
+      type="text"
+      placeholder="旧写法：需要先声明 ref 变量"
+      style="padding: 8px; width: 280px"
+    />
+
+    <h3>新写法（useTemplateRef）</h3>
+    <input
+      ref="tmpl-input"
+      type="text"
+      placeholder="新写法：useTemplateRef 直接通过字符串获取"
+      style="padding: 8px; width: 280px"
+    />
+
+    <br /><br />
+    <button @click="logBothValues">打印两个 input 的值到控制台</button>
+
+    <p>观察：useTemplateRef 写法更简洁，变量名只出现在模板一处</p>
+  </div>
+</template>

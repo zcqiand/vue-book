@@ -1,0 +1,15 @@
+<!-- ===== 重构后：逻辑全部提取到 useMouse，组件只负责展示 ===== -->
+<!-- src/components/MouseBoxGood.vue -->
+<script setup lang="ts">
+// 鼠标追踪逻辑已提取到 useMouse，组件只需要调用并解构
+import { useMouse } from '../composables/useMouse'
+
+const { x, y } = useMouse()
+</script>
+
+<template>
+  <div>
+    <!-- 同样的展示效果，但 setup 从 20 行缩减到 4 行 -->
+    <p>鼠标位置：{{ x }}, {{ y }}</p>
+  </div>
+</template>

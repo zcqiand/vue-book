@@ -1,0 +1,24 @@
+<!-- src/pages/UserEdit.vue -->
+<script setup lang="ts">
+import FormDialog from '../components/FormDialog.vue'
+
+function onFormChange(id: number): void {
+  console.log('[UserEdit] 用户 ID 变更:', id)
+}
+
+function onFormSubmit(data: { name: string; age: number; role: string }): void {
+  console.log('[UserEdit] 提交表单:', data)
+}
+
+function onDialogClose(): void {
+  console.log('[UserEdit] 对话框已关闭')
+}
+</script>
+
+<template>
+  <FormDialog
+    @change="onFormChange"
+    @submit="onFormSubmit"
+    @close="onDialogClose"
+  />
+</template>

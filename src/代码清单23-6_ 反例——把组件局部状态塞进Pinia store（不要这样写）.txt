@@ -1,0 +1,37 @@
+<!-- src/components/BadLoginForm.vue（反例，不要模仿） -->
+<script setup lang="ts">
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
+
+// ❌ 滥用 Pinia：只在 BadLoginForm 组件内用的表单状态，
+// 不需要跨组件共享，不应该放进 store
+const useBadStore = defineStore('bad-login', () => {
+  const username = ref('')
+  const password = ref('')
+  const isLoading = ref(false)
+  const errorMessage = ref('')
+
+  async function submitLogin() {
+    isLoading.value = true
+    errorMessage.value = ''
+    try {
+      await fetch('/api/login', { method: 'POST' })
+    } catch (err) {
+      errorMessage.value = '登录失败'
+    } finally {
+      isLoading.value = false
+    }
+  }
+
+  return { username, password, isLoading, errorMessage, submitLogin }
+})
+
+// ❌ 问题：username、password、isLoading、errorMessage 仅在此组件内使用，
+// 放入 store 后：
+// 1. 每次打开登录弹窗都要重置状态（因为 store 是全局的）
+// 2. 如果同时打开多个登录弹窗，状态会互相覆盖
+// 3. store 膨胀，原本清晰的组件边界被打破
+// 4. 在 Vue DevTools 里追踪状态时，满屏都是不相关的 store 数据
+
+const badStore = useBadStore()
+</script>

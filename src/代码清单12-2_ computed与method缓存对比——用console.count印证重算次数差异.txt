@@ -1,0 +1,42 @@
+<!-- src/components/ComputedVsMethod.vue -->
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+const firstName = ref<string>('张')
+const lastName = ref<string>('三')
+
+// method：每次调用都完整执行函数体，无缓存可言
+function fullNameMethod(): string {
+  console.count('method 调用') // 每次渲染/调用都输出，证明无缓存
+  return `${firstName.value} ${lastName.value}`
+}
+
+// computed：只在 firstName 或 lastName 变化时才重算，命中缓存时直接返回
+const fullNameComputed = computed<string>(() => {
+  console.count('computed 调用') // 仅依赖变化时输出，缓存命中时不输出
+  return `${firstName.value} ${lastName.value}`
+})
+
+function swapName(): void {
+  // 交换姓名，触发 firstName 和 lastName 同时变化
+  const tmp = firstName.value
+  firstName.value = lastName.value
+  lastName.value = tmp
+  // 触发一次 computed 重算，method 在下一次模板渲染时也会重算
+}
+</script>
+
+<template>
+  <div>
+    <p>姓：{{ firstName }}</p>
+    <p>名：{{ lastName }}</p>
+
+    <!-- 模板里同一位置出现两次 method 调用 -->
+    <!-- method：每次渲染都重算，所以 count 会是 2 -->
+    <!-- computed：缓存有效，只在依赖变化后重算一次 -->
+    <p>方法全名：{{ fullNameMethod() }}（另一处：{{ fullNameMethod() }}）</p>
+    <p>计算属性：{{ fullNameComputed }}（另一处：{{ fullNameComputed }}）</p>
+
+    <button @click="swapName">交换姓名（观察控制台计数差异）</button>
+  </div>
+</template>

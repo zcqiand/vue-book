@@ -1,0 +1,12 @@
+<script setup>
+const props = defineProps({
+  title: String,
+  count: Number
+})
+
+const user = ref(null)
+
+function onChange(id) {
+  emit('change', id)
+}
+</script>

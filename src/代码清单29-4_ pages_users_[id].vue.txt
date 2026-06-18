@@ -1,0 +1,12 @@
+<script setup lang="ts">
+const route = useRoute()
+const userId = route.params.id as string
+const { data: user } = await useFetch(`/api/users/${userId}`)
+</script>
+<template>
+  <div>
+    <h1>用户 {{ userId }} 的详情</h1>
+    <p v-if="user">{{ user.name }}</p>
+    <NuxtLink to="/">返回首页</NuxtLink>
+  </div>
+</template>

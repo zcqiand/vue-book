@@ -1,0 +1,11 @@
+// nuxt.config.ts
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+  modules: [],
+  app: {
+    head: {
+      title: '我的 Nuxt 应用',
+      meta: [{ name: 'description', content: '应用描述' }]
+    }
+  }
+})

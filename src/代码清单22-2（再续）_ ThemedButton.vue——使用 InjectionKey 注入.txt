@@ -1,0 +1,65 @@
+<!-- src/components/ThemedButton.vue -->
+<template>
+  <div class="themed-button-container">
+    <span class="theme-label">当前主题：{{ theme }}</span>
+    <button class="theme-toggle-btn" @click="switchTheme">
+      切换主题
+    </button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { inject } from 'vue'
+import { themeKey, switchThemeKey } from '../symbols'
+
+// inject 使用 InjectionKey 作为第一个参数
+// 类型自动推导：theme 类型为 Ref<'light' | 'dark'>，switchTheme 类型为 () => void
+// 无需手动写泛型注解，IDE 能正确推导
+const theme = inject(themeKey)
+const switchTheme = inject(switchThemeKey)
+
+// 非空断言：ThemeProvider 必定提供此值
+if (!theme || !switchTheme) {
+  throw new Error('ThemedButton 必须用在 ThemeProvider 内部')
+}
+</script>
+
+<style scoped>
+/* 与 22-1 相同，此处省略 */
+.themed-button-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background-color: inherit;
+}
+
+.theme-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.theme-toggle-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.light .theme-toggle-btn {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.dark .theme-toggle-btn {
+  background-color: #60a5fa;
+  color: #1f2937;
+}
+
+.theme-toggle-btn:hover {
+  opacity: 0.85;
+}
+</style>

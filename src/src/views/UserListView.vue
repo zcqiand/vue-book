@@ -1,0 +1,45 @@
+// 代码清单21-2: 组件中使用 useFetch
+// src/views/UserListView.vue
+<script setup lang="ts">
+import { useFetch } from '../composables/useFetch'
+
+interface User {
+  id: number
+  name: string
+  email: string
+}
+
+// 调用 useFetch，泛型 User[] 指定返回数据类型
+const { data: users, error, loading } = useFetch<User[]>('/api/users')
+</script>
+
+<template>
+  <div class="p-6">
+    <h2 class="text-xl font-semibold text-gray-800 mb-6">用户列表</h2>
+
+    <!-- 加载态 -->
+    <div v-if="loading" class="text-gray-500">
+      <span class="inline-block animate-spin mr-2">⟳</span>加载中……
+    </div>
+
+    <!-- 错误态 -->
+    <div v-else-if="error" class="p-4 bg-red-50 border border-red-200 rounded text-red-700">
+      加载失败：{{ error.message }}
+    </div>
+
+    <!-- 数据态 -->
+    <ul v-else-if="users" class="space-y-2">
+      <li
+        v-for="user in users"
+        :key="user.id"
+        class="p-4 bg-white border border-gray-200 rounded shadow-sm"
+      >
+        <span class="font-medium text-gray-800">{{ user.name }}</span>
+        <span class="text-gray-500 ml-2">{{ user.email }}</span>
+      </li>
+    </ul>
+
+    <!-- 空数据 -->
+    <p v-else class="text-gray-400">暂无数据</p>
+  </div>
+</template>

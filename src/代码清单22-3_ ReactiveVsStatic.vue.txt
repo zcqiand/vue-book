@@ -1,0 +1,19 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 响应式注入
+const counter = ref(0)
+provide('counter', counter)
+
+// 静态注入
+const appVersion = '1.0.0'
+provide('appVersion', appVersion)
+</script>
+
+<template>
+  <div>
+    <p>计数器（响应式）：{{ counter.value }}</p>
+    <p>版本号（静态）：{{ appVersion }}</p>
+    <button @click="counter.value++">递增</button>
+  </div>
+</template>

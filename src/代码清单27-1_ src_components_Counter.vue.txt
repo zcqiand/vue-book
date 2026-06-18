@@ -1,0 +1,11 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+const count = ref(0)
+function increment() { count.value++ }
+</script>
+<template>
+  <div>
+    <span>计数：{{ count }}</span>
+    <button @click="increment">+1</button>
+  </div>
+</template>

@@ -1,0 +1,18 @@
+<script setup lang="ts">
+import { inject } from 'vue'
+
+// localeKey 在 symbols.ts 中定义
+import { localeKey } from '../symbols'
+
+// inject(key, defaultValue) 第三个参数提供默认值
+// localeKey 是 Symbol，永不为 null/undefined，直接作为 key 传入，第二个参数是默认值
+const locale = inject<string>(localeKey, 'zh-CN')
+
+// 如果没有 provide 方注入，使用默认值 'zh-CN'
+</script>
+
+<template>
+  <div>
+    <p>当前语言：{{ locale }}</p>
+  </div>
+</template>

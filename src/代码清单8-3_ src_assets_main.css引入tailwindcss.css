@@ -1,0 +1,9 @@
+/* src/assets/main.css */
+@import "tailwindcss";  /* ❶ 4.x 的唯一入口：一行引入全部工具类 */
+
+/*
+ * 这一行由 main.ts 的 `import './assets/main.css'` 加载，
+ * 之后所有 .vue / .ts 模板即可直接使用 flex、p-4、text-gray-900 等工具类。
+ * 主题定制（断点、颜色、字体）在 4.x 里改用 @theme { ... } 块声明，
+ * 默认断点与调色板无需任何配置即可使用。
+ */

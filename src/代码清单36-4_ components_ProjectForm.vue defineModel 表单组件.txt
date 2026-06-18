@@ -1,0 +1,97 @@
+<script setup lang="ts">
+import { reactive, watch } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useInspectionStore } from '@/stores/inspection'
+import type { Project, ProjectStatus } from '@/api/inspection'
+
+type ProjectFormData = Pick<Project, 'name' | 'client' | 'status'>
+
+const props = defineProps<{ visible: boolean }>()
+const model = defineModel<ProjectFormData>({ required: true })
+const inspectionStore = useInspectionStore()
+const { statusOptions } = storeToRefs(inspectionStore)
+
+interface FormErrors {
+  name?: string
+  client?: string
+  status?: string
+}
+const errors = reactive<FormErrors>({})
+
+function validate(): boolean {
+  errors.name = undefined
+  errors.client = undefined
+  errors.status = undefined
+
+  const data = model.value
+  let valid = true
+  const allowedStatuses: ProjectStatus[] = ['pending', 'in_progress', 'completed', 'cancelled']
+
+  if (!data.name || data.name.trim().length === 0) {
+    errors.name = '项目名称不能为空'
+    valid = false
+  } else if (data.name.trim().length > 60) {
+    errors.name = '项目名称不能超过 60 个字符'
+    valid = false
+  }
+
+  if (!data.client || data.client.trim().length === 0) {
+    errors.client = '委托单位不能为空'
+    valid = false
+  }
+
+  if (!allowedStatuses.includes(data.status)) {
+    errors.status = '请选择有效的项目状态'
+    valid = false
+  }
+
+  return valid
+}
+
+watch(
+  () => props.visible,
+  (isOpen) => {
+    if (isOpen) inspectionStore.fetchStatuses()
+  },
+  { immediate: true }
+)
+
+const emit = defineEmits<{
+  submit: [formData: ProjectFormData]
+  cancel: []
+}>()
+
+function handleSubmit(): void {
+  if (!validate()) return
+  emit('submit', { ...model.value })
+}
+
+function handleCancel(): void {
+  emit('cancel')
+}
+
+defineExpose({ validate })
+</script>
+
+<template>
+  <div v-if="visible" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4" @click.self="handleCancel">
+    <div class="w-full max-w-lg bg-white rounded-lg shadow-xl p-6" @click.stop>
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">检测项目信息</h2>
+      <form class="flex flex-col gap-4" @submit.prevent="handleSubmit">
+        <label>项目名称<input v-model="model.name" type="text" /></label>
+        <p v-if="errors.name">{{ errors.name }}</p>
+        <label>委托单位<input v-model="model.client" type="text" /></label>
+        <p v-if="errors.client">{{ errors.client }}</p>
+        <label>
+          项目状态
+          <select v-model="model.status">
+            <option v-for="option in statusOptions" :key="option.value" :value="option.value">{{ option.label }}</option>
+          </select>
+        </label>
+        <p v-if="errors.status">{{ errors.status }}</p>
+        <button type="button" @click="handleCancel">取消</button>
+        <button type="submit">保存</button>
+      </form>
+    </div>
+  </div>
+</template>

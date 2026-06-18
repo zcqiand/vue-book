@@ -1,0 +1,5 @@
+<ItemList :items="['Vue', 'React', 'Svelte']">
+  <template #default="{ item }">
+    <strong>{{ item }}</strong>
+  </template>
+</ItemList>

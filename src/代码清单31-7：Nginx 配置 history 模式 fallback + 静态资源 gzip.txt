@@ -1,0 +1,22 @@
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/vue-book-demo/dist;
+    index index.html;
+
+    # SPA 路由回退：先找文件 → 再找目录 → 都没有返回 index.html，交给前端路由
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # 带 hash 的静态资源内容寻址，永不变，开一年长缓存 + immutable 禁止协商请求
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # 文本类资源 gzip 压缩，传输体积降到原大小的 30% 左右
+    gzip on;
+    gzip_types text/plain text/css application/javascript application/json image/svg+xml;
+    gzip_min_length 1024;
+}

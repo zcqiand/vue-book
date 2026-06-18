@@ -1,0 +1,20 @@
+$ npm create vue@latest my-vue-app
+
+Vue.js - The Progressive JavaScript Framework
+
+✔ Project name: … my-vue-app
+✔ Add TypeScript? … No / Yes
+✔ Add JSX Support? … No / Yes
+✔ Add Vue Router for Single Page App development? … No / Yes
+✔ Add Pinia for state management? … No / Yes
+✔ Add Vitest for Unit Testing? … No / Yes
+✔ Add ESLint for code quality? … No / Yes
+✔ Add Prettier for code formatting? … No / Yes
+
+Scaffolding project in /projects/my-vue-app...
+
+Done. Now run:
+
+  cd my-vue-app
+  npm install
+  npm run dev

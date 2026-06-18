@@ -1,0 +1,10 @@
+<!-- src/components/Greeting.vue -->
+<script setup lang="ts">
+defineProps<{
+  name?: string
+}>()
+</script>
+
+<template>
+  <span>你好 {{ name ?? '世界' }}！</span>
+</template>

@@ -1,0 +1,25 @@
+<!-- src/components/BookCard.vue -->
+<script setup lang="ts">
+// 基于类型的泛型声明（Vue 3.3+ 推荐写法）
+interface Props {
+  title: string
+  count?: number
+  tags?: string[]
+  publishedAt?: Date
+}
+
+// Vue 3.5 解构默认值：可选 prop 在解构时直接写默认值，
+// 模板里就能直接使用解构出来的常量，类型安全且保持响应性
+const { title, count = 0, tags = [] } = defineProps<Props>()
+</script>
+
+<template>
+  <div class="book-card">
+    <h2>{{ title }}</h2>
+    <!-- count 有默认值，类型为 number，toLocaleString 不会报 undefined -->
+    <p>阅读量：{{ count.toLocaleString() }}</p>
+    <div class="tags">
+      <span v-for="tag in tags" :key="tag" class="tag">{{ tag }}</span>
+    </div>
+  </div>
+</template>

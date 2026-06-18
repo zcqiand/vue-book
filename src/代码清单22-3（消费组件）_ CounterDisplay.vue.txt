@@ -1,0 +1,16 @@
+<script setup lang="ts">
+import { inject } from 'vue'
+
+// 响应式注入：counter 是 Ref<number>
+const counter = inject<{ value: number }>('counter')
+
+// 静态注入：version 是 string（快照）
+const version = inject<string>('appVersion')
+</script>
+
+<template>
+  <div>
+    <p>计数器值：{{ counter?.value }}</p>
+    <p>版本号：{{ version }}</p>
+  </div>
+</template>

@@ -1,0 +1,1 @@
+watch(() => user.name, callback)

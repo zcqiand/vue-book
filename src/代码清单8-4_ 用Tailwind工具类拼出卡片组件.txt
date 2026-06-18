@@ -1,0 +1,25 @@
+<!-- src/components/UserCard.vue -->
+<script setup lang="ts">
+defineProps<{
+  title: string
+  description: string
+}>()
+</script>
+
+<template>
+  <!-- ❶ 容器：弹性布局、垂直居中、子元素间距 16px、大圆角、白底、24px 内边距、中等阴影 -->
+  <div class="flex items-center gap-4 rounded-xl bg-white p-6 shadow-md">
+    <!-- ❷ 头像：48×48 正圆，蓝底白字，flex 居中 -->
+    <div
+      class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 font-semibold text-white"
+    >
+      {{ title.charAt(0) }}
+    </div>
+
+    <!-- ❸ 文字区：标题 18px/字重 600/深灰，描述 14px/浅灰 -->
+    <div>
+      <h3 class="text-lg font-semibold text-gray-900">{{ title }}</h3>
+      <p class="text-sm text-gray-500">{{ description }}</p>
+    </div>
+  </div>
+</template>

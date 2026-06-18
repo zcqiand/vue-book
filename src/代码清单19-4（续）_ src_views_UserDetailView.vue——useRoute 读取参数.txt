@@ -1,0 +1,37 @@
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+
+const route = useRoute()
+
+const userId = computed<string>(() => (route.params.id as string) ?? '')
+
+const userMap: Record<string, { id: string; name: string; email: string }> = {
+  '1': { id: '1', name: '张三', email: 'zhangsan@example.com' },
+  '2': { id: '2', name: '李四', email: 'lisi@example.com' },
+  '3': { id: '3', name: '王五', email: 'wangwu@example.com' },
+}
+
+const user = computed(() => userMap[userId.value])
+</script>
+
+<template>
+  <div>
+    <h1 class="text-2xl font-bold text-gray-800 mb-4">用户详情</h1>
+
+    <p v-if="!user" class="text-red-500">未找到 ID 为 {{ userId }} 的用户</p>
+
+    <div v-else class="p-4 bg-white rounded border border-gray-200 space-y-2">
+      <p><span class="font-medium text-gray-700">ID：</span>{{ user.id }}</p>
+      <p><span class="font-medium text-gray-700">姓名：</span>{{ user.name }}</p>
+      <p><span class="font-medium text-gray-700">邮箱：</span>{{ user.email }}</p>
+    </div>
+
+    <RouterLink
+      to="/users"
+      class="inline-block mt-4 text-indigo-600 hover:underline"
+    >
+      返回用户列表
+    </RouterLink>
+  </div>
+</template>

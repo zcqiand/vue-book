@@ -1,0 +1,103 @@
+<!-- src/components/TeleportModal.vue -->
+<template>
+  <div class="teleport-demo">
+    <button @click="show = !show" class="btn-toggle">
+      {{ show ? '关闭' : '打开 Teleport 模态框' }}
+    </button>
+
+    <!-- Teleport: to="body" 将内部内容传送到 body 末尾 -->
+    <!-- 内容虽然在 body 下，但事件处理、响应式状态仍在当前组件内 -->
+    <Teleport to="body">
+      <div v-if="show" class="modal-overlay">
+        <div class="modal">
+          <h3>Teleport 模态框</h3>
+          <p>这个模态框已经被 Teleport 传送到了 body 下。</p>
+          <p>它不再受父级元素的 overflow / z-index 影响。</p>
+          <button @click="show = false" class="btn-close">关闭</button>
+        </div>
+      </div>
+    </Teleport>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const show = ref<boolean>(false)
+</script>
+
+<style scoped>
+.teleport-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.btn-toggle {
+  padding: 8px 16px;
+  background-color: #8b5cf6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-toggle:hover {
+  background-color: #7c3aed;
+}
+
+/* 模态框样式 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 340px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+}
+
+.modal h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.modal p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.btn-close {
+  margin-top: 12px;
+  padding: 6px 12px;
+  background-color: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-close:hover {
+  background-color: #dc2626;
+}
+</style>

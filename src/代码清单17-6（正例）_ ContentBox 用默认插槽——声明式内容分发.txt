@@ -1,0 +1,18 @@
+<template>
+  <div class="content-box">
+    <!-- 插槽：Vue 编译器会检查插槽内容是否是合法模板 -->
+    <slot />
+  </div>
+</template>
+
+<script setup lang="ts">
+// 不需要 content prop，内容通过插槽分发
+</script>
+
+<style scoped>
+.content-box {
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+</style>

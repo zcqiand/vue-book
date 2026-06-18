@@ -1,0 +1,5 @@
+<!-- 错误：漏写了 item.status，item.status 变化后 DOM 不更新 -->
+<div v-memo="[item.id]">{{ item.name }}-{{ item.status }}</div>
+
+<!-- 正确：所有参与渲染的属性都要写入依赖数组 -->
+<div v-memo="[item.id, item.name, item.status]">{{ item.name }}-{{ item.status }}</div>

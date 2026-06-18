@@ -1,0 +1,83 @@
+// 代码清单21-4: defineAsyncComponent 配置加载组件/错误组件/超时
+// src/components/UserListAsync.vue
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue'
+
+// 加载组件：数据请求期间显示
+const LoadingSpinner = {
+  template: `<div class="text-center p-4"><span class="inline-block animate-spin text-2xl">⟳</span><p class="text-gray-500 mt-2">加载中……</p></div>`,
+}
+
+// 错误组件：请求失败或超时后显示
+const ErrorDisplay = {
+  props: {
+    error: {
+      type: Object,
+      default: null,
+    },
+  },
+  template: `
+    <div class="p-4 bg-red-50 border border-red-200 rounded text-red-700">
+      <p class="font-semibold">加载失败</p>
+      <p class="text-sm mt-1">{{ error?.message ?? '未知错误' }}</p>
+      <button
+        @click="$emit('retry')"
+        class="mt-2 px-3 py-1 bg-red-100 hover:bg-red-200 rounded text-sm"
+      >
+        重试
+      </button>
+    </div>
+  `,
+}
+
+// 异步组件：请求超时 5 秒，失败后显示错误组件
+const UserListViewAsync = defineAsyncComponent({
+  // 动态 import，失败则走 errorComponent
+  loader: () =>
+    new Promise((resolve, reject) => {
+      // 模拟网络延迟 + 随机失败，方便本地测试
+      setTimeout(() => {
+        if (Math.random() > 0.3) {
+          reject(new Error('网络错误，请检查连接'))
+        } else {
+          resolve({
+            template: `
+              <div class="p-4">
+                <h2 class="text-lg font-semibold mb-4">用户列表（异步）</h2>
+                <ul class="space-y-2">
+                  <li class="p-3 bg-white border rounded shadow-sm">张三 zhangsan@example.com</li>
+                  <li class="p-3 bg-white border rounded shadow-sm">李四 lisi@example.com</li>
+                </ul>
+              </div>
+            `,
+          })
+        }
+      }, 2000)
+    }),
+
+  loadingComponent: LoadingSpinner,
+  errorComponent: ErrorDisplay,
+  timeout: 5000, // 超过 5 秒视为超时，显示错误组件
+  delay: 200, // 加载中组件显示延迟（避免闪烁）
+  suspensible: false, // 与 Suspense 结合使用
+})
+</script>
+
+<template>
+  <div>
+    <!-- 方式一：直接使用异步组件，由其内置的 loadingComponent 和 errorComponent 处理 -->
+    <UserListViewAsync />
+
+    <!-- 方式二：结合 <Suspense>，由 Suspense 的 #fallback 处理加载态 -->
+    <!--
+    <Suspense>
+      <template #default>
+        <UserListViewAsync />
+      </template>
+      <template #fallback>
+        <LoadingSpinner />
+      </template>
+    </Suspense>
+    -->
+  </div>
+</template>

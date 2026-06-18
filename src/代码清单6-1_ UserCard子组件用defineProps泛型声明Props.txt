@@ -1,0 +1,30 @@
+<!-- src/components/UserCard.vue -->
+<script setup lang="ts">
+// defineProps 是编译器宏，无需 import；尖括号里的类型参数即 Props 的 TS 类型声明
+interface User {
+  name: string
+  age: number
+}
+
+defineProps<{
+  title: string // 必选 prop，父组件不传会报类型错误
+  user: User // 对象类型 prop，子组件只读渲染
+}>()
+</script>
+
+<template>
+  <section class="user-card">
+    <h3>{{ title }}</h3>
+    <!-- 模板里直接使用 props 字段，Vue 会自动从 props 上下文中解构 -->
+    <p>姓名：{{ user.name }}</p>
+    <p>年龄：{{ user.age }}</p>
+  </section>
+</template>
+
+<style scoped>
+.user-card {
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+</style>

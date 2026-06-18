@@ -1,0 +1,4 @@
+<script setup lang="ts">
+// 第二个参数是返回 Promise 的工厂函数
+const { data } = await useAsyncData('posts', () => $fetch('/api/posts'))
+</script>

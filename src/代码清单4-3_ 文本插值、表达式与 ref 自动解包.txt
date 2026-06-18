@@ -1,0 +1,32 @@
+<template>
+  <div class="demo">
+    <p>变量插值：{{ name }}</p>
+    <!-- ref 在模板自动解包，写 name 而非 name.value -->
+
+    <p>算术表达式：{{ price * count }} 元</p>
+
+    <p>三元运算符：{{ count >= 10 ? '库存充足' : '库存紧张' }}</p>
+
+    <p>方法调用：{{ formatPrice(price) }}</p>
+
+    <p>对象属性：{{ user.name }}（{{ user.role }}）</p>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, reactive } from 'vue'
+
+const name = ref<string>('Vue 3.5') // ref：基本类型/需要整体替换的值
+const price = ref<number>(88)
+const count = ref<number>(15)
+
+const user = reactive<{ name: string; role: string }>({
+  // reactive：对象类型，模板里直接写 user.name 即可
+  name: '张三',
+  role: '管理员',
+})
+
+function formatPrice(value: number): string {
+  return `¥${value.toFixed(2)}`
+}
+</script>

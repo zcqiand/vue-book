@@ -1,0 +1,100 @@
+<!-- src/components/ErrorBoundary.vue -->
+<template>
+  <div class="error-boundary">
+    <!-- 正常态：渲染子组件插槽内容 -->
+    <slot v-if="!hasError" />
+
+    <!-- 降级态：错误时显示友好提示 + 重试按钮 -->
+    <div v-else class="fallback-ui">
+      <div class="error-icon">!</div>
+      <h3>页面出现了一些问题</h3>
+      <p>不用担心，这只是局部内容加载失败。</p>
+      <button class="btn-retry" @click="handleRetry">重新加载</button>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, onErrorCaptured } from 'vue'
+
+// 错误态标志
+const hasError = ref(false)
+
+// onErrorCaptured：捕获从子组件树上抛上来的错误
+// err: 错误对象 instance: 抛出错误的组件实例 info: 额外调试信息
+onErrorCaptured((err: Error, instance: object | null, info: string) => {
+  console.error('[ErrorBoundary] 捕获到子组件错误:', err.message, info)
+
+  // 标记错误态，渲染降级 UI
+  hasError.value = true
+
+  // 返回 false：阻止错误继续向父组件冒泡
+  return false
+})
+
+// 重试按钮处理函数：清除错误态，让 Suspense 重新加载
+function handleRetry(): void {
+  hasError.value = false
+}
+</script>
+
+<style scoped>
+.error-boundary {
+  position: relative;
+}
+
+.fallback-ui {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 24px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.error-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #ef4444;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fallback-ui h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #991b1b;
+}
+
+.fallback-ui p {
+  margin: 0;
+  font-size: 14px;
+  color: #7f1d1d;
+}
+
+.btn-retry {
+  margin-top: 8px;
+  padding: 10px 24px;
+  background-color: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-retry:hover {
+  background-color: #dc2626;
+}
+</style>
