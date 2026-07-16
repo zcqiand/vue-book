@@ -1,4 +1,3 @@
-<!-- src/components/ReactiveReplaceBug.vue -->
 <script setup lang="ts">
 import { reactive } from 'vue'
 

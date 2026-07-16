@@ -1,66 +1,43 @@
-import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
-import { exchangeSsoTicket } from '@/api/auth'
-import { useAuthStore } from '@/stores/auth'
+import { apiClient } from '../api/client'
 
-const SSO_STATE_KEY = 'saas-sso-state'
-const SSO_RETURN_TO_KEY = 'saas-sso-return-to'
-
-function createState(): string {
-  return crypto.randomUUID()
+interface BuildSsoRedirectOptions {
+  ssoBaseUrl?: string
+  clientId?: string
+  redirectUri?: string
+  state: string
 }
 
-function readQuery(value: unknown): string {
-  return typeof value === 'string' ? value : ''
+interface OAuthCallbackResult {
+  token: string
+  user: { id: string; username: string; displayName: string; orgId: string }
 }
 
-export function useSso() {
-  const authStore = useAuthStore()
+/** 构造 SSO /authorize 跳转 URL */
+export function buildSsoRedirectUrl(options: BuildSsoRedirectOptions): string {
+  const ssoBaseUrl = options.ssoBaseUrl ?? import.meta.env.VITE_SSO_BASE_URL ?? '/sso'
+  const clientId = options.clientId ?? import.meta.env.VITE_SSO_CLIENT_ID ?? 'saas-demo-client'
+  const redirectUri = options.redirectUri ?? `${window.location.origin}/sso-callback`
+  const params = new URLSearchParams({
+    client_id: clientId,
+    redirect_uri: redirectUri,
+    response_type: 'code',
+    state: options.state,
+  })
+  return `${ssoBaseUrl}/authorize?${params.toString()}`
+}
 
-  function buildSsoLoginUrl(returnTo: string = window.location.pathname): string {
-    const state = createState()
-    sessionStorage.setItem(SSO_STATE_KEY, state)
-    sessionStorage.setItem(SSO_RETURN_TO_KEY, returnTo)
+/** 跳转到 SSO 授权服务器（mock IdP 在 MSW 层拦截） */
+export function redirectToSso(options: BuildSsoRedirectOptions): void {
+  window.location.href = buildSsoRedirectUrl(options)
+}
 
-    const url = new URL(import.meta.env.VITE_SSO_AUTHORIZE_URL ?? 'https://sso.example.com/login')
-    url.searchParams.set('client_id', import.meta.env.VITE_SSO_CLIENT_ID ?? 'vue-saas-demo')
-    url.searchParams.set('redirect_uri', `${window.location.origin}/auth/sso/callback`)
-    url.searchParams.set('response_type', 'ticket')
-    url.searchParams.set('state', state)
+/** 生成随机 state（防 CSRF） */
+export function generateState(): string {
+  return Math.random().toString(36).slice(2) + Date.now().toString(36)
+}
 
-    return url.toString()
-  }
-
-  function startSsoLogin(returnTo?: string): void {
-    window.location.assign(buildSsoLoginUrl(returnTo))
-  }
-
-  async function handleSsoCallback(route: RouteLocationNormalizedLoaded, router: Router): Promise<void> {
-    const ticket = readQuery(route.query.ticket)
-    const idpToken = readQuery(route.query.token)
-    const state = readQuery(route.query.state)
-    const expectedState = sessionStorage.getItem(SSO_STATE_KEY)
-
-    if (expectedState === null || state.length === 0 || state !== expectedState) {
-      throw new Error('SSO state 校验失败')
-    }
-
-    if (ticket.length === 0 && idpToken.length === 0) {
-      throw new Error('SSO 回调缺少 ticket 或 token')
-    }
-
-    const returnTo = sessionStorage.getItem(SSO_RETURN_TO_KEY) ?? '/'
-    const session = await exchangeSsoTicket({ ticket, idpToken, returnTo, state })
-    await authStore.applySession(session)
-
-    sessionStorage.removeItem(SSO_STATE_KEY)
-    sessionStorage.removeItem(SSO_RETURN_TO_KEY)
-
-    await router.replace(returnTo)
-  }
-
-  return {
-    buildSsoLoginUrl,
-    startSsoLogin,
-    handleSsoCallback
-  }
+/** 处理 SSO 回调：用 code 换 token + user（走后端 /auth/oauth/callback） */
+export async function handleSsoCallback(code: string, provider = 'oidc'): Promise<OAuthCallbackResult> {
+  const res = await apiClient.post<OAuthCallbackResult>('/auth/oauth/callback', { code, provider })
+  return res.data
 }

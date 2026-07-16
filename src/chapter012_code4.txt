@@ -1,4 +1,0 @@
-computed 调用: 2
-method 调用: 4
-method 调用: 5
-method 调用: 6

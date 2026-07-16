@@ -1,3 +1,0 @@
-<KeepAlive :max="5">
-  <component :is="currentComponent" />
-</KeepAlive>

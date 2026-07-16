@@ -1,1 +1,0 @@
-watch(() => user.name, callback)

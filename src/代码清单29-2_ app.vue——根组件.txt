@@ -1,6 +1,0 @@
-<!-- app.vue（根组件）-->
-<template>
-  <div>
-    <NuxtPage />
-  </div>
-</template>

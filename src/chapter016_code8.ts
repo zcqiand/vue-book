@@ -1,1 +1,0 @@
-const user = ref<User | null>(null)  // 推断为 Ref<User | null>，正确

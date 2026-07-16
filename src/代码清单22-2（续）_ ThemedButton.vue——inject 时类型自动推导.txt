@@ -1,8 +1,0 @@
-<script setup lang="ts">
-import { inject, computed } from 'vue'
-import { themeKey } from '../symbols'
-
-// TypeScript 自动推导 theme 为 Ref<'light' | 'dark'>
-const theme = inject(themeKey)
-const isDark = computed(() => theme?.value === 'dark')
-</script>

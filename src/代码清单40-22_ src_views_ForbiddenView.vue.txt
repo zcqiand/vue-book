@@ -1,8 +1,0 @@
-<template>
-  <section class="rounded-xl border border-red-200 bg-red-50 p-6 text-red-800 shadow-sm">
-    <h2 class="text-lg font-semibold">403：没有访问权限</h2>
-    <p class="mt-2 text-sm leading-6">
-      当前租户下的角色或权限不满足页面要求。你可以返回控制台切换租户，或联系管理员调整授权。
-    </p>
-  </section>
-</template>

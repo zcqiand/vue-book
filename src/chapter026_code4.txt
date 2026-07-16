@@ -1,1 +1,0 @@
-<h1 v-once>{{ appTitle }}</h1>

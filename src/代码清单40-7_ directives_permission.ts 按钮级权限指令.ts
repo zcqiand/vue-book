@@ -1,65 +1,31 @@
-import type { Directive, DirectiveBinding, EffectScope } from 'vue'
-import { effectScope, watch } from 'vue'
-import { useAuthStore } from '@/stores/auth'
-import type { Permission } from '@/types/auth'
+import type { Directive, DirectiveBinding } from 'vue'
+import { useAuthStore } from '../stores/auth'
 
-type PermissionValue = Permission | Permission[]
-
-type PermissionBinding = DirectiveBinding<PermissionValue> & {
-  modifiers: {
-    all?: boolean
+function evaluate(binding: DirectiveBinding): boolean {
+  const value = binding.value
+  const auth = useAuthStore()
+  if (typeof value === 'string') return auth.permissions.includes(value)
+  if (Array.isArray(value)) {
+    // 数组 = anyOf
+    return value.some((v: string) => auth.permissions.includes(v))
   }
+  // 无值或非法值：放行（由模板自行处理）
+  return true
 }
 
-const scopeMap = new WeakMap<HTMLElement, EffectScope>()
-
-function normalize(value: PermissionValue): Permission[] {
-  return Array.isArray(value) ? value : [value]
-}
-
-function isAllowed(currentPermissions: Permission[], binding: PermissionBinding): boolean {
-  const permissionSet = new Set(currentPermissions)
-  const required = normalize(binding.value)
-
-  return binding.modifiers.all
-    ? required.every((permission) => permissionSet.has(permission))
-    : required.some((permission) => permissionSet.has(permission))
-}
-
-function updateElementVisibility(
-  el: HTMLElement,
-  binding: PermissionBinding,
-  currentPermissions: Permission[]
-): void {
-  const allowed = isAllowed(currentPermissions, binding)
-  el.hidden = !allowed
-  el.toggleAttribute('aria-hidden', !allowed)
-}
-
-export const permissionDirective: Directive<HTMLElement, PermissionValue> = {
-  mounted(el: HTMLElement, binding: PermissionBinding) {
-    const scope = effectScope()
-    scopeMap.set(el, scope)
-
-    scope.run(() => {
-      const authStore = useAuthStore()
-
-      watch(
-        () => authStore.permissions.slice(),
-        (currentPermissions) => {
-          updateElementVisibility(el, binding, currentPermissions)
-        },
-        { immediate: true }
-      )
-    })
+/**
+ * v-permission 用法：
+ *   <button v-permission="'user:create'">新增</button>
+ *   <div v-permission="['user:read', 'user:create']">...</div>
+ * 无权限时元素被 removeChild 移除（mounted/updated 均判定）。
+ */
+export const permissionDirective: Directive = {
+  mounted(el: HTMLElement, binding: DirectiveBinding) {
+    if (!evaluate(binding)) el.parentNode?.removeChild(el)
   },
-  updated(el: HTMLElement, binding: PermissionBinding) {
-    const authStore = useAuthStore()
-    updateElementVisibility(el, binding, authStore.permissions)
+  updated(el: HTMLElement, binding: DirectiveBinding) {
+    if (!evaluate(binding)) el.parentNode?.removeChild(el)
   },
-  unmounted(el: HTMLElement) {
-    const scope = scopeMap.get(el)
-    scope?.stop()
-    scopeMap.delete(el)
-  }
 }
+
+export default permissionDirective

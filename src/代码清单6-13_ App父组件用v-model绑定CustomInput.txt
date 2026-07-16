@@ -1,0 +1,17 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import CustomInput from '@/components/CustomInput.vue'
+
+const username = ref('') // 父组件持有唯一真相源
+</script>
+
+<template>
+  <div>
+    <label>
+      用户名：
+      <!-- v-model 自动建立双向绑定：输入时更新 username，username 变化时回填输入框 -->
+      <CustomInput v-model="username" />
+    </label>
+    <p>你输入的是：{{ username }}</p>
+  </div>
+</template>

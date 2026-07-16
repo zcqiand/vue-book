@@ -1,0 +1,3306 @@
+[
+  {
+    "title": "代码清单1-1: 用原生 JavaScript 实现计数器——命令式 DOM 操作",
+    "lang": "html",
+    "chapter_file": "chapter-001.md",
+    "line": 33,
+    "extracted_file": "src\\代码清单1-1_ 用原生 JavaScript 实现计数器——命令式 DOM 操作.html",
+    "source": null
+  },
+  {
+    "title": "代码清单1-2: 用Vue单文件组件实现计数器——声明式写法",
+    "lang": "vue",
+    "chapter_file": "chapter-001.md",
+    "line": 97,
+    "extracted_file": "src\\代码清单1-2_ 用Vue单文件组件实现计数器——声明式写法.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单1-3: 最简 Vue + TypeScript 单文件组件——HelloWorld",
+    "lang": "vue",
+    "chapter_file": "chapter-001.md",
+    "line": 164,
+    "extracted_file": "src\\代码清单1-3_ 最简 Vue + TypeScript 单文件组件——HelloWorld.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单2-1: const/let/var 作用域与var的闭包坑",
+    "lang": "typescript",
+    "chapter_file": "chapter-002.md",
+    "line": 21,
+    "extracted_file": "src\\代码清单2-1_ const_let_var 作用域与var的闭包坑.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单2-2: 解构赋值",
+    "lang": "typescript",
+    "chapter_file": "chapter-002.md",
+    "line": 83,
+    "extracted_file": "src\\代码清单2-2_ 解构赋值.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单2-3: 展开运算符合并与复制",
+    "lang": "typescript",
+    "chapter_file": "chapter-002.md",
+    "line": 123,
+    "extracted_file": "src\\代码清单2-3_ 展开运算符合并与复制.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单2-4: 解构断开与原对象的联系",
+    "lang": "typescript",
+    "chapter_file": "chapter-002.md",
+    "line": 150,
+    "extracted_file": "src\\代码清单2-4_ 解构断开与原对象的联系.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单2-5: 箭头函数与普通函数的this差异",
+    "lang": "typescript",
+    "chapter_file": "chapter-002.md",
+    "line": 192,
+    "extracted_file": "src\\代码清单2-5_ 箭头函数与普通函数的this差异.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单2-6: 回调地狱反例与Promise链式调用",
+    "lang": "typescript",
+    "chapter_file": "chapter-002.md",
+    "line": 252,
+    "extracted_file": "src\\代码清单2-6_ 回调地狱反例与Promise链式调用.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单2-7: async/await改写与并发请求",
+    "lang": "typescript",
+    "chapter_file": "chapter-002.md",
+    "line": 296,
+    "extracted_file": "src\\代码清单2-7_ async_await改写与并发请求.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单2-8: ES Module具名导出与默认导出",
+    "lang": "typescript",
+    "chapter_file": "chapter-002.md",
+    "line": 356,
+    "extracted_file": "src\\代码清单2-8_ ES Module具名导出与默认导出.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单2-9: 默认导出与混合导入",
+    "lang": "typescript",
+    "chapter_file": "chapter-002.md",
+    "line": 372,
+    "extracted_file": "src\\代码清单2-9_ 默认导出与混合导入.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单2-10: 待重写的命令式代码练习素材",
+    "lang": "javascript",
+    "chapter_file": "chapter-002.md",
+    "line": 413,
+    "extracted_file": "src\\代码清单2-10_ 待重写的命令式代码练习素材.js",
+    "source": null
+  },
+  {
+    "title": "代码清单3-1: main.ts 应用入口",
+    "lang": "typescript",
+    "chapter_file": "chapter-003.md",
+    "line": 146,
+    "extracted_file": "src\\代码清单3-1_ main.ts 应用入口.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单3-2: 最简版的 App.vue 根组件",
+    "lang": "vue",
+    "chapter_file": "chapter-003.md",
+    "line": 163,
+    "extracted_file": "src\\代码清单3-2_ 最简版的 App.vue 根组件.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单4-1: 最小 SFC 三段式结构（HelloCard.vue）",
+    "lang": "vue",
+    "chapter_file": "chapter-004.md",
+    "line": 17,
+    "extracted_file": "src\\代码清单4-1_ 最小 SFC 三段式结构（HelloCard.vue）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单4-2: 反例——用 innerHTML 拼接带插值的字符串导致不渲染",
+    "lang": "vue",
+    "chapter_file": "chapter-004.md",
+    "line": 54,
+    "extracted_file": "src\\代码清单4-2_ 反例——用 innerHTML 拼接带插值的字符串导致不渲染.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单4-3: 文本插值与表达式（含 ref 自动解包）",
+    "lang": "vue",
+    "chapter_file": "chapter-004.md",
+    "line": 91,
+    "extracted_file": "src\\代码清单4-3_ 文本插值与表达式（含 ref 自动解包）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单4-4: v-bind 属性绑定与 :class/:style 动态样式",
+    "lang": "vue",
+    "chapter_file": "chapter-004.md",
+    "line": 130,
+    "extracted_file": "src\\代码清单4-4_ v-bind 属性绑定与 _class__style 动态样式.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单4-5: v-on 事件绑定与修饰符",
+    "lang": "vue",
+    "chapter_file": "chapter-004.md",
+    "line": 175,
+    "extracted_file": "src\\代码清单4-5_ v-on 事件绑定与修饰符.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单4-6: 指令全家桶速览（v-if/v-for/v-model/v-show）",
+    "lang": "vue",
+    "chapter_file": "chapter-004.md",
+    "line": 224,
+    "extracted_file": "src\\代码清单4-6_ 指令全家桶速览（v-if_v-for_v-model_v-show）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单4-7: script setup 与普通 setup 函数对比",
+    "lang": "vue",
+    "chapter_file": "chapter-004.md",
+    "line": 277,
+    "extracted_file": "src\\代码清单4-7_ script setup 与普通 setup 函数对比.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单4-8: 完整最小组件 UserInfoCard.vue",
+    "lang": "vue",
+    "chapter_file": "chapter-004.md",
+    "line": 315,
+    "extracted_file": "src\\代码清单4-8_ 完整最小组件 UserInfoCard.vue.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单4-9: 父组件使用 UserInfoCard",
+    "lang": "vue",
+    "chapter_file": "chapter-004.md",
+    "line": 405,
+    "extracted_file": "src\\代码清单4-9_ 父组件使用 UserInfoCard.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单5-1: vite.config.ts 配置（create-vue 脚手架默认生成内容）",
+    "lang": "typescript",
+    "chapter_file": "chapter-005.md",
+    "line": 123,
+    "extracted_file": "src\\代码清单5-1_ vite.config.ts 配置（create-vue 脚手架默认生成内容）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单5-2: vite.config.ts 开发服务器配置示例（本书补充，脚手架默认不生成）",
+    "lang": "typescript",
+    "chapter_file": "chapter-005.md",
+    "line": 147,
+    "extracted_file": "src\\代码清单5-2_ vite.config.ts 开发服务器配置示例（本书补充，脚手架默认不生成）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单5-3: main.ts 应用入口（createApp + Router + Pinia 链式启动）",
+    "lang": "typescript",
+    "chapter_file": "chapter-005.md",
+    "line": 184,
+    "extracted_file": "src\\代码清单5-3_ main.ts 应用入口（createApp + Router + Pinia 链式启动）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单5-4: App.vue 根组件（RouterView 路由出口与全局布局）",
+    "lang": "vue",
+    "chapter_file": "chapter-005.md",
+    "line": 207,
+    "extracted_file": "src\\代码清单5-4_ App.vue 根组件（RouterView 路由出口与全局布局）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-1: UserCard子组件用defineProps泛型声明Props",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 23,
+    "extracted_file": "src\\代码清单6-1_ UserCard子组件用defineProps泛型声明Props.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-2: App父组件把数据通过Props传给UserCard",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 57,
+    "extracted_file": "src\\代码清单6-2_ App父组件把数据通过Props传给UserCard.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-3: 反例——子组件直接修改Props触发只读报错",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 81,
+    "extracted_file": "src\\代码清单6-3_ 反例——子组件直接修改Props触发只读报错.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-4: 正确写法——用emit事件让父组件修改后重新传入",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 115,
+    "extracted_file": "src\\代码清单6-4_ 正确写法——用emit事件让父组件修改后重新传入.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-5: 用响应式解构默认值为可选Props提供兜底值",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 146,
+    "extracted_file": "src\\代码清单6-5_ 用响应式解构默认值为可选Props提供兜底值.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-6: withDefaults为泛型Props声明默认值（兼容写法）",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 191,
+    "extracted_file": "src\\代码清单6-6_ withDefaults为泛型Props声明默认值（兼容写法）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-7: Counter子组件用defineEmits向父组件抛change事件",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 222,
+    "extracted_file": "src\\代码清单6-7_ Counter子组件用defineEmits向父组件抛change事件.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-8: App父组件监听change事件并更新自己的状态",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 250,
+    "extracted_file": "src\\代码清单6-8_ App父组件监听change事件并更新自己的状态.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-9: EditableCounter子组件用defineExpose暴露reset方法",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 285,
+    "extracted_file": "src\\代码清单6-9_ EditableCounter子组件用defineExpose暴露reset方法.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-10: App父组件通过模板引用调用子组件的reset方法",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 314,
+    "extracted_file": "src\\代码清单6-10_ App父组件通过模板引用调用子组件的reset方法.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-11: 手写modelValue+update组合的传统输入组件（对比写法）",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 345,
+    "extracted_file": "src\\代码清单6-11_ 手写modelValue+update组合的传统输入组件（对比写法）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-12: 用defineModel实现双向绑定的自定义输入组件",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 374,
+    "extracted_file": "src\\代码清单6-12_ 用defineModel实现双向绑定的自定义输入组件.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-13: App父组件用v-model绑定CustomInput",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 392,
+    "extracted_file": "src\\代码清单6-13_ App父组件用v-model绑定CustomInput.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-14: TodoItem子组件——展示单条待办并上报toggle事件",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 434,
+    "extracted_file": "src\\代码清单6-14_ TodoItem子组件——展示单条待办并上报toggle事件.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-15: TodoBoard父组件——管理数据、监听事件、双向绑定输入框",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 465,
+    "extracted_file": "src\\代码清单6-15_ TodoBoard父组件——管理数据、监听事件、双向绑定输入框.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单6-16: App根组件挂载TodoBoard",
+    "lang": "vue",
+    "chapter_file": "chapter-006.md",
+    "line": 529,
+    "extracted_file": "src\\代码清单6-16_ App根组件挂载TodoBoard.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单7-1: v-on内联语句与方法处理器对比",
+    "lang": "vue",
+    "chapter_file": "chapter-007.md",
+    "line": 17,
+    "extracted_file": "src\\代码清单7-1_ v-on内联语句与方法处理器对比.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单7-2: 事件修饰符.stop/.prevent/.enter的用法",
+    "lang": "vue",
+    "chapter_file": "chapter-007.md",
+    "line": 57,
+    "extracted_file": "src\\代码清单7-2_ 事件修饰符.stop_.prevent_.enter的用法.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单7-3: v-model绑定input与textarea",
+    "lang": "vue",
+    "chapter_file": "chapter-007.md",
+    "line": 107,
+    "extracted_file": "src\\代码清单7-3_ v-model绑定input与textarea.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单7-4: v-model绑定checkbox/radio/select",
+    "lang": "vue",
+    "chapter_file": "chapter-007.md",
+    "line": 136,
+    "extracted_file": "src\\代码清单7-4_ v-model绑定checkbox_radio_select.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单7-5: v-model本质——:value + @input 的语法糖",
+    "lang": "vue",
+    "chapter_file": "chapter-007.md",
+    "line": 195,
+    "extracted_file": "src\\代码清单7-5_ v-model本质——_value + @input 的语法糖.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单7-6: v-model修饰符.lazy/.number/.trim",
+    "lang": "vue",
+    "chapter_file": "chapter-007.md",
+    "line": 235,
+    "extracted_file": "src\\代码清单7-6_ v-model修饰符.lazy_.number_.trim.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单7-7: 带即时验证的完整登录表单",
+    "lang": "vue",
+    "chapter_file": "chapter-007.md",
+    "line": 282,
+    "extracted_file": "src\\代码清单7-7_ 带即时验证的完整登录表单.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单7-8: 练习一参考实现——事件修饰符与内联语句",
+    "lang": "vue",
+    "chapter_file": "chapter-007.md",
+    "line": 405,
+    "extracted_file": "src\\代码清单7-8_ 练习一参考实现——事件修饰符与内联语句.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单7-9: 练习二参考实现——多字段即时验证",
+    "lang": "vue",
+    "chapter_file": "chapter-007.md",
+    "line": 456,
+    "extracted_file": "src\\代码清单7-9_ 练习二参考实现——多字段即时验证.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单7-10: 练习三参考实现——留言板组件",
+    "lang": "vue",
+    "chapter_file": "chapter-007.md",
+    "line": 579,
+    "extracted_file": "src\\代码清单7-10_ 练习三参考实现——留言板组件.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单8-1: scoped写法与Tailwind写法并排对比",
+    "lang": "vue",
+    "chapter_file": "chapter-008.md",
+    "line": 31,
+    "extracted_file": "src\\代码清单8-1_ scoped写法与Tailwind写法并排对比.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单8-2: vite.config.ts注册Tailwind插件",
+    "lang": "ts",
+    "chapter_file": "chapter-008.md",
+    "line": 128,
+    "extracted_file": "src\\代码清单8-2_ vite.config.ts注册Tailwind插件.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单8-3: src/assets/main.css引入tailwindcss",
+    "lang": "css",
+    "chapter_file": "chapter-008.md",
+    "line": 150,
+    "extracted_file": "src\\代码清单8-3_ src_assets_main.css引入tailwindcss.css",
+    "source": null
+  },
+  {
+    "title": "代码清单8-4: 用Tailwind工具类拼出卡片组件",
+    "lang": "vue",
+    "chapter_file": "chapter-008.md",
+    "line": 182,
+    "extracted_file": "src\\代码清单8-4_ 用Tailwind工具类拼出卡片组件.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单8-5: 响应式网格——移动端单列、中屏双列、桌面三列",
+    "lang": "vue",
+    "chapter_file": "chapter-008.md",
+    "line": 219,
+    "extracted_file": "src\\代码清单8-5_ 响应式网格——移动端单列、中屏双列、桌面三列.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单8-6: 入口CSS启用class策略暗色模式",
+    "lang": "css",
+    "chapter_file": "chapter-008.md",
+    "line": 249,
+    "extracted_file": "src\\代码清单8-6_ 入口CSS启用class策略暗色模式.css",
+    "source": null
+  },
+  {
+    "title": "代码清单8-7: 带响应式与暗色模式的内容区容器",
+    "lang": "vue",
+    "chapter_file": "chapter-008.md",
+    "line": 259,
+    "extracted_file": "src\\代码清单8-7_ 带响应式与暗色模式的内容区容器.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单8-8: App.vue组合响应式网格与暗色模式切换",
+    "lang": "vue",
+    "chapter_file": "chapter-008.md",
+    "line": 337,
+    "extracted_file": "src\\代码清单8-8_ App.vue组合响应式网格与暗色模式切换.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单9-1: v-if/v-else-if/v-else实现登录状态三分支",
+    "lang": "vue",
+    "chapter_file": "chapter-009.md",
+    "line": 21,
+    "extracted_file": "src\\代码清单9-1_ v-if_v-else-if_v-else实现登录状态三分支.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单9-2: v-show控制频繁切换的折叠面板",
+    "lang": "vue",
+    "chapter_file": "chapter-009.md",
+    "line": 70,
+    "extracted_file": "src\\代码清单9-2_ v-show控制频繁切换的折叠面板.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单9-3: template包裹多个元素承载v-if与v-for",
+    "lang": "vue",
+    "chapter_file": "chapter-009.md",
+    "line": 123,
+    "extracted_file": "src\\代码清单9-3_ template包裹多个元素承载v-if与v-for.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单9-4: v-for渲染用户列表并绑定稳定key",
+    "lang": "vue",
+    "chapter_file": "chapter-009.md",
+    "line": 165,
+    "extracted_file": "src\\代码清单9-4_ v-for渲染用户列表并绑定稳定key.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单9-5: 反例——:key=index导致删除中间项时输入框状态错位",
+    "lang": "vue",
+    "chapter_file": "chapter-009.md",
+    "line": 211,
+    "extracted_file": "src\\代码清单9-5_ 反例——_key=index导致删除中间项时输入框状态错位.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单9-6: 正例——:key=item.id修复输入框状态错位",
+    "lang": "vue",
+    "chapter_file": "chapter-009.md",
+    "line": 257,
+    "extracted_file": "src\\代码清单9-6_ 正例——_key=item.id修复输入框状态错位.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单9-7: 反例与正例——v-for与v-if不要同级",
+    "lang": "vue",
+    "chapter_file": "chapter-009.md",
+    "line": 304,
+    "extracted_file": "src\\代码清单9-7_ 反例与正例——v-for与v-if不要同级.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单9-8: computed派生过滤与排序列表",
+    "lang": "vue",
+    "chapter_file": "chapter-009.md",
+    "line": 354,
+    "extracted_file": "src\\代码清单9-8_ computed派生过滤与排序列表.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单10-1: ref基本类型计数器与开关（.value与模板自动解包）",
+    "lang": "vue",
+    "chapter_file": "chapter-010.md",
+    "line": 31,
+    "extracted_file": "src\\代码清单10-1_ ref基本类型计数器与开关（.value与模板自动解包）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单10-2: ref泛型标注（含User|null的延迟赋值场景）",
+    "lang": "vue",
+    "chapter_file": "chapter-010.md",
+    "line": 75,
+    "extracted_file": "src\\代码清单10-2_ ref泛型标注（含User_null的延迟赋值场景）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单10-3: reactive对象与数组的深层响应式",
+    "lang": "vue",
+    "chapter_file": "chapter-010.md",
+    "line": 136,
+    "extracted_file": "src\\代码清单10-3_ reactive对象与数组的深层响应式.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单10-4: ref与reactive在对象整体替换上的取舍对比",
+    "lang": "vue",
+    "chapter_file": "chapter-010.md",
+    "line": 231,
+    "extracted_file": "src\\代码清单10-4_ ref与reactive在对象整体替换上的取舍对比.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单10-5: 反例——script中忘.value导致计数不生效（先错后对）",
+    "lang": "vue",
+    "chapter_file": "chapter-010.md",
+    "line": 293,
+    "extracted_file": "src\\代码清单10-5_ 反例——script中忘.value导致计数不生效（先错后对）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单10-6: 实战——ref包对象实现用户整体切换",
+    "lang": "vue",
+    "chapter_file": "chapter-010.md",
+    "line": 341,
+    "extracted_file": "src\\代码清单10-6_ 实战——ref包对象实现用户整体切换.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单11-1: ref在脚本与模板中的解包差异（含常见失误）",
+    "lang": "vue",
+    "chapter_file": "chapter-011.md",
+    "line": 20,
+    "extracted_file": "src\\代码清单11-1_ ref在脚本与模板中的解包差异（含常见失误）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单11-2: reactive直接解构导致响应式丢失（含失误与修复）",
+    "lang": "vue",
+    "chapter_file": "chapter-011.md",
+    "line": 110,
+    "extracted_file": "src\\代码清单11-2_ reactive直接解构导致响应式丢失（含失误与修复）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单11-3: toRefs批量转换reactive为响应式ref",
+    "lang": "vue",
+    "chapter_file": "chapter-011.md",
+    "line": 170,
+    "extracted_file": "src\\代码清单11-3_ toRefs批量转换reactive为响应式ref.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单11-4: reactive整体重新赋值失效（含失误与Object.assign修复）",
+    "lang": "vue",
+    "chapter_file": "chapter-011.md",
+    "line": 227,
+    "extracted_file": "src\\代码清单11-4_ reactive整体重新赋值失效（含失误与Object.assign修复）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单11-5: ref包对象实现整体替换（替代reactive的干净方案）",
+    "lang": "vue",
+    "chapter_file": "chapter-011.md",
+    "line": 290,
+    "extracted_file": "src\\代码清单11-5_ ref包对象实现整体替换（替代reactive的干净方案）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单11-6: reactive内嵌ref自动解包与toRef单属性转换",
+    "lang": "vue",
+    "chapter_file": "chapter-011.md",
+    "line": 352,
+    "extracted_file": "src\\代码清单11-6_ reactive内嵌ref自动解包与toRef单属性转换.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单11-7: 练习1-reactive直接解构陷阱复现",
+    "lang": "vue",
+    "chapter_file": "chapter-011.md",
+    "line": 460,
+    "extracted_file": "src\\代码清单11-7_ 练习1-reactive直接解构陷阱复现.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单11-8: 练习2-reactive整体替换失效与Object.assign修复",
+    "lang": "vue",
+    "chapter_file": "chapter-011.md",
+    "line": 525,
+    "extracted_file": "src\\代码清单11-8_ 练习2-reactive整体替换失效与Object.assign修复.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单11-9: 练习3-同一计数器的ref与reactive三种写法对比",
+    "lang": "vue",
+    "chapter_file": "chapter-011.md",
+    "line": 615,
+    "extracted_file": "src\\代码清单11-9_ 练习3-同一计数器的ref与reactive三种写法对比.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单12-1: computed基础——购物车商品列表与总金额计算",
+    "lang": "vue",
+    "chapter_file": "chapter-012.md",
+    "line": 22,
+    "extracted_file": "src\\代码清单12-1_ computed基础——购物车商品列表与总金额计算.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单12-2: computed与method缓存对比——用console.count印证重算次数差异",
+    "lang": "vue",
+    "chapter_file": "chapter-012.md",
+    "line": 98,
+    "extracted_file": "src\\代码清单12-2_ computed与method缓存对比——用console.count印证重算次数差异.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单12-3: 反例——模板方法调用导致重复计算",
+    "lang": "vue",
+    "chapter_file": "chapter-012.md",
+    "line": 170,
+    "extracted_file": "src\\代码清单12-3_ 反例——模板方法调用导致重复计算.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单12-4: 可写computed——get/set实现firstName+lastName双向派生",
+    "lang": "vue",
+    "chapter_file": "chapter-012.md",
+    "line": 237,
+    "extracted_file": "src\\代码清单12-4_ 可写computed——get_set实现firstName+lastName双向派生.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单12-5: computed依赖reactive对象属性时的正确写法",
+    "lang": "vue",
+    "chapter_file": "chapter-012.md",
+    "line": 300,
+    "extracted_file": "src\\代码清单12-5_ computed依赖reactive对象属性时的正确写法.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单12-6: 实战练习一——价格计算器三层派生与缓存验证",
+    "lang": "vue",
+    "chapter_file": "chapter-012.md",
+    "line": 393,
+    "extracted_file": "src\\代码清单12-6_ 实战练习一——价格计算器三层派生与缓存验证.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单12-7: 实战练习二——购物车全选可写computed双向派生",
+    "lang": "vue",
+    "chapter_file": "chapter-012.md",
+    "line": 469,
+    "extracted_file": "src\\代码清单12-7_ 实战练习二——购物车全选可写computed双向派生.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单12-8: 实战练习三——computed与watchEffect实现搜索过滤的语义对比",
+    "lang": "vue",
+    "chapter_file": "chapter-012.md",
+    "line": 546,
+    "extracted_file": "src\\代码清单12-8_ 实战练习三——computed与watchEffect实现搜索过滤的语义对比.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单13-1: watch监听ref——搜索框防抖与immediate行为对比",
+    "lang": "vue",
+    "chapter_file": "chapter-013.md",
+    "line": 21,
+    "extracted_file": "src\\代码清单13-1_ watch监听ref——搜索框防抖与immediate行为对比.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单13-2: watch用getter函数监听reactive属性",
+    "lang": "vue",
+    "chapter_file": "chapter-013.md",
+    "line": 75,
+    "extracted_file": "src\\代码清单13-2_ watch用getter函数监听reactive属性.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单13-3: watchEffect自动追踪多个依赖",
+    "lang": "vue",
+    "chapter_file": "chapter-013.md",
+    "line": 157,
+    "extracted_file": "src\\代码清单13-3_ watchEffect自动追踪多个依赖.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单13-4: 用onCleanup取消过期请求",
+    "lang": "vue",
+    "chapter_file": "chapter-013.md",
+    "line": 204,
+    "extracted_file": "src\\代码清单13-4_ 用onCleanup取消过期请求.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单13-5: deep监听嵌套对象与替代方案",
+    "lang": "vue",
+    "chapter_file": "chapter-013.md",
+    "line": 291,
+    "extracted_file": "src\\代码清单13-5_ deep监听嵌套对象与替代方案.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单13-6: 练习一表单字段防抖保存",
+    "lang": "vue",
+    "chapter_file": "chapter-013.md",
+    "line": 468,
+    "extracted_file": "src\\代码清单13-6_ 练习一表单字段防抖保存.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单13-7: 练习二watchEffect同步到localStorage",
+    "lang": "vue",
+    "chapter_file": "chapter-013.md",
+    "line": 517,
+    "extracted_file": "src\\代码清单13-7_ 练习二watchEffect同步到localStorage.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单13-8: 练习三deep与getter触发对比",
+    "lang": "vue",
+    "chapter_file": "chapter-013.md",
+    "line": 592,
+    "extracted_file": "src\\代码清单13-8_ 练习三deep与getter触发对比.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单14-1: onMounted与onUnmounted成对清理——第三方图表库初始化与销毁",
+    "lang": "vue",
+    "chapter_file": "chapter-014.md",
+    "line": 22,
+    "extracted_file": "src\\代码清单14-1_ onMounted与onUnmounted成对清理——第三方图表库初始化与销毁.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单14-2: 模板引用ref绑定DOM——自动聚焦输入框",
+    "lang": "vue",
+    "chapter_file": "chapter-014.md",
+    "line": 145,
+    "extracted_file": "src\\代码清单14-2_ 模板引用ref绑定DOM——自动聚焦输入框.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单14-3: useTemplateRef与旧ref变量写法对比——同一个input的两种获取方式",
+    "lang": "vue",
+    "chapter_file": "chapter-014.md",
+    "line": 196,
+    "extracted_file": "src\\代码清单14-3_ useTemplateRef与旧ref变量写法对比——同一个input的两种获取方式.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单14-4: nextTick实战——列表更新后滚动到底部",
+    "lang": "vue",
+    "chapter_file": "chapter-014.md",
+    "line": 250,
+    "extracted_file": "src\\代码清单14-4_ nextTick实战——列表更新后滚动到底部.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单15-1: useMouse——鼠标位置组合式函数",
+    "lang": "vue",
+    "chapter_file": "chapter-015.md",
+    "line": 24,
+    "extracted_file": "src\\代码清单15-1_ useMouse——鼠标位置组合式函数.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单15-2: 组件中使用useMouse",
+    "lang": "vue",
+    "chapter_file": "chapter-015.md",
+    "line": 54,
+    "extracted_file": "src\\代码清单15-2_ 组件中使用useMouse.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单15-3: useLocalStorage——响应式本地存储组合式函数",
+    "lang": "vue",
+    "chapter_file": "chapter-015.md",
+    "line": 75,
+    "extracted_file": "src\\代码清单15-3_ useLocalStorage——响应式本地存储组合式函数.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单15-4: 组件中使用useLocalStorage",
+    "lang": "vue",
+    "chapter_file": "chapter-015.md",
+    "line": 99,
+    "extracted_file": "src\\代码清单15-4_ 组件中使用useLocalStorage.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单15-5: useDebounceFn——防抖组合式函数",
+    "lang": "ts",
+    "chapter_file": "chapter-015.md",
+    "line": 124,
+    "extracted_file": "src\\代码清单15-5_ useDebounceFn——防抖组合式函数.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单15-6: 组件中使用useDebounceFn",
+    "lang": "vue",
+    "chapter_file": "chapter-015.md",
+    "line": 157,
+    "extracted_file": "src\\代码清单15-6_ 组件中使用useDebounceFn.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单16-1: defineProps泛型声明——Vue 3.5解构默认值",
+    "lang": "vue",
+    "chapter_file": "chapter-016.md",
+    "line": 19,
+    "extracted_file": "src\\代码清单16-1_ defineProps泛型声明——Vue 3.5解构默认值.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单16-2: ref泛型——初值为null时必须手动指定泛型",
+    "lang": "vue",
+    "chapter_file": "chapter-016.md",
+    "line": 79,
+    "extracted_file": "src\\代码清单16-2_ ref泛型——初值为null时必须手动指定泛型.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单16-3: computed返回类型——interface与type别名选择",
+    "lang": "vue",
+    "chapter_file": "chapter-016.md",
+    "line": 147,
+    "extracted_file": "src\\代码清单16-3_ computed返回类型——interface与type别名选择.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单16-4: defineEmits类型标注——完整事件载荷类型",
+    "lang": "vue",
+    "chapter_file": "chapter-016.md",
+    "line": 210,
+    "extracted_file": "src\\代码清单16-4_ defineEmits类型标注——完整事件载荷类型.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单16-5: 父组件监听带类型的emit",
+    "lang": "vue",
+    "chapter_file": "chapter-016.md",
+    "line": 255,
+    "extracted_file": "src\\代码清单16-5_ 父组件监听带类型的emit.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单16-6: 泛型组件——generic=\\",
+    "lang": "vue",
+    "chapter_file": "chapter-016.md",
+    "line": 287,
+    "extracted_file": "src\\代码清单16-6_ 泛型组件——generic=_.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单16-7: 使用泛型组件——TypeScript自动推断类型",
+    "lang": "vue",
+    "chapter_file": "chapter-016.md",
+    "line": 314,
+    "extracted_file": "src\\代码清单16-7_ 使用泛型组件——TypeScript自动推断类型.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单16-8: vue-tsc典型报错修复——Property不存在与类型断言",
+    "lang": "vue",
+    "chapter_file": "chapter-016.md",
+    "line": 356,
+    "extracted_file": "src\\代码清单16-8_ vue-tsc典型报错修复——Property不存在与类型断言.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-1: Card 组件——header/default/footer 三个具名插槽",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 53,
+    "extracted_file": "src\\代码清单17-1_ Card 组件——header_default_footer 三个具名插槽.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-2: 父组件用 #header/#default/#footer 分发内容",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 85,
+    "extracted_file": "src\\代码清单17-2_ 父组件用 #header_#default_#footer 分发内容.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-3: TableList 作用域插槽——每行数据通过插槽回传",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 115,
+    "extracted_file": "src\\代码清单17-3_ TableList 作用域插槽——每行数据通过插槽回传.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-4: 父组件用 #name/#status 等插槽自定义每列",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 147,
+    "extracted_file": "src\\代码清单17-4_ 父组件用 #name_#status 等插槽自定义每列.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-5（逻辑层）: useMousePosition Composable",
+    "lang": "typescript",
+    "chapter_file": "chapter-017.md",
+    "line": 188,
+    "extracted_file": "src\\代码清单17-5（逻辑层）_ useMousePosition Composable.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单17-6: MouseTracker 无渲染组件——把坐标经作用域插槽回传",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 212,
+    "extracted_file": "src\\代码清单17-6_ MouseTracker 无渲染组件——把坐标经作用域插槽回传.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-7: 父组件使用MouseTracker",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 226,
+    "extracted_file": "src\\代码清单17-7_ 父组件使用MouseTracker.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-8（拆分前）: 臃肿的 UserList.vue 同时处理数据和渲染",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 246,
+    "extracted_file": "src\\代码清单17-8（拆分前）_ 臃肿的 UserList.vue 同时处理数据和渲染.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-9（拆分后）: UserCard 展示组件——纯渲染",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 294,
+    "extracted_file": "src\\代码清单17-9（拆分后）_ UserCard 展示组件——纯渲染.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-10（拆分后）: UserListContainer 容器组件——只含数据获取",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 314,
+    "extracted_file": "src\\代码清单17-10（拆分后）_ UserListContainer 容器组件——只含数据获取.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-11: ThemeProvider provide theme 到组件树",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 354,
+    "extracted_file": "src\\代码清单17-11_ ThemeProvider provide theme 到组件树.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-12: ThemedButton inject theme 使用",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 385,
+    "extracted_file": "src\\代码清单17-12_ ThemedButton inject theme 使用.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-13: 受控/非受控切换的 Input.vue",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 443,
+    "extracted_file": "src\\代码清单17-13_ 受控_非受控切换的 Input.vue.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-14: Modal 模板骨架——三段具名插槽",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 504,
+    "extracted_file": "src\\代码清单17-14_ Modal 模板骨架——三段具名插槽.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-15: Modal.vue script setup——Teleport + closeOnBackdrop",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 535,
+    "extracted_file": "src\\代码清单17-15_ Modal.vue script setup——Teleport + closeOnBackdrop.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-16: TreeNodeData 类型定义",
+    "lang": "typescript",
+    "chapter_file": "chapter-017.md",
+    "line": 584,
+    "extracted_file": "src\\代码清单17-16_ TreeNodeData 类型定义.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单17-17: TreeNode.vue——递归 + 作用域插槽",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 597,
+    "extracted_file": "src\\代码清单17-17_ TreeNode.vue——递归 + 作用域插槽.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单17-18: 父组件用作用域插槽自定义节点渲染",
+    "lang": "vue",
+    "chapter_file": "chapter-017.md",
+    "line": 665,
+    "extracted_file": "src\\代码清单17-18_ 父组件用作用域插槽自定义节点渲染.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单18-1: 多字段表单：每个字段独立 ref",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 20,
+    "extracted_file": "src\\代码清单18-1_ 多字段表单：每个字段独立 ref.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单18-2: 多字段表单：reactive 集中管理",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 31,
+    "extracted_file": "src\\代码清单18-2_ 多字段表单：reactive 集中管理.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单18-3: computed 派生表单错误信息",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 50,
+    "extracted_file": "src\\代码清单18-3_ computed 派生表单错误信息.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单18-4: computed 派生表单整体有效性",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 76,
+    "extracted_file": "src\\代码清单18-4_ computed 派生表单整体有效性.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单18-5: 动态表单项：reactive 数组与初始结构",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 92,
+    "extracted_file": "src\\代码清单18-5_ 动态表单项：reactive 数组与初始结构.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单18-6: defineModel 对比传统 modelValue 写法",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 139,
+    "extracted_file": "src\\代码清单18-6_ defineModel 对比传统 modelValue 写法.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单18-7: InputField 组件模板",
+    "lang": "vue",
+    "chapter_file": "chapter-018.md",
+    "line": 152,
+    "extracted_file": "src\\代码清单18-7_ InputField 组件模板.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单18-8: 父组件使用 InputField 组件",
+    "lang": "vue",
+    "chapter_file": "chapter-018.md",
+    "line": 164,
+    "extracted_file": "src\\代码清单18-8_ 父组件使用 InputField 组件.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单18-9: useDebounceFn 最小实现",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 182,
+    "extracted_file": "src\\代码清单18-9_ useDebounceFn 最小实现.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单18-10: mock 邮箱查重接口",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 203,
+    "extracted_file": "src\\代码清单18-10_ mock 邮箱查重接口.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单18-11: EmailField 组件：防抖 + 异步校验",
+    "lang": "vue",
+    "chapter_file": "chapter-018.md",
+    "line": 217,
+    "extracted_file": "src\\代码清单18-11_ EmailField 组件：防抖 + 异步校验.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单18-12: scorePassword 纯函数",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 265,
+    "extracted_file": "src\\代码清单18-12_ scorePassword 纯函数.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单18-13: 派生强度提示（不影响校验）",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 284,
+    "extracted_file": "src\\代码清单18-13_ 派生强度提示（不影响校验）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单18-14: 提交前总验证",
+    "lang": "typescript",
+    "chapter_file": "chapter-018.md",
+    "line": 308,
+    "extracted_file": "src\\代码清单18-14_ 提交前总验证.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单19-1: createRouter 创建路由实例",
+    "lang": "typescript",
+    "chapter_file": "chapter-019.md",
+    "line": 24,
+    "extracted_file": "src\\代码清单19-1_ createRouter 创建路由实例.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单19-2: useRoute 读取路由参数",
+    "lang": "typescript",
+    "chapter_file": "chapter-019.md",
+    "line": 60,
+    "extracted_file": "src\\代码清单19-2_ useRoute 读取路由参数.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单20-1: AdminLayout 布局组件，内容区用 RouterView 的 v-slot 出口",
+    "lang": "vue",
+    "chapter_file": "chapter-020.md",
+    "line": 81,
+    "extracted_file": "src\\代码清单20-1_ AdminLayout 布局组件，内容区用 RouterView 的 v-slot 出口.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单20-2: 嵌套路由表，children 挂在布局路由下，父路由 redirect 到默认子页",
+    "lang": "typescript",
+    "chapter_file": "chapter-020.md",
+    "line": 110,
+    "extracted_file": "src\\代码清单20-2_ 嵌套路由表，children 挂在布局路由下，父路由 redirect 到默认子页.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单20-3: 用 meta.requiresAuth 标记需要登录的路由",
+    "lang": "typescript",
+    "chapter_file": "chapter-020.md",
+    "line": 141,
+    "extracted_file": "src\\代码清单20-3_ 用 meta.requiresAuth 标记需要登录的路由.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单20-4: 全局 beforeEach 登录守卫，未登录带 redirect 参数跳 /login",
+    "lang": "typescript",
+    "chapter_file": "chapter-020.md",
+    "line": 157,
+    "extracted_file": "src\\代码清单20-4_ 全局 beforeEach 登录守卫，未登录带 redirect 参数跳 _login.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单20-5: 登录成功后读取 redirect query 跳回原目标页",
+    "lang": "typescript",
+    "chapter_file": "chapter-020.md",
+    "line": 179,
+    "extracted_file": "src\\代码清单20-5_ 登录成功后读取 redirect query 跳回原目标页.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单20-6: 用 webpackChunkName 风格的魔法注释给懒加载 chunk 命名",
+    "lang": "typescript",
+    "chapter_file": "chapter-020.md",
+    "line": 200,
+    "extracted_file": "src\\代码清单20-6_ 用 webpackChunkName 风格的魔法注释给懒加载 chunk 命名.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单21-1: watchEffect 异步写入已卸载组件的陷阱",
+    "lang": "typescript",
+    "chapter_file": "chapter-021.md",
+    "line": 20,
+    "extracted_file": "src\\代码清单21-1_ watchEffect 异步写入已卸载组件的陷阱.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单21-2: useUser Composable 最小实现",
+    "lang": "typescript",
+    "chapter_file": "chapter-021.md",
+    "line": 103,
+    "extracted_file": "src\\代码清单21-2_ useUser Composable 最小实现.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单21-3: UserCard.vue 三态渲染",
+    "lang": "vue",
+    "chapter_file": "chapter-021.md",
+    "line": 167,
+    "extracted_file": "src\\代码清单21-3_ UserCard.vue 三态渲染.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单21-4: UserDetailAsync.vue 异步 setup",
+    "lang": "vue",
+    "chapter_file": "chapter-021.md",
+    "line": 219,
+    "extracted_file": "src\\代码清单21-4_ UserDetailAsync.vue 异步 setup.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单21-5: 父组件包裹 Suspense",
+    "lang": "vue",
+    "chapter_file": "chapter-021.md",
+    "line": 245,
+    "extracted_file": "src\\代码清单21-5_ 父组件包裹 Suspense.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单22-1: provide 提供响应式主题与方法",
+    "lang": "typescript",
+    "chapter_file": "chapter-022.md",
+    "line": 21,
+    "extracted_file": "src\\代码清单22-1_ provide 提供响应式主题与方法.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单22-2: inject 接收祖先提供的数据",
+    "lang": "typescript",
+    "chapter_file": "chapter-022.md",
+    "line": 34,
+    "extracted_file": "src\\代码清单22-2_ inject 接收祖先提供的数据.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单22-3: InjectionKey 类型安全的注入键",
+    "lang": "typescript",
+    "chapter_file": "chapter-022.md",
+    "line": 49,
+    "extracted_file": "src\\代码清单22-3_ InjectionKey 类型安全的注入键.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单22-4: 响应式注入与静态注入对比",
+    "lang": "typescript",
+    "chapter_file": "chapter-022.md",
+    "line": 70,
+    "extracted_file": "src\\代码清单22-4_ 响应式注入与静态注入对比.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单22-5: 多层 provide/inject 最小可运行示例（主题+用户+配置）",
+    "lang": "vue",
+    "chapter_file": "chapter-022.md",
+    "line": 145,
+    "extracted_file": "src\\代码清单22-5_ 多层 provide_inject 最小可运行示例（主题+用户+配置）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单22-6: 中间层 Layout.vue —— 仅充当包裹层，不消费任何状态",
+    "lang": "vue",
+    "chapter_file": "chapter-022.md",
+    "line": 201,
+    "extracted_file": "src\\代码清单22-6_ 中间层 Layout.vue —— 仅充当包裹层，不消费任何状态.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单22-7: 深孙组件 SidebarUser.vue —— 注入用户身份 ref",
+    "lang": "vue",
+    "chapter_file": "chapter-022.md",
+    "line": 216,
+    "extracted_file": "src\\代码清单22-7_ 深孙组件 SidebarUser.vue —— 注入用户身份 ref.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单22-8: 深孙组件 ContentTheme.vue —— 注入主题 ref 与切换方法",
+    "lang": "vue",
+    "chapter_file": "chapter-022.md",
+    "line": 239,
+    "extracted_file": "src\\代码清单22-8_ 深孙组件 ContentTheme.vue —— 注入主题 ref 与切换方法.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单22-9: 深孙组件 FooterConfig.vue —— 注入静态配置",
+    "lang": "vue",
+    "chapter_file": "chapter-022.md",
+    "line": 263,
+    "extracted_file": "src\\代码清单22-9_ 深孙组件 FooterConfig.vue —— 注入静态配置.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单23-1: src/main.ts——Pinia 注册",
+    "lang": "typescript",
+    "chapter_file": "chapter-023.md",
+    "line": 26,
+    "extracted_file": "src\\代码清单23-1_ src_main.ts——Pinia 注册.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单23-2: src/stores/user.ts——setup store 用户登录态",
+    "lang": "typescript",
+    "chapter_file": "chapter-023.md",
+    "line": 47,
+    "extracted_file": "src\\代码清单23-2_ src_stores_user.ts——setup store 用户登录态.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单23-3: src/stores/user.options.ts——options store 等价写法",
+    "lang": "typescript",
+    "chapter_file": "chapter-023.md",
+    "line": 101,
+    "extracted_file": "src\\代码清单23-3_ src_stores_user.options.ts——options store 等价写法.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单23-4: src/views/HeaderNav.vue——组件中读写 store",
+    "lang": "typescript",
+    "chapter_file": "chapter-023.md",
+    "line": 145,
+    "extracted_file": "src\\代码清单23-4_ src_views_HeaderNav.vue——组件中读写 store.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单23-5: src/views/UserBadge.vue——storeToRefs 解构",
+    "lang": "vue",
+    "chapter_file": "chapter-023.md",
+    "line": 198,
+    "extracted_file": "src\\代码清单23-5_ src_views_UserBadge.vue——storeToRefs 解构.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单23-6: 反例——滥用 Pinia",
+    "lang": "typescript",
+    "chapter_file": "chapter-023.md",
+    "line": 237,
+    "extracted_file": "src\\代码清单23-6_ 反例——滥用 Pinia.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单23-7: src/stores/cart.ts——购物车 store 骨架",
+    "lang": "typescript",
+    "chapter_file": "chapter-023.md",
+    "line": 265,
+    "extracted_file": "src\\代码清单23-7_ src_stores_cart.ts——购物车 store 骨架.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单23-8: src/views/CartPanel.vue——购物车面板组件",
+    "lang": "vue",
+    "chapter_file": "chapter-023.md",
+    "line": 326,
+    "extracted_file": "src\\代码清单23-8_ src_views_CartPanel.vue——购物车面板组件.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单23-9: src/stores/auth.ts——带持久化的认证 store",
+    "lang": "typescript",
+    "chapter_file": "chapter-023.md",
+    "line": 372,
+    "extracted_file": "src\\代码清单23-9_ src_stores_auth.ts——带持久化的认证 store.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单23-10: $patch 批量更新登录态",
+    "lang": "typescript",
+    "chapter_file": "chapter-023.md",
+    "line": 423,
+    "extracted_file": "src\\代码清单23-10_ $patch 批量更新登录态.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单23-11: src/stores/cart-setup.ts——setup store 风格购物车",
+    "lang": "typescript",
+    "chapter_file": "chapter-023.md",
+    "line": 450,
+    "extracted_file": "src\\代码清单23-11_ src_stores_cart-setup.ts——setup store 风格购物车.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单23-12: setup store 自定义 reset",
+    "lang": "typescript",
+    "chapter_file": "chapter-023.md",
+    "line": 491,
+    "extracted_file": "src\\代码清单23-12_ setup store 自定义 reset.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单24-1: ProductPage.vue——完整降级恢复链路",
+    "lang": "vue",
+    "chapter_file": "chapter-024.md",
+    "line": 35,
+    "extracted_file": "src\\代码清单24-1_ ProductPage.vue——完整降级恢复链路.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单24-2: ProductPage.vue——Suspense + ErrorBoundary 完整链路",
+    "lang": "vue",
+    "chapter_file": "chapter-024.md",
+    "line": 85,
+    "extracted_file": "src\\代码清单24-2_ ProductPage.vue——Suspense + ErrorBoundary 完整链路.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单24-3: 错误处理职责对比",
+    "lang": "vue",
+    "chapter_file": "chapter-024.md",
+    "line": 157,
+    "extracted_file": "src\\代码清单24-3_ 错误处理职责对比.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单24-4: ErrorBoundary.vue——onErrorCaptured 捕获错误",
+    "lang": "vue",
+    "chapter_file": "chapter-024.md",
+    "line": 224,
+    "extracted_file": "src\\代码清单24-4_ ErrorBoundary.vue——onErrorCaptured 捕获错误.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单24-5: OrderSubmit.vue——try-catch + Suspense #error",
+    "lang": "vue",
+    "chapter_file": "chapter-024.md",
+    "line": 302,
+    "extracted_file": "src\\代码清单24-5_ OrderSubmit.vue——try-catch + Suspense #error.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单24-6: src/main.ts——全局错误处理与上报",
+    "lang": "typescript",
+    "chapter_file": "chapter-024.md",
+    "line": 425,
+    "extracted_file": "src\\代码清单24-6_ src_main.ts——全局错误处理与上报.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单25-1: FormField.vue——useId 生成稳定 ID",
+    "lang": "vue",
+    "chapter_file": "chapter-025.md",
+    "line": 29,
+    "extracted_file": "src\\代码清单25-1_ FormField.vue——useId 生成稳定 ID.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单25-2: InputFocus.vue——useTemplateRef",
+    "lang": "vue",
+    "chapter_file": "chapter-025.md",
+    "line": 73,
+    "extracted_file": "src\\代码清单25-2_ InputFocus.vue——useTemplateRef.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单25-3: ArticleCard.vue——响应式 props 解构默认值",
+    "lang": "vue",
+    "chapter_file": "chapter-025.md",
+    "line": 127,
+    "extracted_file": "src\\代码清单25-3_ ArticleCard.vue——响应式 props 解构默认值.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单25-4: ModalTransition.vue——Transition 淡入淡出",
+    "lang": "vue",
+    "chapter_file": "chapter-025.md",
+    "line": 160,
+    "extracted_file": "src\\代码清单25-4_ ModalTransition.vue——Transition 淡入淡出.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单25-5: UserTabs.vue——KeepAlive 缓存",
+    "lang": "vue",
+    "chapter_file": "chapter-025.md",
+    "line": 214,
+    "extracted_file": "src\\代码清单25-5_ UserTabs.vue——KeepAlive 缓存.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单25-6: TeleportModal.vue——Teleport 模态框",
+    "lang": "vue",
+    "chapter_file": "chapter-025.md",
+    "line": 251,
+    "extracted_file": "src\\代码清单25-6_ TeleportModal.vue——Teleport 模态框.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单25-7: DeferredTeleport.vue——延迟 Teleport",
+    "lang": "vue",
+    "chapter_file": "chapter-025.md",
+    "line": 303,
+    "extracted_file": "src\\代码清单25-7_ DeferredTeleport.vue——延迟 Teleport.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单26-1: SlowList.vue——在 Profiler 下观察到的慢组件示例",
+    "lang": "vue",
+    "chapter_file": "chapter-026.md",
+    "line": 26,
+    "extracted_file": "src\\代码清单26-1_ SlowList.vue——在 Profiler 下观察到的慢组件示例.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单26-2: shallowRef 优化大对象",
+    "lang": "typescript",
+    "chapter_file": "chapter-026.md",
+    "line": 77,
+    "extracted_file": "src\\代码清单26-2_ shallowRef 优化大对象.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单26-3: shallowReactive 只代理第一层",
+    "lang": "typescript",
+    "chapter_file": "chapter-026.md",
+    "line": 110,
+    "extracted_file": "src\\代码清单26-3_ shallowReactive 只代理第一层.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单26-4: markRaw 标记第三方实例",
+    "lang": "typescript",
+    "chapter_file": "chapter-026.md",
+    "line": 131,
+    "extracted_file": "src\\代码清单26-4_ markRaw 标记第三方实例.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单26-5: v-once 和 v-memo",
+    "lang": "vue",
+    "chapter_file": "chapter-026.md",
+    "line": 154,
+    "extracted_file": "src\\代码清单26-5_ v-once 和 v-memo.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单26-6: KeepAlive 缓存",
+    "lang": "vue",
+    "chapter_file": "chapter-026.md",
+    "line": 201,
+    "extracted_file": "src\\代码清单26-6_ KeepAlive 缓存.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单26-7: 路由懒加载",
+    "lang": "typescript",
+    "chapter_file": "chapter-026.md",
+    "line": 237,
+    "extracted_file": "src\\代码清单26-7_ 路由懒加载.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单26-8: 练习一 shallowRef 装载大列表",
+    "lang": "typescript",
+    "chapter_file": "chapter-026.md",
+    "line": 305,
+    "extracted_file": "src\\代码清单26-8_ 练习一 shallowRef 装载大列表.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单26-9: 练习二 v-memo 精细化记忆化",
+    "lang": "vue",
+    "chapter_file": "chapter-026.md",
+    "line": 339,
+    "extracted_file": "src\\代码清单26-9_ 练习二 v-memo 精细化记忆化.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单26-10: 练习三 路由懒加载切分 chunk",
+    "lang": "typescript",
+    "chapter_file": "chapter-026.md",
+    "line": 371,
+    "extracted_file": "src\\代码清单26-10_ 练习三 路由懒加载切分 chunk.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单26-11: 练习三 defineAsyncComponent 配加载态",
+    "lang": "typescript",
+    "chapter_file": "chapter-026.md",
+    "line": 392,
+    "extracted_file": "src\\代码清单26-11_ 练习三 defineAsyncComponent 配加载态.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单26-12: 练习三 import.meta.glob 空闲预加载",
+    "lang": "typescript",
+    "chapter_file": "chapter-026.md",
+    "line": 409,
+    "extracted_file": "src\\代码清单26-12_ 练习三 import.meta.glob 空闲预加载.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-1: 测实现细节：直接访问内部状态",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 35,
+    "extracted_file": "src\\代码清单27-1_ 测实现细节：直接访问内部状态.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-2: 测用户行为：模拟点击断言文案",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 44,
+    "extracted_file": "src\\代码清单27-2_ 测用户行为：模拟点击断言文案.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-3: Vitest 测试基本结构",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 75,
+    "extracted_file": "src\\代码清单27-3_ Vitest 测试基本结构.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-4: 用户行为 vs 实现细节",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 112,
+    "extracted_file": "src\\代码清单27-4_ 用户行为 vs 实现细节.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-5: 用 vi.fn 造一个假回调",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 139,
+    "extracted_file": "src\\代码清单27-5_ 用 vi.fn 造一个假回调.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-6: 用 vi.spyOn 监听 console.warn",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 162,
+    "extracted_file": "src\\代码清单27-6_ 用 vi.spyOn 监听 console.warn.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-7: 用 vi.mock 替换 axios 模块",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 177,
+    "extracted_file": "src\\代码清单27-7_ 用 vi.mock 替换 axios 模块.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-8: 用 vi.useFakeTimers 控制时间",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 195,
+    "extracted_file": "src\\代码清单27-8_ 用 vi.useFakeTimers 控制时间.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-9: CounterButton 组件实现参考",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 246,
+    "extracted_file": "src\\代码清单27-9_ CounterButton 组件实现参考.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-10: CounterButton 测试参考",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 277,
+    "extracted_file": "src\\代码清单27-10_ CounterButton 测试参考.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-11: src/api/user.ts",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 337,
+    "extracted_file": "src\\代码清单27-11_ src_api_user.ts.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单27-12: UserProfile 组件实现参考",
+    "lang": "vue",
+    "chapter_file": "chapter-027.md",
+    "line": 351,
+    "extracted_file": "src\\代码清单27-12_ UserProfile 组件实现参考.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单27-13: UserProfile 测试参考",
+    "lang": "typescript",
+    "chapter_file": "chapter-027.md",
+    "line": 391,
+    "extracted_file": "src\\代码清单27-13_ UserProfile 测试参考.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单28-1: useMouse.ts",
+    "lang": "vue",
+    "chapter_file": "chapter-028.md",
+    "line": 48,
+    "extracted_file": "src\\代码清单28-1_ useMouse.ts.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单28-2: useMouse.test.ts——宿主组件模式",
+    "lang": "typescript",
+    "chapter_file": "chapter-028.md",
+    "line": 76,
+    "extracted_file": "src\\代码清单28-2_ useMouse.test.ts——宿主组件模式.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单28-3: withSetup 工具函数",
+    "lang": "typescript",
+    "chapter_file": "chapter-028.md",
+    "line": 123,
+    "extracted_file": "src\\代码清单28-3_ withSetup 工具函数.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单28-4: 用 withSetup 测试 useCounter",
+    "lang": "typescript",
+    "chapter_file": "chapter-028.md",
+    "line": 142,
+    "extracted_file": "src\\代码清单28-4_ 用 withSetup 测试 useCounter.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单28-5: stores/user.ts",
+    "lang": "typescript",
+    "chapter_file": "chapter-028.md",
+    "line": 181,
+    "extracted_file": "src\\代码清单28-5_ stores_user.ts.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单28-6: user.test.ts——Pinia store 测试",
+    "lang": "typescript",
+    "chapter_file": "chapter-028.md",
+    "line": 212,
+    "extracted_file": "src\\代码清单28-6_ user.test.ts——Pinia store 测试.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单28-7: 集成测试——父+子+Pinia",
+    "lang": "typescript",
+    "chapter_file": "chapter-028.md",
+    "line": 288,
+    "extracted_file": "src\\代码清单28-7_ 集成测试——父+子+Pinia.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单28-8: useCounter.ts",
+    "lang": "typescript",
+    "chapter_file": "chapter-028.md",
+    "line": 373,
+    "extracted_file": "src\\代码清单28-8_ useCounter.ts.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单28-9: useUsers.ts",
+    "lang": "typescript",
+    "chapter_file": "chapter-028.md",
+    "line": 411,
+    "extracted_file": "src\\代码清单28-9_ useUsers.ts.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单28-10: stores/cart.ts",
+    "lang": "typescript",
+    "chapter_file": "chapter-028.md",
+    "line": 461,
+    "extracted_file": "src\\代码清单28-10_ stores_cart.ts.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单29-1: pages/users/[id].vue",
+    "lang": "vue",
+    "chapter_file": "chapter-029.md",
+    "line": 81,
+    "extracted_file": "src\\代码清单29-1_ pages_users_[id].vue.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单29-2: server/api/hello.ts",
+    "lang": "typescript",
+    "chapter_file": "chapter-029.md",
+    "line": 101,
+    "extracted_file": "src\\代码清单29-2_ server_api_hello.ts.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单29-3: 调用 Nitro route",
+    "lang": "vue",
+    "chapter_file": "chapter-029.md",
+    "line": 114,
+    "extracted_file": "src\\代码清单29-3_ 调用 Nitro route.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单29-4: onMounted 守卫",
+    "lang": "vue",
+    "chapter_file": "chapter-029.md",
+    "line": 137,
+    "extracted_file": "src\\代码清单29-4_ onMounted 守卫.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单29-5: ClientOnly 包裹",
+    "lang": "vue",
+    "chapter_file": "chapter-029.md",
+    "line": 149,
+    "extracted_file": "src\\代码清单29-5_ ClientOnly 包裹.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单29-6: useFetch SSR 预取",
+    "lang": "vue",
+    "chapter_file": "chapter-029.md",
+    "line": 174,
+    "extracted_file": "src\\代码清单29-6_ useFetch SSR 预取.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单29-7: useAsyncData 自定义取数",
+    "lang": "vue",
+    "chapter_file": "chapter-029.md",
+    "line": 189,
+    "extracted_file": "src\\代码清单29-7_ useAsyncData 自定义取数.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单29-8: $fetch 客户端交互取数",
+    "lang": "vue",
+    "chapter_file": "chapter-029.md",
+    "line": 204,
+    "extracted_file": "src\\代码清单29-8_ $fetch 客户端交互取数.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单29-9: middleware/auth.ts",
+    "lang": "typescript",
+    "chapter_file": "chapter-029.md",
+    "line": 223,
+    "extracted_file": "src\\代码清单29-9_ middleware_auth.ts.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单29-10: server/plugins/00-headers.ts",
+    "lang": "typescript",
+    "chapter_file": "chapter-029.md",
+    "line": 236,
+    "extracted_file": "src\\代码清单29-10_ server_plugins_00-headers.ts.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单29-11: server/api/time.get.ts",
+    "lang": "typescript",
+    "chapter_file": "chapter-029.md",
+    "line": 286,
+    "extracted_file": "src\\代码清单29-11_ server_api_time.get.ts.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单29-12: pages/index.vue 调用 API",
+    "lang": "vue",
+    "chapter_file": "chapter-029.md",
+    "line": 297,
+    "extracted_file": "src\\代码清单29-12_ pages_index.vue 调用 API.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单30-1: useFetch 数据预取",
+    "lang": "vue",
+    "chapter_file": "chapter-030.md",
+    "line": 55,
+    "extracted_file": "src\\代码清单30-1_ useFetch 数据预取.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单30-2: useAsyncData",
+    "lang": "typescript",
+    "chapter_file": "chapter-030.md",
+    "line": 66,
+    "extracted_file": "src\\代码清单30-2_ useAsyncData.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单30-3: useAsyncData",
+    "lang": "vue",
+    "chapter_file": "chapter-030.md",
+    "line": 73,
+    "extracted_file": "src\\代码清单30-3_ useAsyncData.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单30-4: SSG 配置",
+    "lang": "typescript",
+    "chapter_file": "chapter-030.md",
+    "line": 88,
+    "extracted_file": "src\\代码清单30-4_ SSG 配置.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单30-5: CSR 配置",
+    "lang": "typescript",
+    "chapter_file": "chapter-030.md",
+    "line": 102,
+    "extracted_file": "src\\代码清单30-5_ CSR 配置.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单30-6: Hydration mismatch 修复",
+    "lang": "vue",
+    "chapter_file": "chapter-030.md",
+    "line": 122,
+    "extracted_file": "src\\代码清单30-6_ Hydration mismatch 修复.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单30-7: ISR 与 SWR 配置",
+    "lang": "typescript",
+    "chapter_file": "chapter-030.md",
+    "line": 152,
+    "extracted_file": "src\\代码清单30-7_ ISR 与 SWR 配置.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单30-8: 主动失效 webhook",
+    "lang": "typescript",
+    "chapter_file": "chapter-030.md",
+    "line": 174,
+    "extracted_file": "src\\代码清单30-8_ 主动失效 webhook.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单30-9: nuxt typecheck 命令",
+    "lang": "bash",
+    "chapter_file": "chapter-030.md",
+    "line": 210,
+    "extracted_file": "src\\代码清单30-9_ nuxt typecheck 命令.sh",
+    "source": null
+  },
+  {
+    "title": "代码清单30-10: ClientOnly 隔离调试",
+    "lang": "vue",
+    "chapter_file": "chapter-030.md",
+    "line": 221,
+    "extracted_file": "src\\代码清单30-10_ ClientOnly 隔离调试.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单30-11: onMounted 重构示例",
+    "lang": "vue",
+    "chapter_file": "chapter-030.md",
+    "line": 244,
+    "extracted_file": "src\\代码清单30-11_ onMounted 重构示例.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单30-12: about 路由 SSG",
+    "lang": "typescript",
+    "chapter_file": "chapter-030.md",
+    "line": 268,
+    "extracted_file": "src\\代码清单30-12_ about 路由 SSG.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单30-13: 故意写错的 ClientTime",
+    "lang": "vue",
+    "chapter_file": "chapter-030.md",
+    "line": 291,
+    "extracted_file": "src\\代码清单30-13_ 故意写错的 ClientTime.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单30-14: 修复后的 ClientTime",
+    "lang": "vue",
+    "chapter_file": "chapter-030.md",
+    "line": 314,
+    "extracted_file": "src\\代码清单30-14_ 修复后的 ClientTime.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单30-15: node-server preset 配置",
+    "lang": "typescript",
+    "chapter_file": "chapter-030.md",
+    "line": 346,
+    "extracted_file": "src\\代码清单30-15_ node-server preset 配置.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单31-1：package.json scripts 与构建命令",
+    "lang": "json",
+    "chapter_file": "chapter-031.md",
+    "line": 23,
+    "extracted_file": "src\\代码清单31-1：package.json scripts 与构建命令.json",
+    "source": null
+  },
+  {
+    "title": "代码清单31-2：vite.config.ts 的 manualChunks 代码分割 + base 路径",
+    "lang": "typescript",
+    "chapter_file": "chapter-031.md",
+    "line": 79,
+    "extracted_file": "src\\代码清单31-2：vite.config.ts 的 manualChunks 代码分割 + base 路径.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单31-3：.env.development（开发环境变量文件）",
+    "lang": "ini",
+    "chapter_file": "chapter-031.md",
+    "line": 119,
+    "extracted_file": "src\\代码清单31-3：.env.development（开发环境变量文件）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单31-4：.env.production（生产环境变量文件）",
+    "lang": "ini",
+    "chapter_file": "chapter-031.md",
+    "line": 126,
+    "extracted_file": "src\\代码清单31-4：.env.production（生产环境变量文件）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单31-5：src/env.d.ts 为自定义 VITE_ 变量补充类型",
+    "lang": "typescript",
+    "chapter_file": "chapter-031.md",
+    "line": 142,
+    "extracted_file": "src\\代码清单31-5：src_env.d.ts 为自定义 VITE_ 变量补充类型.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单31-6：src/config.ts 集中读取环境变量",
+    "lang": "typescript",
+    "chapter_file": "chapter-031.md",
+    "line": 157,
+    "extracted_file": "src\\代码清单31-6：src_config.ts 集中读取环境变量.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单31-7：Nginx 配置 history 模式 fallback + 静态资源 gzip",
+    "lang": "nginx",
+    "chapter_file": "chapter-031.md",
+    "line": 186,
+    "extracted_file": "src\\代码清单31-7：Nginx 配置 history 模式 fallback + 静态资源 gzip.conf",
+    "source": null
+  },
+  {
+    "title": "代码清单31-8：Vercel 部署配置 vercel.json SPA 重写规则",
+    "lang": "json",
+    "chapter_file": "chapter-031.md",
+    "line": 223,
+    "extracted_file": "src\\代码清单31-8：Vercel 部署配置 vercel.json SPA 重写规则.json",
+    "source": null
+  },
+  {
+    "title": "代码清单31-9：安装 rollup-plugin-visualizer",
+    "lang": "bash",
+    "chapter_file": "chapter-031.md",
+    "line": 269,
+    "extracted_file": "src\\代码清单31-9：安装 rollup-plugin-visualizer.sh",
+    "source": null
+  },
+  {
+    "title": "代码清单31-10：vite.config.ts 接入产物可视化分析",
+    "lang": "typescript",
+    "chapter_file": "chapter-031.md",
+    "line": 275,
+    "extracted_file": "src\\代码清单31-10：vite.config.ts 接入产物可视化分析.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单31-11：执行构建命令",
+    "lang": "bash",
+    "chapter_file": "chapter-031.md",
+    "line": 307,
+    "extracted_file": "src\\代码清单31-11：执行构建命令.sh",
+    "source": null
+  },
+  {
+    "title": "代码清单31-12：.env（全局兜底，所有模式都加载）",
+    "lang": "ini",
+    "chapter_file": "chapter-031.md",
+    "line": 323,
+    "extracted_file": "src\\代码清单31-12：.env（全局兜底，所有模式都加载）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单31-13：.env.development（仅 dev 模式加载）",
+    "lang": "ini",
+    "chapter_file": "chapter-031.md",
+    "line": 328,
+    "extracted_file": "src\\代码清单31-13：.env.development（仅 dev 模式加载）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单31-14：.env.production（仅 build 模式加载）",
+    "lang": "ini",
+    "chapter_file": "chapter-031.md",
+    "line": 334,
+    "extracted_file": "src\\代码清单31-14：.env.production（仅 build 模式加载）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单31-15：src/main.ts 验证环境变量读取",
+    "lang": "typescript",
+    "chapter_file": "chapter-031.md",
+    "line": 342,
+    "extracted_file": "src\\代码清单31-15：src_main.ts 验证环境变量读取.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单31-16：分别跑 dev 与 build 验证环境变量",
+    "lang": "bash",
+    "chapter_file": "chapter-031.md",
+    "line": 356,
+    "extracted_file": "src\\代码清单31-16：分别跑 dev 与 build 验证环境变量.sh",
+    "source": null
+  },
+  {
+    "title": "代码清单31-17：把本地项目推送到 GitHub",
+    "lang": "bash",
+    "chapter_file": "chapter-031.md",
+    "line": 374,
+    "extracted_file": "src\\代码清单31-17：把本地项目推送到 GitHub.sh",
+    "source": null
+  },
+  {
+    "title": "代码清单31-18：vercel.json SPA fallback + assets 长缓存",
+    "lang": "json",
+    "chapter_file": "chapter-031.md",
+    "line": 386,
+    "extracted_file": "src\\代码清单31-18：vercel.json SPA fallback + assets 长缓存.json",
+    "source": null
+  },
+  {
+    "title": "代码清单31-19：用 Vercel CLI 本地预演部署",
+    "lang": "bash",
+    "chapter_file": "chapter-031.md",
+    "line": 409,
+    "extracted_file": "src\\代码清单31-19：用 Vercel CLI 本地预演部署.sh",
+    "source": null
+  },
+  {
+    "title": "代码清单32-1：vite.config.ts 的 server.proxy 开发环境跨域代理",
+    "lang": "typescript",
+    "chapter_file": "chapter-032.md",
+    "line": 31,
+    "extracted_file": "src\\代码清单32-1：vite.config.ts 的 server.proxy 开发环境跨域代理.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单32-2：生产环境 Nginx 反向代理 /api + SPA fallback",
+    "lang": "nginx",
+    "chapter_file": "chapter-032.md",
+    "line": 101,
+    "extracted_file": "src\\代码清单32-2：生产环境 Nginx 反向代理 _api + SPA fallback.conf",
+    "source": null
+  },
+  {
+    "title": "代码清单32-3：useUserStore（Pinia setup store）管理登录态",
+    "lang": "typescript",
+    "chapter_file": "chapter-032.md",
+    "line": 150,
+    "extracted_file": "src\\代码清单32-3：useUserStore（Pinia setup store）管理登录态.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单32-4：axios 实例 + 请求/响应拦截器与 useHttp Composable",
+    "lang": "typescript",
+    "chapter_file": "chapter-032.md",
+    "line": 246,
+    "extracted_file": "src\\代码清单32-4：axios 实例 + 请求_响应拦截器与 useHttp Composable.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单32-5：src/composables/useHttp.ts",
+    "lang": "typescript",
+    "chapter_file": "chapter-032.md",
+    "line": 325,
+    "extracted_file": "src\\代码清单32-5：src_composables_useHttp.ts.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单32-6：登录页组件 LoginView.vue",
+    "lang": "vue",
+    "chapter_file": "chapter-032.md",
+    "line": 358,
+    "extracted_file": "src\\代码清单32-6：登录页组件 LoginView.vue.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单32-7：fetch 版本包装函数（对照说明）",
+    "lang": "typescript",
+    "chapter_file": "chapter-032.md",
+    "line": 502,
+    "extracted_file": "src\\代码清单32-7：fetch 版本包装函数（对照说明）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单32-8：为真实后端配置开发代理",
+    "lang": "typescript",
+    "chapter_file": "chapter-032.md",
+    "line": 602,
+    "extracted_file": "src\\代码清单32-8：为真实后端配置开发代理.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单32-9：用 MSW handlers 固化接口契约",
+    "lang": "typescript",
+    "chapter_file": "chapter-032.md",
+    "line": 622,
+    "extracted_file": "src\\代码清单32-9：用 MSW handlers 固化接口契约.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单33-1: 入口迁移前（Vue 2 main.js 全局构造函数 + Vuex）",
+    "lang": "javascript",
+    "chapter_file": "chapter-033.md",
+    "line": 97,
+    "extracted_file": "src\\代码清单33-1_ 入口迁移前（Vue 2 main.js 全局构造函数 + Vuex）.js",
+    "source": null
+  },
+  {
+    "title": "代码清单33-2: 入口迁移后（Vue 3.5 main.ts 应用实例 + Pinia）",
+    "lang": "typescript",
+    "chapter_file": "chapter-033.md",
+    "line": 116,
+    "extracted_file": "src\\代码清单33-2_ 入口迁移后（Vue 3.5 main.ts 应用实例 + Pinia）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单33-3: filter 迁移前（Vue 2 用 filter 格式化货币）",
+    "lang": "vue",
+    "chapter_file": "chapter-033.md",
+    "line": 146,
+    "extracted_file": "src\\代码清单33-3_ filter 迁移前（Vue 2 用 filter 格式化货币）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单33-4: filter 迁移后（Vue 3.5 改 computed 缓存派生值）",
+    "lang": "vue",
+    "chapter_file": "chapter-033.md",
+    "line": 173,
+    "extracted_file": "src\\代码清单33-4_ filter 迁移后（Vue 3.5 改 computed 缓存派生值）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单33-5: 事件总线迁移前（Vue 2 用 new Vue() 当总线）",
+    "lang": "typescript",
+    "chapter_file": "chapter-033.md",
+    "line": 210,
+    "extracted_file": "src\\代码清单33-5_ 事件总线迁移前（Vue 2 用 new Vue() 当总线）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单33-6: 事件总线迁移后（Vue 3.5 mitt 库 + 类型化 emitter）",
+    "lang": "typescript",
+    "chapter_file": "chapter-033.md",
+    "line": 222,
+    "extracted_file": "src\\代码清单33-6_ 事件总线迁移后（Vue 3.5 mitt 库 + 类型化 emitter）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单33-7: 接收端组件（onMounted 注册、onUnmounted 注销）",
+    "lang": "vue",
+    "chapter_file": "chapter-033.md",
+    "line": 238,
+    "extracted_file": "src\\代码清单33-7_ 接收端组件（onMounted 注册、onUnmounted 注销）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单33-8: 共享状态场景应用 Pinia 而非 mitt（对照）",
+    "lang": "vue",
+    "chapter_file": "chapter-033.md",
+    "line": 267,
+    "extracted_file": "src\\代码清单33-8_ 共享状态场景应用 Pinia 而非 mitt（对照）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单33-9: Mixin 迁移前（Vue 2 userMixin.js）",
+    "lang": "javascript",
+    "chapter_file": "chapter-033.md",
+    "line": 292,
+    "extracted_file": "src\\代码清单33-9_ Mixin 迁移前（Vue 2 userMixin.js）.js",
+    "source": null
+  },
+  {
+    "title": "代码清单33-10: Mixin 迁移后（Vue 3.5 useUser Composable）",
+    "lang": "typescript",
+    "chapter_file": "chapter-033.md",
+    "line": 322,
+    "extracted_file": "src\\代码清单33-10_ Mixin 迁移后（Vue 3.5 useUser Composable）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单33-11: 组件中调用 useUser（显式来源、精确类型）",
+    "lang": "vue",
+    "chapter_file": "chapter-033.md",
+    "line": 374,
+    "extracted_file": "src\\代码清单33-11_ 组件中调用 useUser（显式来源、精确类型）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单33-12: Vue.set / $delete 迁移前（Vue 2 显式通知）",
+    "lang": "javascript",
+    "chapter_file": "chapter-033.md",
+    "line": 403,
+    "extracted_file": "src\\代码清单33-12_ Vue.set _ $delete 迁移前（Vue 2 显式通知）.js",
+    "source": null
+  },
+  {
+    "title": "代码清单33-13: Vue.set / $delete 迁移后（Vue 3.5 Proxy 直接赋值）",
+    "lang": "vue",
+    "chapter_file": "chapter-033.md",
+    "line": 424,
+    "extracted_file": "src\\代码清单33-13_ Vue.set _ $delete 迁移后（Vue 3.5 Proxy 直接赋值）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单33-14: 初始化迁移目标项目（create-vue 脚手架）",
+    "lang": "bash",
+    "chapter_file": "chapter-033.md",
+    "line": 476,
+    "extracted_file": "src\\代码清单33-14_ 初始化迁移目标项目（create-vue 脚手架）.sh",
+    "source": null
+  },
+  {
+    "title": "代码清单33-15: 迁移前的 Vuex 3 store（mutations + actions 分离）",
+    "lang": "javascript",
+    "chapter_file": "chapter-033.md",
+    "line": 491,
+    "extracted_file": "src\\代码清单33-15_ 迁移前的 Vuex 3 store（mutations + actions 分离）.js",
+    "source": null
+  },
+  {
+    "title": "代码清单33-16: 迁移后的 Pinia store（setup 风格 + actions 合并）",
+    "lang": "typescript",
+    "chapter_file": "chapter-033.md",
+    "line": 524,
+    "extracted_file": "src\\代码清单33-16_ 迁移后的 Pinia store（setup 风格 + actions 合并）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单33-17: 迁移前的 Vue 2 计数器组件（Options API + this.$store）",
+    "lang": "vue",
+    "chapter_file": "chapter-033.md",
+    "line": 560,
+    "extracted_file": "src\\代码清单33-17_ 迁移前的 Vue 2 计数器组件（Options API + this.$store）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单33-18: 迁移后的 Vue 3.5 计数器组件（script setup + storeToRefs）",
+    "lang": "vue",
+    "chapter_file": "chapter-033.md",
+    "line": 581,
+    "extracted_file": "src\\代码清单33-18_ 迁移后的 Vue 3.5 计数器组件（script setup + storeToRefs）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单33-19: 迁移前的 Vue Router 3 配置（new VueRouter + mode: 'history'）",
+    "lang": "javascript",
+    "chapter_file": "chapter-033.md",
+    "line": 622,
+    "extracted_file": "src\\代码清单33-19_ 迁移前的 Vue Router 3 配置（new VueRouter + mode_ 'history'）.js",
+    "source": null
+  },
+  {
+    "title": "代码清单33-20: 迁移后的 Vue Router 4 配置（createRouter + createWebHistory）",
+    "lang": "typescript",
+    "chapter_file": "chapter-033.md",
+    "line": 643,
+    "extracted_file": "src\\代码清单33-20_ 迁移后的 Vue Router 4 配置（createRouter + createWebHistory）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单33-21: 迁移后的路由守卫（return 写法取代 next 回调）",
+    "lang": "typescript",
+    "chapter_file": "chapter-033.md",
+    "line": 668,
+    "extracted_file": "src\\代码清单33-21_ 迁移后的路由守卫（return 写法取代 next 回调）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单33-22: 迁移前的 Vue.prototype 全局挂载（main.js）",
+    "lang": "javascript",
+    "chapter_file": "chapter-033.md",
+    "line": 697,
+    "extracted_file": "src\\代码清单33-22_ 迁移前的 Vue.prototype 全局挂载（main.js）.js",
+    "source": null
+  },
+  {
+    "title": "代码清单33-23: 迁移后的 axios 工具模块（显式导入替代全局挂载）",
+    "lang": "typescript",
+    "chapter_file": "chapter-033.md",
+    "line": 712,
+    "extracted_file": "src\\代码清单33-23_ 迁移后的 axios 工具模块（显式导入替代全局挂载）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单33-24: filter 迁移后的 Vue 3 组件（computed 缓存派生值）",
+    "lang": "vue",
+    "chapter_file": "chapter-033.md",
+    "line": 737,
+    "extracted_file": "src\\代码清单33-24_ filter 迁移后的 Vue 3 组件（computed 缓存派生值）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单33-25: 过渡期用 globalProperties 替代 Vue.prototype（main.ts）",
+    "lang": "typescript",
+    "chapter_file": "chapter-033.md",
+    "line": 764,
+    "extracted_file": "src\\代码清单33-25_ 过渡期用 globalProperties 替代 Vue.prototype（main.ts）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单33-26: 迁移收尾的全局检索清单（grep 命令）",
+    "lang": "bash",
+    "chapter_file": "chapter-033.md",
+    "line": 786,
+    "extracted_file": "src\\代码清单33-26_ 迁移收尾的全局检索清单（grep 命令）.sh",
+    "source": null
+  },
+  {
+    "title": "代码清单34-1: 用 create-vue 初始化 lab-management-system-vue 项目",
+    "lang": "bash",
+    "chapter_file": "chapter-034.md",
+    "line": 123,
+    "extracted_file": "src\\代码清单34-1_ 用 create-vue 初始化 lab-management-system-vue 项目.sh",
+    "source": null
+  },
+  {
+    "title": "代码清单34-2: router/index.ts 五分组路由 + import.meta.glob 懒加载",
+    "lang": "typescript",
+    "chapter_file": "chapter-034.md",
+    "line": 243,
+    "extracted_file": "src\\代码清单34-2_ router_index.ts 五分组路由 + import.meta.glob 懒加载.ts",
+    "source": "code/cases/lab-management-system-vue/src/router/index.ts"
+  },
+  {
+    "title": "代码清单34-3: AppSidebar.vue 五分组可折叠侧边栏",
+    "lang": "vue",
+    "chapter_file": "chapter-034.md",
+    "line": 556,
+    "extracted_file": "src\\代码清单34-3_ AppSidebar.vue 五分组可折叠侧边栏.txt",
+    "source": "code/cases/lab-management-system-vue/src/components/AppSidebar.vue"
+  },
+  {
+    "title": "代码清单34-4: layouts/MainLayout.vue 主布局组件（Tailwind + RouterLink + 嵌套出口）",
+    "lang": "vue",
+    "chapter_file": "chapter-034.md",
+    "line": 761,
+    "extracted_file": "src\\代码清单34-4_ layouts_MainLayout.vue 主布局组件（Tailwind + RouterLink + 嵌套出口）.txt",
+    "source": "code/cases/lab-management-system-vue/src/layouts/MainLayout.vue"
+  },
+  {
+    "title": "代码清单34-5: stores/auth.ts 登录态 setup store",
+    "lang": "typescript",
+    "chapter_file": "chapter-034.md",
+    "line": 795,
+    "extracted_file": "src\\代码清单34-5_ stores_auth.ts 登录态 setup store.ts",
+    "source": "code/cases/lab-management-system-vue/src/stores/auth.ts"
+  },
+  {
+    "title": "代码清单34-6: stores/inspection.ts 检测项目 setup store",
+    "lang": "typescript",
+    "chapter_file": "chapter-034.md",
+    "line": 926,
+    "extracted_file": "src\\代码清单34-6_ stores_inspection.ts 检测项目 setup store.ts",
+    "source": "code/cases/lab-management-system-vue/src/stores/inspection.ts"
+  },
+  {
+    "title": "代码清单34-7: stores/workflow.ts 工作流 setup store",
+    "lang": "typescript",
+    "chapter_file": "chapter-034.md",
+    "line": 981,
+    "extracted_file": "src\\代码清单34-7_ stores_workflow.ts 工作流 setup store.ts",
+    "source": "code/cases/lab-management-system-vue/src/stores/workflow.ts"
+  },
+  {
+    "title": "代码清单34-8: types/api.ts 业务实体契约（与 React 姊妹仓共享）",
+    "lang": "typescript",
+    "chapter_file": "chapter-034.md",
+    "line": 1099,
+    "extracted_file": "src\\代码清单34-8_ types_api.ts 业务实体契约（与 React 姊妹仓共享）.ts",
+    "source": "code/cases/lab-management-system-vue/src/types/api.ts"
+  },
+  {
+    "title": "代码清单35-1: stores/auth.ts 登录态与权限的完整 setup store",
+    "lang": "typescript",
+    "chapter_file": "chapter-035.md",
+    "line": 73,
+    "extracted_file": "src\\代码清单35-1_ stores_auth.ts 登录态与权限的完整 setup store.ts",
+    "source": "code/cases/lab-management-system-vue/src/stores/auth.ts"
+  },
+  {
+    "title": "代码清单35-2: composables/useAuth.ts 封装 auth store 的登录态操作",
+    "lang": "typescript",
+    "chapter_file": "chapter-035.md",
+    "line": 218,
+    "extracted_file": "src\\代码清单35-2_ composables_useAuth.ts 封装 auth store 的登录态操作.ts",
+    "source": "code/cases/lab-management-system-vue/src/composables/useAuth.ts"
+  },
+  {
+    "title": "代码清单35-3: api/client.ts axios 实例 + JWT 注入 + 401 回调",
+    "lang": "typescript",
+    "chapter_file": "chapter-035.md",
+    "line": 280,
+    "extracted_file": "src\\代码清单35-3_ api_client.ts axios 实例 + JWT 注入 + 401 回调.ts",
+    "source": "code/cases/lab-management-system-vue/src/api/client.ts"
+  },
+  {
+    "title": "代码清单35-4: main.ts 装配 401 回调到 auth store",
+    "lang": "typescript",
+    "chapter_file": "chapter-035.md",
+    "line": 341,
+    "extracted_file": "src\\代码清单35-4_ main.ts 装配 401 回调到 auth store.ts",
+    "source": "code/cases/lab-management-system-vue/src/main.ts"
+  },
+  {
+    "title": "代码清单35-5: router/index.ts 的 applyAuthGuard 三步校验（完整路由表见代码清单34-2）",
+    "lang": "typescript",
+    "chapter_file": "chapter-035.md",
+    "line": 360,
+    "extracted_file": "src\\代码清单35-5_ router_index.ts 的 applyAuthGuard 三步校验（完整路由表见代码清单34-2）.ts",
+    "source": "code/cases/lab-management-system-vue/src/router/index.ts"
+  },
+  {
+    "title": "代码清单35-6: directives/permission.ts 基于 hasAnyPermission 的自定义指令",
+    "lang": "typescript",
+    "chapter_file": "chapter-035.md",
+    "line": 403,
+    "extracted_file": "src\\代码清单35-6_ directives_permission.ts 基于 hasAnyPermission 的自定义指令.ts",
+    "source": "code/cases/lab-management-system-vue/src/directives/permission.ts"
+  },
+  {
+    "title": "代码清单35-7: views/Login.vue 登录页（Tailwind 卡片 + useAuth + redirect 回跳）",
+    "lang": "vue",
+    "chapter_file": "chapter-035.md",
+    "line": 474,
+    "extracted_file": "src\\代码清单35-7_ views_Login.vue 登录页（Tailwind 卡片 + useAuth + redirect 回跳）.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/Login.vue"
+  },
+  {
+    "title": "代码清单35-8: msw/jwt.ts Mock JWT 颁发与校验（base64url + 固定 signature）",
+    "lang": "typescript",
+    "chapter_file": "chapter-035.md",
+    "line": 570,
+    "extracted_file": "src\\代码清单35-8_ msw_jwt.ts Mock JWT 颁发与校验（base64url + 固定 signature）.ts",
+    "source": "code/cases/lab-management-system-vue/msw/jwt.ts"
+  },
+  {
+    "title": "代码清单35-9: msw/handlers.ts 的 /auth/login + /auth/me handler（完整文件含全部 CRUD handler）",
+    "lang": "typescript",
+    "chapter_file": "chapter-035.md",
+    "line": 648,
+    "extracted_file": "src\\代码清单35-9_ msw_handlers.ts 的 _auth_login + _auth_me handler（完整文件含全部 CRUD handler）.ts",
+    "source": "code/cases/lab-management-system-vue/msw/handlers.ts"
+  },
+  {
+    "title": "代码清单36-1: 列表查询状态 useTable",
+    "lang": "typescript",
+    "chapter_file": "chapter-036.md",
+    "line": 101,
+    "extracted_file": "src\\代码清单36-1_ 列表查询状态 useTable.ts",
+    "source": "code/cases/lab-management-system-vue/src/composables/useTable.ts"
+  },
+  {
+    "title": "代码清单36-2: REST 资源封装 useResource",
+    "lang": "typescript",
+    "chapter_file": "chapter-036.md",
+    "line": 148,
+    "extracted_file": "src\\代码清单36-2_ REST 资源封装 useResource.ts",
+    "source": "code/cases/lab-management-system-vue/src/composables/useResource.ts"
+  },
+  {
+    "title": "代码清单36-3: 报告类别查询 useCategories",
+    "lang": "typescript",
+    "chapter_file": "chapter-036.md",
+    "line": 213,
+    "extracted_file": "src\\代码清单36-3_ 报告类别查询 useCategories.ts",
+    "source": "code/cases/lab-management-system-vue/src/composables/useCategories.ts"
+  },
+  {
+    "title": "代码清单36-4: 合同管理列表 ProjectList",
+    "lang": "vue",
+    "chapter_file": "chapter-036.md",
+    "line": 254,
+    "extracted_file": "src\\代码清单36-4_ 合同管理列表 ProjectList.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/inspection/ProjectList.vue"
+  },
+  {
+    "title": "代码清单36-5: 接样管理列表 ReceiptList",
+    "lang": "vue",
+    "chapter_file": "chapter-036.md",
+    "line": 359,
+    "extracted_file": "src\\代码清单36-5_ 接样管理列表 ReceiptList.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/receipts/ReceiptList.vue"
+  },
+  {
+    "title": "代码清单36-6: 数据录入页 DataEntryPage",
+    "lang": "vue",
+    "chapter_file": "chapter-036.md",
+    "line": 473,
+    "extracted_file": "src\\代码清单36-6_ 数据录入页 DataEntryPage.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/data-entry/DataEntryPage.vue"
+  },
+  {
+    "title": "代码清单36-7: 任务安排页 TaskAssignmentPage",
+    "lang": "vue",
+    "chapter_file": "chapter-036.md",
+    "line": 536,
+    "extracted_file": "src\\代码清单36-7_ 任务安排页 TaskAssignmentPage.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/task-assignment/TaskAssignmentPage.vue"
+  },
+  {
+    "title": "代码清单36-8: 用户管理 UsersList",
+    "lang": "vue",
+    "chapter_file": "chapter-036.md",
+    "line": 632,
+    "extracted_file": "src\\代码清单36-8_ 用户管理 UsersList.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/settings/UsersList.vue"
+  },
+  {
+    "title": "代码清单37-1: types/api.ts FlowStage 八阶段 + completed 终态",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 23,
+    "extracted_file": "src\\代码清单37-1_ types_api.ts FlowStage 八阶段 + completed 终态.ts",
+    "source": "code/cases/lab-management-system-vue/src/types/api.ts"
+  },
+  {
+    "title": "代码清单37-2: stores/workflow.ts 流程状态机 setup store",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 57,
+    "extracted_file": "src\\代码清单37-2_ stores_workflow.ts 流程状态机 setup store.ts",
+    "source": "code/cases/lab-management-system-vue/src/stores/workflow.ts"
+  },
+  {
+    "title": "代码清单37-3: FlowStagePage props 与提交/退回计算",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 144,
+    "extracted_file": "src\\代码清单37-3_ FlowStagePage props 与提交_退回计算.ts",
+    "source": "code/cases/lab-management-system-vue/src/components/FlowStagePage.vue"
+  },
+  {
+    "title": "代码清单37-4: FlowStagePage 数据加载 + 三态过滤",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 176,
+    "extracted_file": "src\\代码清单37-4_ FlowStagePage 数据加载 + 三态过滤.ts",
+    "source": "code/cases/lab-management-system-vue/src/components/FlowStagePage.vue"
+  },
+  {
+    "title": "代码清单37-5: FlowStagePage 跨阶段复用时重置本地状态",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 211,
+    "extracted_file": "src\\代码清单37-5_ FlowStagePage 跨阶段复用时重置本地状态.ts",
+    "source": "code/cases/lab-management-system-vue/src/components/FlowStagePage.vue"
+  },
+  {
+    "title": "代码清单37-6: FlowStagePage 批量提交/退回/撤回走 receipt.flowAction",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 230,
+    "extracted_file": "src\\代码清单37-6_ FlowStagePage 批量提交_退回_撤回走 receipt.flowAction.ts",
+    "source": "code/cases/lab-management-system-vue/src/components/FlowStagePage.vue"
+  },
+  {
+    "title": "代码清单37-7: ReportReview.vue 报告审核阶段壳",
+    "lang": "vue",
+    "chapter_file": "chapter-037.md",
+    "line": 250,
+    "extracted_file": "src\\代码清单37-7_ ReportReview.vue 报告审核阶段壳.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/reports/ReportReview.vue"
+  },
+  {
+    "title": "代码清单37-8: useCategories composable + categoryName 纯函数",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 297,
+    "extracted_file": "src\\代码清单37-8_ useCategories composable + categoryName 纯函数.ts",
+    "source": "code/cases/lab-management-system-vue/src/composables/useCategories.ts"
+  },
+  {
+    "title": "代码清单37-9: renderReport.ts 模板标签替换 + 特殊表渲染",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 328,
+    "extracted_file": "src\\代码清单37-9_ renderReport.ts 模板标签替换 + 特殊表渲染.ts",
+    "source": "code/cases/lab-management-system-vue/src/components/renderReport.ts"
+  },
+  {
+    "title": "代码清单37-10: ReportPreviewModal 三路并行渲染",
+    "lang": "vue",
+    "chapter_file": "chapter-037.md",
+    "line": 364,
+    "extracted_file": "src\\代码清单37-10_ ReportPreviewModal 三路并行渲染.txt",
+    "source": "code/cases/lab-management-system-vue/src/components/ReportPreviewModal.vue"
+  },
+  {
+    "title": "代码清单37-11: ConfirmModal 二次确认弹窗 props",
+    "lang": "vue",
+    "chapter_file": "chapter-037.md",
+    "line": 411,
+    "extracted_file": "src\\代码清单37-11_ ConfirmModal 二次确认弹窗 props.txt",
+    "source": "code/cases/lab-management-system-vue/src/components/ConfirmModal.vue"
+  },
+  {
+    "title": "代码清单37-12: ConfirmModal 在业务页的标准用法",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 424,
+    "extracted_file": "src\\代码清单37-12_ ConfirmModal 在业务页的标准用法.ts",
+    "source": "code/cases/lab-management-system-vue/src/views/receipts/ReceiptList.vue"
+  },
+  {
+    "title": "代码清单37-13: ConfirmModal 接入删除接样单",
+    "lang": "vue",
+    "chapter_file": "chapter-037.md",
+    "line": 433,
+    "extracted_file": "src\\代码清单37-13_ ConfirmModal 接入删除接样单.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/receipts/ReceiptList.vue"
+  },
+  {
+    "title": "代码清单37-14: useReportStore v1 三态工作流",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 453,
+    "extracted_file": "src\\代码清单37-14_ useReportStore v1 三态工作流.ts",
+    "source": "code/cases/lab-management-system-vue/src/stores/report.ts"
+  },
+  {
+    "title": "代码清单37-15: ReportList v1 三态行内按钮",
+    "lang": "vue",
+    "chapter_file": "chapter-037.md",
+    "line": 474,
+    "extracted_file": "src\\代码清单37-15_ ReportList v1 三态行内按钮.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/reports/ReportList.vue"
+  },
+  {
+    "title": "代码清单37-16: ReportWorkflowList v2 五态行内按钮 + 工作流动作",
+    "lang": "vue",
+    "chapter_file": "chapter-037.md",
+    "line": 488,
+    "extracted_file": "src\\代码清单37-16_ ReportWorkflowList v2 五态行内按钮 + 工作流动作.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/reports/ReportWorkflowList.vue"
+  },
+  {
+    "title": "代码清单37-17: ReportWorkflowFormModal 三级联动",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 519,
+    "extracted_file": "src\\代码清单37-17_ ReportWorkflowFormModal 三级联动.ts",
+    "source": "code/cases/lab-management-system-vue/src/views/reports/ReportWorkflowFormModal.vue"
+  },
+  {
+    "title": "代码清单37-18: useAuditStore fetchLogs + exportLogs",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 554,
+    "extracted_file": "src\\代码清单37-18_ useAuditStore fetchLogs + exportLogs.ts",
+    "source": "code/cases/lab-management-system-vue/src/stores/audit.ts"
+  },
+  {
+    "title": "代码清单37-19: AuditLogList 视图分四段",
+    "lang": "vue",
+    "chapter_file": "chapter-037.md",
+    "line": 589,
+    "extracted_file": "src\\代码清单37-19_ AuditLogList 视图分四段.txt",
+    "source": "code/cases/lab-management-system-vue/src/views/audit/AuditLogList.vue"
+  },
+  {
+    "title": "代码清单37-20: auditQuery 派生 computed",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 610,
+    "extracted_file": "src\\代码清单37-20_ auditQuery 派生 computed.ts",
+    "source": "code/cases/lab-management-system-vue/src/views/audit/AuditLogList.vue"
+  },
+  {
+    "title": "代码清单37-21: /audit-logs MSW handler",
+    "lang": "typescript",
+    "chapter_file": "chapter-037.md",
+    "line": 624,
+    "extracted_file": "src\\代码清单37-21_ _audit-logs MSW handler.ts",
+    "source": "code/cases/lab-management-system-vue/msw/handlers.ts"
+  },
+  {
+    "title": "代码清单38-1: Vitest 测试环境与覆盖率门槛",
+    "lang": "typescript",
+    "chapter_file": "chapter-038.md",
+    "line": 26,
+    "extracted_file": "src\\代码清单38-1_ Vitest 测试环境与覆盖率门槛.ts",
+    "source": "code/cases/lab-management-system-vue/vitest.config.ts"
+  },
+  {
+    "title": "代码清单38-2: receipt store 的流程动作测试",
+    "lang": "typescript",
+    "chapter_file": "chapter-038.md",
+    "line": 56,
+    "extracted_file": "src\\代码清单38-2_ receipt store 的流程动作测试.ts",
+    "source": "code/cases/lab-management-system-vue/tests/stores/receipt.store.spec.ts"
+  },
+  {
+    "title": "代码清单38-3: DataEntryPage 的挂载与弹窗断言",
+    "lang": "typescript",
+    "chapter_file": "chapter-038.md",
+    "line": 87,
+    "extracted_file": "src\\代码清单38-3_ DataEntryPage 的挂载与弹窗断言.ts",
+    "source": "code/cases/lab-management-system-vue/tests/views/DataEntryPage.spec.ts"
+  },
+  {
+    "title": "代码清单38-4: 接样单提交后的状态前进断言",
+    "lang": "typescript",
+    "chapter_file": "chapter-038.md",
+    "line": 122,
+    "extracted_file": "src\\代码清单38-4_ 接样单提交后的状态前进断言.ts",
+    "source": "code/cases/lab-management-system-vue/tests/integration/receiptFlow.integration.spec.ts"
+  },
+  {
+    "title": "代码清单38-5: 两阶段构建并交给 Nginx 服务",
+    "lang": "dockerfile",
+    "chapter_file": "chapter-038.md",
+    "line": 162,
+    "extracted_file": "src\\代码清单38-5_ 两阶段构建并交给 Nginx 服务.dockerfile",
+    "source": "code/cases/lab-management-system-vue/Dockerfile"
+  },
+  {
+    "title": "代码清单38-6: GitHub Actions 测试与构建流水线",
+    "lang": "yaml",
+    "chapter_file": "chapter-038.md",
+    "line": 185,
+    "extracted_file": "src\\代码清单38-6_ GitHub Actions 测试与构建流水线.yml",
+    "source": "code/cases/lab-management-system-vue/.github/workflows/ci.yml"
+  },
+  {
+    "title": "代码清单39-1: types/tenant.ts SaaS 多租户类型契约",
+    "lang": "typescript",
+    "chapter_file": "chapter-039.md",
+    "line": 45,
+    "extracted_file": "src\\代码清单39-1_ types_tenant.ts SaaS 多租户类型契约.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/types/tenant.ts"
+  },
+  {
+    "title": "代码清单39-2: stores/tenant.ts 租户上下文单一事实来源（节选）",
+    "lang": "typescript",
+    "chapter_file": "chapter-039.md",
+    "line": 99,
+    "extracted_file": "src\\代码清单39-2_ stores_tenant.ts 租户上下文单一事实来源（节选）.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/stores/tenant.ts"
+  },
+  {
+    "title": "代码清单39-3: api/client.ts 拦截器统一注入 X-Tenant-ID",
+    "lang": "typescript",
+    "chapter_file": "chapter-039.md",
+    "line": 189,
+    "extracted_file": "src\\代码清单39-3_ api_client.ts 拦截器统一注入 X-Tenant-ID.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/api/client.ts"
+  },
+  {
+    "title": "代码清单39-4: router/dynamicRoutes.ts 按功能模块动态注册路由",
+    "lang": "typescript",
+    "chapter_file": "chapter-039.md",
+    "line": 260,
+    "extracted_file": "src\\代码清单39-4_ router_dynamicRoutes.ts 按功能模块动态注册路由.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/router/dynamicRoutes.ts"
+  },
+  {
+    "title": "代码清单39-5: router/index.ts 多租户守卫链路（节选）",
+    "lang": "typescript",
+    "chapter_file": "chapter-039.md",
+    "line": 315,
+    "extracted_file": "src\\代码清单39-5_ router_index.ts 多租户守卫链路（节选）.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/router/index.ts"
+  },
+  {
+    "title": "代码清单39-6: composables/useTheme.ts CSS 变量加 provide/inject 主题",
+    "lang": "typescript",
+    "chapter_file": "chapter-039.md",
+    "line": 423,
+    "extracted_file": "src\\代码清单39-6_ composables_useTheme.ts CSS 变量加 provide_inject 主题.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/composables/useTheme.ts"
+  },
+  {
+    "title": "代码清单39-7: views/tenant/TenantLayout.vue 租户布局入口",
+    "lang": "vue",
+    "chapter_file": "chapter-039.md",
+    "line": 477,
+    "extracted_file": "src\\代码清单39-7_ views_tenant_TenantLayout.vue 租户布局入口.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/views/tenant/TenantLayout.vue"
+  },
+  {
+    "title": "代码清单39-8: components/AppSidebar.vue 多租户侧边栏分组（节选）",
+    "lang": "vue",
+    "chapter_file": "chapter-039.md",
+    "line": 541,
+    "extracted_file": "src\\代码清单39-8_ components_AppSidebar.vue 多租户侧边栏分组（节选）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/components/AppSidebar.vue"
+  },
+  {
+    "title": "代码清单39-9: mocks/handlers.ts 租户相关 handler（节选）",
+    "lang": "typescript",
+    "chapter_file": "chapter-039.md",
+    "line": 639,
+    "extracted_file": "src\\代码清单39-9_ mocks_handlers.ts 租户相关 handler（节选）.ts",
+    "source": "code/cases/saas-identity-platform-vue/mocks/handlers.ts"
+  },
+  {
+    "title": "代码清单39-10: 按 tenantId 分片业务状态的简化示意（非仓库实现）",
+    "lang": "typescript",
+    "chapter_file": "chapter-039.md",
+    "line": 721,
+    "extracted_file": "src\\代码清单39-10_ 按 tenantId 分片业务状态的简化示意（非仓库实现）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单40-1: types/rbac.ts 角色权限矩阵与 RBAC 类型",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 42,
+    "extracted_file": "src\\代码清单40-1_ types_rbac.ts 角色权限矩阵与 RBAC 类型.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/types/rbac.ts"
+  },
+  {
+    "title": "代码清单40-2: api/client.ts 共享 axios 实例与 token/租户头注入",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 109,
+    "extracted_file": "src\\代码清单40-2_ api_client.ts 共享 axios 实例与 token_租户头注入.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/api/client.ts"
+  },
+  {
+    "title": "代码清单40-3: stores/auth.ts 支持组织联动刷新的认证 store",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 158,
+    "extracted_file": "src\\代码清单40-3_ stores_auth.ts 支持组织联动刷新的认证 store.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/stores/auth.ts"
+  },
+  {
+    "title": "代码清单40-4: composables/useSso.ts SSO 跳转与回调 exchange",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 260,
+    "extracted_file": "src\\代码清单40-4_ composables_useSso.ts SSO 跳转与回调 exchange.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/composables/useSso.ts"
+  },
+  {
+    "title": "代码清单40-5: composables/useOAuth.ts OAuth2.0 授权码前端流程",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 310,
+    "extracted_file": "src\\代码清单40-5_ composables_useOAuth.ts OAuth2.0 授权码前端流程.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/composables/useOAuth.ts"
+  },
+  {
+    "title": "代码清单40-6: composables/usePermission.ts 函数级权限判断",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 376,
+    "extracted_file": "src\\代码清单40-6_ composables_usePermission.ts 函数级权限判断.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/composables/usePermission.ts"
+  },
+  {
+    "title": "代码清单40-7: directives/permission.ts 按钮级权限指令",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 411,
+    "extracted_file": "src\\代码清单40-7_ directives_permission.ts 按钮级权限指令.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/directives/permission.ts"
+  },
+  {
+    "title": "代码清单40-8: router/index.ts 懒加载映射表 + 多层守卫（节选）",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 453,
+    "extracted_file": "src\\代码清单40-8_ router_index.ts 懒加载映射表 + 多层守卫（节选）.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/router/index.ts"
+  },
+  {
+    "title": "代码清单40-9: stores/rbac.ts 角色 CRUD store",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 540,
+    "extracted_file": "src\\代码清单40-9_ stores_rbac.ts 角色 CRUD store.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/stores/rbac.ts"
+  },
+  {
+    "title": "代码清单40-10: views/roles/RolesList.vue 角色列表页 script（节选）",
+    "lang": "vue",
+    "chapter_file": "chapter-040.md",
+    "line": 630,
+    "extracted_file": "src\\代码清单40-10_ views_roles_RolesList.vue 角色列表页 script（节选）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/views/roles/RolesList.vue"
+  },
+  {
+    "title": "代码清单40-11: views/roles/MenuPermissions.vue 矩阵状态与父子联动（节选）",
+    "lang": "vue",
+    "chapter_file": "chapter-040.md",
+    "line": 713,
+    "extracted_file": "src\\代码清单40-11_ views_roles_MenuPermissions.vue 矩阵状态与父子联动（节选）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/views/roles/MenuPermissions.vue"
+  },
+  {
+    "title": "代码清单40-12: types/security.ts 登录安全配置类型（节选）",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 855,
+    "extracted_file": "src\\代码清单40-12_ types_security.ts 登录安全配置类型（节选）.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/types/security.ts"
+  },
+  {
+    "title": "代码清单40-13: stores/security.ts 聚合安全配置 store（节选）",
+    "lang": "typescript",
+    "chapter_file": "chapter-040.md",
+    "line": 928,
+    "extracted_file": "src\\代码清单40-13_ stores_security.ts 聚合安全配置 store（节选）.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/stores/security.ts"
+  },
+  {
+    "title": "代码清单40-14: views/auth/ApiKeysList.vue API Key 管理（CRUD 代表）",
+    "lang": "vue",
+    "chapter_file": "chapter-040.md",
+    "line": 1011,
+    "extracted_file": "src\\代码清单40-14_ views_auth_ApiKeysList.vue API Key 管理（CRUD 代表）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/views/auth/ApiKeysList.vue"
+  },
+  {
+    "title": "代码清单40-15: OAuth 回调页组件（简化示意，非仓库文件）",
+    "lang": "vue",
+    "chapter_file": "chapter-040.md",
+    "line": 1048,
+    "extracted_file": "src\\代码清单40-15_ OAuth 回调页组件（简化示意，非仓库文件）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单40-16: 组织切换与权限展示控制台（简化示意，非仓库文件）",
+    "lang": "vue",
+    "chapter_file": "chapter-040.md",
+    "line": 1098,
+    "extracted_file": "src\\代码清单40-16_ 组织切换与权限展示控制台（简化示意，非仓库文件）.txt",
+    "source": null
+  },
+  {
+    "title": "代码清单41-1: 组织树递归节点组件",
+    "lang": "vue",
+    "chapter_file": "chapter-041.md",
+    "line": 22,
+    "extracted_file": "src\\代码清单41-1_ 组织树递归节点组件.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/components/OrgTreeNode.vue"
+  },
+  {
+    "title": "代码清单41-2: 组织管理页：树渲染 + 选中态 + 工具栏（节选）",
+    "lang": "vue",
+    "chapter_file": "chapter-041.md",
+    "line": 88,
+    "extracted_file": "src\\代码清单41-2_ 组织管理页：树渲染 + 选中态 + 工具栏（节选）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/views/OrgInfo.vue"
+  },
+  {
+    "title": "代码清单41-3: 组织树 CRUD（org store 节选）",
+    "lang": "typescript",
+    "chapter_file": "chapter-041.md",
+    "line": 241,
+    "extracted_file": "src\\代码清单41-3_ 组织树 CRUD（org store 节选）.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/stores/org.ts"
+  },
+  {
+    "title": "代码清单41-4: 组织节点表单弹窗（节选）",
+    "lang": "vue",
+    "chapter_file": "chapter-041.md",
+    "line": 294,
+    "extracted_file": "src\\代码清单41-4_ 组织节点表单弹窗（节选）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/components/OrgNodeFormModal.vue"
+  },
+  {
+    "title": "代码清单41-5: useTable 列表分页与搜索状态组合式函数",
+    "lang": "typescript",
+    "chapter_file": "chapter-041.md",
+    "line": 354,
+    "extracted_file": "src\\代码清单41-5_ useTable 列表分页与搜索状态组合式函数.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/composables/useTable.ts"
+  },
+  {
+    "title": "代码清单41-6: 用户列表页（useTable + useUserStore 组合）",
+    "lang": "vue",
+    "chapter_file": "chapter-041.md",
+    "line": 443,
+    "extracted_file": "src\\代码清单41-6_ 用户列表页（useTable + useUserStore 组合）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/views/user/UserList.vue"
+  },
+  {
+    "title": "代码清单41-7: 岗位列表（群组化 CRUD 同构样板）",
+    "lang": "vue",
+    "chapter_file": "chapter-041.md",
+    "line": 597,
+    "extracted_file": "src\\代码清单41-7_ 岗位列表（群组化 CRUD 同构样板）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/views/positions/PositionsList.vue"
+  },
+  {
+    "title": "代码清单41-8: 岗位/用户组/权限组类型契约（节选）",
+    "lang": "typescript",
+    "chapter_file": "chapter-041.md",
+    "line": 663,
+    "extracted_file": "src\\代码清单41-8_ 岗位_用户组_权限组类型契约（节选）.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/types/org.ts"
+  },
+  {
+    "title": "代码清单41-9: useVirtualList 定高虚拟滚动组合式函数",
+    "lang": "typescript",
+    "chapter_file": "chapter-041.md",
+    "line": 716,
+    "extracted_file": "src\\代码清单41-9_ useVirtualList 定高虚拟滚动组合式函数.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/composables/useVirtualList.ts"
+  },
+  {
+    "title": "代码清单41-10: 审计日志页（shallowRef + 虚拟滚动 + 分页 + action 过滤）",
+    "lang": "vue",
+    "chapter_file": "chapter-041.md",
+    "line": 778,
+    "extracted_file": "src\\代码清单41-10_ 审计日志页（shallowRef + 虚拟滚动 + 分页 + action 过滤）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/views/audit/AuditLog.vue"
+  },
+  {
+    "title": "代码清单41-11: reactive 深层代理反例与 shallowRef 替换写法（教学片段）",
+    "lang": "typescript",
+    "chapter_file": "chapter-041.md",
+    "line": 920,
+    "extracted_file": "src\\代码清单41-11_ reactive 深层代理反例与 shallowRef 替换写法（教学片段）.ts",
+    "source": null
+  },
+  {
+    "title": "代码清单42-1: deploy/nginx.conf 前端静态托管与后端反向代理",
+    "lang": "nginx",
+    "chapter_file": "chapter-042.md",
+    "line": 28,
+    "extracted_file": "src\\代码清单42-1_ deploy_nginx.conf 前端静态托管与后端反向代理.conf",
+    "source": "code/cases/saas-identity-platform-vue/deploy/nginx.conf"
+  },
+  {
+    "title": "代码清单42-2: vite.config.ts 开发环境 API 代理与构建期常量注入",
+    "lang": "typescript",
+    "chapter_file": "chapter-042.md",
+    "line": 105,
+    "extracted_file": "src\\代码清单42-2_ vite.config.ts 开发环境 API 代理与构建期常量注入.ts",
+    "source": "code/cases/saas-identity-platform-vue/vite.config.ts"
+  },
+  {
+    "title": "代码清单42-3: src/api/client.ts 生产 API 基础地址与请求拦截器",
+    "lang": "typescript",
+    "chapter_file": "chapter-042.md",
+    "line": 143,
+    "extracted_file": "src\\代码清单42-3_ src_api_client.ts 生产 API 基础地址与请求拦截器.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/api/client.ts"
+  },
+  {
+    "title": "代码清单42-4: src/main.ts 应用入口、路由预加载与全局 errorHandler 接线",
+    "lang": "typescript",
+    "chapter_file": "chapter-042.md",
+    "line": 214,
+    "extracted_file": "src\\代码清单42-4_ src_main.ts 应用入口、路由预加载与全局 errorHandler 接线.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/main.ts"
+  },
+  {
+    "title": "代码清单42-5: src/app/errorHandler.ts 全局错误捕获与上报",
+    "lang": "typescript",
+    "chapter_file": "chapter-042.md",
+    "line": 262,
+    "extracted_file": "src\\代码清单42-5_ src_app_errorHandler.ts 全局错误捕获与上报.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/app/errorHandler.ts"
+  },
+  {
+    "title": "代码清单42-6: src/router/nav.ts 平台导航单一来源",
+    "lang": "typescript",
+    "chapter_file": "chapter-042.md",
+    "line": 343,
+    "extracted_file": "src\\代码清单42-6_ src_router_nav.ts 平台导航单一来源.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/router/nav.ts"
+  },
+  {
+    "title": "代码清单42-7: src/views/platform/PlatformLayout.vue 平台布局（节选）",
+    "lang": "vue",
+    "chapter_file": "chapter-042.md",
+    "line": 362,
+    "extracted_file": "src\\代码清单42-7_ src_views_platform_PlatformLayout.vue 平台布局（节选）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/views/platform/PlatformLayout.vue"
+  },
+  {
+    "title": "代码清单42-8: src/views/platform/AppList.vue 平台应用管理 CRUD（节选）",
+    "lang": "vue",
+    "chapter_file": "chapter-042.md",
+    "line": 402,
+    "extracted_file": "src\\代码清单42-8_ src_views_platform_AppList.vue 平台应用管理 CRUD（节选）.txt",
+    "source": "code/cases/saas-identity-platform-vue/src/views/platform/AppList.vue"
+  },
+  {
+    "title": "代码清单42-9: .github/workflows/ci.yml CI 流水线骨架（lint + typecheck + test + build）",
+    "lang": "yaml",
+    "chapter_file": "chapter-042.md",
+    "line": 523,
+    "extracted_file": "src\\代码清单42-9_ .github_workflows_ci.yml CI 流水线骨架（lint + typecheck + test + build）.yml",
+    "source": null
+  },
+  {
+    "title": "代码清单42-10: src/monitoring/client-errors.ts 客户端错误捕获与 sendBeacon 上报",
+    "lang": "typescript",
+    "chapter_file": "chapter-042.md",
+    "line": 593,
+    "extracted_file": "src\\代码清单42-10_ src_monitoring_client-errors.ts 客户端错误捕获与 sendBeacon 上报.ts",
+    "source": "code/cases/saas-identity-platform-vue/src/monitoring/client-errors.ts"
+  }
+]

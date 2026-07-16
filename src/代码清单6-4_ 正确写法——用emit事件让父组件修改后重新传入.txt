@@ -1,0 +1,20 @@
+<script setup lang="ts">
+defineProps<{
+  title: string
+}>()
+
+// 声明一个 update 事件，载荷是新的标题字符串
+const emit = defineEmits<{
+  update: [nextTitle: string]
+}>()
+
+function edit() {
+  // 不直接改 prop，而是抛事件，由父组件决定是否采用新值
+  emit('update', '新标题')
+}
+</script>
+
+<template>
+  <h3>{{ title }}</h3>
+  <button type="button" @click="edit">改标题</button>
+</template>

@@ -1,0 +1,20 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import Counter from '@/components/Counter.vue'
+
+const total = ref(0) // 唯一真相源：计数值只在这里维护
+
+// 父组件定义「收到 change 事件后做什么」：用载荷的新值更新自己的状态
+function onCountChange(value: number) {
+  total.value = value
+}
+</script>
+
+<template>
+  <div>
+    <h2>计数器示例</h2>
+    <!-- 把状态传下去，把事件监听挂上 -->
+    <Counter :count="total" @change="onCountChange" />
+    <p>父组件持有的总计：{{ total }}</p>
+  </div>
+</template>

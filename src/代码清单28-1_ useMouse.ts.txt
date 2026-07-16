@@ -20,3 +20,4 @@ export function useMouse() {
 
   return { x, y }
 }
+</script>

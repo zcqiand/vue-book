@@ -1,0 +1,54 @@
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+interface OrderItem {
+  id: number
+  name: string
+  price: number
+  quantity: number
+}
+
+const cart = ref<OrderItem[]>([
+  { id: 1, name: 'Vue 实战', price: 89, quantity: 2 },
+  { id: 2, name: 'TypeScript入门', price: 59, quantity: 1 },
+])
+
+// computed 返回简单类型：直接标注类型
+const totalPrice = computed<number>(() =>
+  cart.value.reduce((sum, item) => sum + item.price * item.quantity, 0)
+)
+
+// computed 返回复杂类型：推荐用 interface
+interface Summary {
+  total: number
+  itemCount: number
+  avgPrice: number
+  highestItem: OrderItem | null
+}
+
+const orderSummary = computed<Summary>(() => {
+  const total = cart.value.reduce((s, i) => s + i.price * i.quantity, 0)
+  const itemCount = cart.value.reduce((s, i) => s + i.quantity, 0)
+  const sorted = [...cart.value].sort((a, b) => b.price - a.price)
+  return {
+    total,
+    itemCount,
+    avgPrice: itemCount > 0 ? Math.round(total / itemCount) : 0,
+    highestItem: sorted[0] ?? null,
+  }
+})
+
+// type 别名写法（与 interface 完全等价）
+type Summary2 = {
+  total: number
+  itemCount: number
+}
+</script>
+
+<template>
+  <div>
+    <h3>购物车汇总</h3>
+    <p>总价：¥{{ totalPrice.toFixed(2) }}</p>
+    <p>商品件数：{{ orderSummary.itemCount }}</p>
+  </div>
+</template>

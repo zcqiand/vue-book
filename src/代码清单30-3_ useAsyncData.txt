@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// 第一个参数是缓存 key，确保 SSR 和客户端复用同一份数据
+// useAsyncData 第二个参数是返回 Promise 的工厂函数
 const { data } = await useAsyncData('posts', () =>
   $fetch('/api/posts')
 )

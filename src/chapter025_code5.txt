@@ -1,3 +1,0 @@
-<Transition>
-  <div v-if="show" class="modal">弹窗内容</div>
-</Transition>

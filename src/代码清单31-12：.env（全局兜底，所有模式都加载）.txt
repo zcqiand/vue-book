@@ -1,0 +1,2 @@
+# 全局变量：所有构建模式都生效
+VITE_APP_NAME=LabMS

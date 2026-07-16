@@ -1,1 +1,0 @@
-const { data: post } = await useAsyncData('posts', () => $fetch(`/api/posts/${route.params.id}`))

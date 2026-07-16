@@ -1,4 +1,3 @@
-<!-- src/components/ReadingStats.vue -->
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
 

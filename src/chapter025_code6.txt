@@ -1,3 +1,0 @@
-<Transition name="fade">
-  <div v-if="show" class="modal">内容</div>
-</Transition>

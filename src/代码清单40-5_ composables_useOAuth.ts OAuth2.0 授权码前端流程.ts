@@ -1,84 +1,57 @@
-import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
-import { exchangeOAuthCode } from '@/api/auth'
-import { useAuthStore } from '@/stores/auth'
-import type { OAuthProvider } from '@/types/auth'
+import { apiClient } from '../api/client'
+import { generateState } from './useSso'
 
-const OAUTH_STATE_PREFIX = 'saas-oauth-state-'
-const OAUTH_RETURN_TO_PREFIX = 'saas-oauth-return-to-'
-
-const authorizeUrlByProvider: Record<OAuthProvider, string> = {
-  github: 'https://github.com/login/oauth/authorize',
-  google: 'https://accounts.google.com/o/oauth2/v2/auth'
+interface BuildOAuthOptions {
+  provider: 'google' | 'github' | 'wechat' | 'dingtalk' | 'feishu'
+  state: string
+  clientId?: string
+  redirectUri?: string
 }
 
-const clientIdByProvider: Record<OAuthProvider, string> = {
-  github: import.meta.env.VITE_GITHUB_CLIENT_ID ?? 'github-demo-client-id',
-  google: import.meta.env.VITE_GOOGLE_CLIENT_ID ?? 'google-demo-client-id'
+interface OAuthCallbackResult {
+  token: string
+  user: { id: string; username: string; displayName: string; orgId: string }
 }
 
-const scopeByProvider: Record<OAuthProvider, string> = {
-  github: 'read:user user:email',
-  google: 'openid email profile'
+/** 各 provider 默认 clientId（来自 .env.example，仅 mock 层使用，非真实凭证） */
+const PROVIDER_CLIENT_ID_ENV: Record<BuildOAuthOptions['provider'], string> = {
+  github: import.meta.env.VITE_OAUTH_GITHUB_CLIENT_ID ?? 'github-demo-client',
+  google: 'google-demo-client',
+  wechat: 'wechat-demo-client',
+  dingtalk: 'dingtalk-demo-client',
+  feishu: 'feishu-demo-client',
 }
 
-function createState(): string {
-  return crypto.randomUUID()
+/** 构造 OAuth2.0 /authorize URL（复用 mock IdP 的 /sso/authorize） */
+export function buildOAuthAuthorizeUrl(options: BuildOAuthOptions): string {
+  const ssoBaseUrl = import.meta.env.VITE_SSO_BASE_URL ?? '/sso'
+  const clientId = options.clientId ?? PROVIDER_CLIENT_ID_ENV[options.provider]
+  const redirectUri = options.redirectUri ??
+    `${window.location.origin}${import.meta.env.VITE_OAUTH_REDIRECT_URI ?? '/oauth/callback'}`
+  const params = new URLSearchParams({
+    client_id: clientId,
+    redirect_uri: redirectUri,
+    response_type: 'code',
+    state: options.state,
+    provider: options.provider,
+  })
+  return `${ssoBaseUrl}/authorize?${params.toString()}`
 }
 
-function readQuery(value: unknown): string {
-  return typeof value === 'string' ? value : ''
+export function redirectToOAuth(options: BuildOAuthOptions): void {
+  window.location.href = buildOAuthAuthorizeUrl(options)
 }
 
-export function useOAuth(provider: OAuthProvider) {
-  const authStore = useAuthStore()
+/** 启动 OAuth 流程：生成 state + 跳转（便捷封装） */
+export function startOAuthFlow(provider: BuildOAuthOptions['provider']): void {
+  redirectToOAuth({ provider, state: generateState() })
+}
 
-  function buildAuthorizationUrl(returnTo: string = window.location.pathname): string {
-    const state = createState()
-    sessionStorage.setItem(`${OAUTH_STATE_PREFIX}${provider}`, state)
-    sessionStorage.setItem(`${OAUTH_RETURN_TO_PREFIX}${provider}`, returnTo)
-
-    const redirectUri = `${window.location.origin}/auth/oauth/${provider}/callback`
-    const url = new URL(authorizeUrlByProvider[provider])
-    url.searchParams.set('client_id', clientIdByProvider[provider])
-    url.searchParams.set('redirect_uri', redirectUri)
-    url.searchParams.set('response_type', 'code')
-    url.searchParams.set('scope', scopeByProvider[provider])
-    url.searchParams.set('state', state)
-
-    return url.toString()
-  }
-
-  function startOAuthLogin(returnTo?: string): void {
-    window.location.assign(buildAuthorizationUrl(returnTo))
-  }
-
-  async function handleOAuthCallback(route: RouteLocationNormalizedLoaded, router: Router): Promise<void> {
-    const code = readQuery(route.query.code)
-    const state = readQuery(route.query.state)
-    const expectedState = sessionStorage.getItem(`${OAUTH_STATE_PREFIX}${provider}`)
-
-    if (code.length === 0) {
-      throw new Error('OAuth 回调缺少 code')
-    }
-
-    if (expectedState === null || state.length === 0 || state !== expectedState) {
-      throw new Error('OAuth state 校验失败')
-    }
-
-    const redirectUri = `${window.location.origin}/auth/oauth/${provider}/callback`
-    const session = await exchangeOAuthCode({ provider, code, redirectUri, state })
-    await authStore.applySession(session)
-
-    const returnTo = sessionStorage.getItem(`${OAUTH_RETURN_TO_PREFIX}${provider}`) ?? '/'
-    sessionStorage.removeItem(`${OAUTH_STATE_PREFIX}${provider}`)
-    sessionStorage.removeItem(`${OAUTH_RETURN_TO_PREFIX}${provider}`)
-
-    await router.replace(returnTo)
-  }
-
-  return {
-    buildAuthorizationUrl,
-    startOAuthLogin,
-    handleOAuthCallback
-  }
+/** 处理 OAuth 回调：用 code 换 token + user */
+export async function handleOAuthCallback(
+  code: string,
+  provider: BuildOAuthOptions['provider'],
+): Promise<OAuthCallbackResult> {
+  const res = await apiClient.post<OAuthCallbackResult>('/auth/oauth/callback', { code, provider })
+  return res.data
 }

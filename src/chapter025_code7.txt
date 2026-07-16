@@ -1,3 +1,0 @@
-<Teleport to="body">
-  <div class="modal">弹窗内容</div>
-</Teleport>

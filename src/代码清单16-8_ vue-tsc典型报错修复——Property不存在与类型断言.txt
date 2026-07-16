@@ -1,0 +1,35 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+interface User {
+  id: number
+  name: string
+  email: string
+}
+
+// 初值为 null 时必须指定泛型
+const user = ref<User | null>(null)
+
+user.value = { id: 1, name: 'Alice', email: 'alice@example.com' }
+
+// 错误场景：访问可能为 null 的值
+// console.log(user.value.name)  // TS18047: 'user.value' is possibly 'null'
+// 修复：空值合并 ?? 提供默认值
+console.log(user.value?.name ?? '匿名用户')
+
+user.value = { id: 2, name: 'Bob', email: 'bob@example.com' }
+
+// 错误场景：属性名拼写错误
+// user.value = { id: 1, namee: 'Bob' }  // TS2353: Object literal may only specify known properties
+// 修复：改正属性名
+
+// 错误场景：类型不匹配
+// user.value = { id: '1', name: 'Charlie' }  // TS2322: Type 'string' is not assignable to type 'number'
+</script>
+
+<template>
+  <div v-if="user !== null">
+    <p>用户：{{ user.name }}</p>
+    <p>邮箱：{{ user.email }}</p>
+  </div>
+</template>

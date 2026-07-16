@@ -1,0 +1,15 @@
+<script setup lang="ts">
+const props = defineProps<{
+  title: string
+}>()
+
+function edit() {
+  // ❶ 直接对 prop 赋值：违反单向数据流
+  props.title = '新标题'
+}
+</script>
+
+<template>
+  <h3>{{ title }}</h3>
+  <button type="button" @click="edit">改标题</button>
+</template>

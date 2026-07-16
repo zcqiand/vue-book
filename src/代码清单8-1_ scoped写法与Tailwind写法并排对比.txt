@@ -1,4 +1,3 @@
-<!-- src/components/UserCardCompare.vue -->
 <script setup lang="ts">
 defineProps<{
   title: string

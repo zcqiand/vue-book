@@ -1,4 +1,3 @@
-<!-- src/components/ResponsiveGrid.vue -->
 <script setup lang="ts">
 const items: string[] = ['模块 A', '模块 B', '模块 C']
 </script>

@@ -1,7 +1,0 @@
-<!-- 组件 A：先渲染 Teleport -->
-<Teleport defer to="#portal-target">
-  <div class="tooltip">提示内容</div>
-</Teleport>
-
-<!-- 组件 B：后渲染目标节点 -->
-<div id="portal-target"></div>

@@ -1,5 +1,0 @@
-$ node --version
-v20.19.0
-
-$ npm --version
-11.3.0

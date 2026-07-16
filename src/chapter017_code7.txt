@@ -1,9 +1,0 @@
-<ClickOutside v-slot="{ isOutside }">
-  <div :class="{ 'inactive': isOutside }">
-    <button @click="toggle">打开菜单</button>
-    <ul v-if="!isOutside">
-      <li>选项一</li>
-      <li>选项二</li>
-    </ul>
-  </div>
-</ClickOutside>

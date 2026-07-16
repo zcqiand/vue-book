@@ -1,0 +1,40 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+interface UserForm {
+  name: string
+  age: number
+  role: 'admin' | 'editor' | 'viewer'
+}
+
+const emit = defineEmits<{
+  change: [id: number]
+  submit: [data: UserForm]
+  close: []
+}>()
+
+const form = ref<UserForm>({
+  name: '',
+  age: 0,
+  role: 'viewer',
+})
+
+const userId = ref<number>(0)
+
+function handleSubmit(): void {
+  emit('change', userId.value)
+  emit('submit', { ...form.value })
+}
+
+function handleClose(): void {
+  emit('close')
+}
+</script>
+
+<template>
+  <div class="dialog">
+    <h3>用户表单</h3>
+    <button @click="handleSubmit">提交</button>
+    <button @click="handleClose">关闭</button>
+  </div>
+</template>

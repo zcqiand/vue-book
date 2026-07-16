@@ -1,4 +1,3 @@
-<!-- src/components/RefComparison.vue -->
 <script setup lang="ts">
 import { ref, useTemplateRef, onMounted } from 'vue'
 

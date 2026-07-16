@@ -1,5 +1,0 @@
-<Fetch url="/api/user" v-slot="{ data, loading, error }">
-  <div v-if="loading">加载中...</div>
-  <div v-else-if="error">{{ error.message }}</div>
-  <UserProfile v-else :user="data" />
-</Fetch>

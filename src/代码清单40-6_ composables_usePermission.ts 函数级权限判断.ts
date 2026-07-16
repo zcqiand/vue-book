@@ -1,38 +1,28 @@
-import { computed } from 'vue'
-import { useAuthStore } from '@/stores/auth'
-import type { Permission, Role } from '@/types/auth'
+import { useAuthStore } from '../stores/auth'
 
 export function usePermission() {
-  const authStore = useAuthStore()
+  const auth = useAuthStore()
 
-  const permissionSet = computed(() => new Set(authStore.permissions))
-  const roleSet = computed(() => new Set(authStore.roles))
-
-  function hasPermission(permission: Permission): boolean {
-    return permissionSet.value.has(permission)
+  /** 是否拥有某权限码（如 'user:read'） */
+  function hasPermission(action: string): boolean {
+    return auth.permissions.includes(action)
+  }
+  /** 是否拥有任一权限码（anyOf） */
+  function hasAnyPermission(actions: string[]): boolean {
+    return actions.some((a) => auth.permissions.includes(a))
+  }
+  /** 是否拥有全部权限码（allOf） */
+  function hasAllPermissions(actions: string[]): boolean {
+    return actions.every((a) => auth.permissions.includes(a))
+  }
+  /** 是否拥有某角色名（如 'admin'） */
+  function hasRole(name: string): boolean {
+    return auth.roles.some((r) => r.name === name)
+  }
+  /** 是否拥有任一角色 */
+  function hasAnyRole(names: string[]): boolean {
+    return names.some((n) => auth.roles.some((r) => r.name === n))
   }
 
-  function hasAnyPermission(permissions: Permission[]): boolean {
-    return permissions.some((permission) => permissionSet.value.has(permission))
-  }
-
-  function hasAllPermissions(permissions: Permission[]): boolean {
-    return permissions.every((permission) => permissionSet.value.has(permission))
-  }
-
-  function hasRole(role: Role): boolean {
-    return roleSet.value.has(role)
-  }
-
-  function hasAnyRole(roles: Role[]): boolean {
-    return roles.some((role) => roleSet.value.has(role))
-  }
-
-  return {
-    hasPermission,
-    hasAnyPermission,
-    hasAllPermissions,
-    hasRole,
-    hasAnyRole
-  }
+  return { hasPermission, hasAnyPermission, hasAllPermissions, hasRole, hasAnyRole }
 }

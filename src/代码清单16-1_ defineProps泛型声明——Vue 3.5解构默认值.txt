@@ -1,6 +1,5 @@
-<!-- src/components/BookCard.vue -->
 <script setup lang="ts">
-// 基于类型的泛型声明（Vue 3.3+ 推荐写法）
+// 基于类型的泛型声明（Vue 3.3 推荐写法）
 interface Props {
   title: string
   count?: number

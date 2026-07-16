@@ -1,1 +1,0 @@
-const config = ref<Record<string, string> | undefined>(undefined)

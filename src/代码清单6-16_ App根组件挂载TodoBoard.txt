@@ -1,0 +1,10 @@
+<script setup lang="ts">
+import TodoBoard from '@/components/TodoBoard.vue'
+</script>
+
+<template>
+  <main>
+    <h1>我的待办</h1>
+    <TodoBoard />
+  </main>
+</template>

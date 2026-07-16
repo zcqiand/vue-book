@@ -1,1 +1,0 @@
-firstName.value = '李'

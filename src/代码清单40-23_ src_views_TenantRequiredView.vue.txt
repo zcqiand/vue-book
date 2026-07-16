@@ -1,8 +1,0 @@
-<template>
-  <section class="rounded-xl border border-amber-200 bg-amber-50 p-6 text-amber-900 shadow-sm">
-    <h2 class="text-lg font-semibold">需要选择租户</h2>
-    <p class="mt-2 text-sm leading-6">
-      多租户系统必须先确定当前租户，才能计算角色、权限、菜单和接口请求头中的 X-Tenant-ID。
-    </p>
-  </section>
-</template>

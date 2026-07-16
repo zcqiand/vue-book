@@ -1,8 +1,0 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import { themeKey } from '../symbols'
-
-const theme = ref<'light' | 'dark'>('light')
-
-provide(themeKey, theme)
-</script>

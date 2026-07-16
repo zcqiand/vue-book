@@ -1,4 +1,3 @@
-<!-- src/composables/useMouse.ts -->
 import { ref, onMounted, onUnmounted } from 'vue'
 
 // 命名规范：以 use 前缀开头，返回响应式状态

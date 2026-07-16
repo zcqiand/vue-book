@@ -1,8 +1,0 @@
-<template>
-  <div>
-    <h1>文章正文</h1>
-    <ClientOnly>
-      <CommentSection /> <!-- 评论组件只在客户端渲染 -->
-    </ClientOnly>
-  </div>
-</template>

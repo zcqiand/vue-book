@@ -1,6 +1,0 @@
-<template>
-  <div v-for="item in items" :key="item.id">
-    {{ getDiscountedPrice(item) }}  <!-- 每次渲染每个 item 都调用 -->
-  </div>
-  <p>总价：{{ calculateTotal() }}</p>  <!-- 只写一次但仍是方法 -->
-</template>

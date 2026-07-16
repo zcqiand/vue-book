@@ -1,24 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useId } from 'vue'
-
-// 用 useId 生成 SSR 安全的唯一 ID，两端结果一致
-const inputId = useId()
-
-// isClient 和 now：只在客户端渲染，避免服务端客户端时间不一致
-const isClient = ref(false)
-const now = ref('')
-onMounted(() => {
-  isClient.value = true
-  now.value = new Date().toISOString()
-})
+// useId 生成 SSR 安全的唯一 ID，两端结果一致
+const id = useId()
+const now = useNow() // 自定义 Composable，返回服务端和客户端一致的时间
 </script>
-<template>
-  <div>
-    <label :for="inputId">用户名</label>
-    <input :id="inputId" type="text" />
-    <!-- 用 v-if 控制只在客户端渲染，避免时间戳/随机值不一致 -->
-    <!-- onMounted 只在客户端执行，服务端渲染阶段自动跳过 -->
-    <p v-if="isClient">当前时间：{{ now }}</p>
-  </div>
-</template>

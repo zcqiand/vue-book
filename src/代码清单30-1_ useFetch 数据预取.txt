@@ -1,10 +1,4 @@
 <script setup lang="ts">
-// SSR 阶段服务端执行请求，结果嵌入 HTML payload
-// 客户端 hydration 时直接复用，不重复请求
-const { data } = await useFetch('/api/posts')
+// SSR 时服务端请求，客户端直接用 payload，不重复请求
+const { data: posts } = await useFetch('/api/posts')
 </script>
-<template>
-  <ul>
-    <li v-for="post in data" :key="post.id">{{ post.title }}</li>
-  </ul>
-</template>
