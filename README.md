@@ -91,6 +91,6 @@ python .claude/scripts/extract_code.py output/xr-know-011
 
 ---
 
-**最后更新**: 2026年07月17日
+**最后更新**: 2026年07月19日
 **书籍版本**: Vue 3.5.x + TypeScript 5.x
 **代码来源**: [../../output/xr-know-011/chapters](../../output/xr-know-011/chapters)
