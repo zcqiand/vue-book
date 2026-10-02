@@ -1,96 +1,51 @@
 # Vue从入门到项目实践 - 代码清单
 
-> **本书配套代码示例库** — 从章节中提取的完整可运行代码片段索引
-
 ## 关于本书
 
-Vue 是当下最主流的前端框架之一,本书基于 Vue 3.5.x + TypeScript 5.x + Vue Router 4.x + ref/reactive + Pinia（官方状态管理） 从零基础带到独立交付企业级项目。
+《Vue 从入门到项目实践》是一本全程锁定 Vue 3.5.x + TypeScript 5.x 的零基础系统教程：以 Composition API + `<script setup>` 为首选范式，带你从第一行代码走到两个企业级生产项目。工程栈一站式覆盖 Vite 6 构建、Vue Router 4 路由、Pinia 状态管理、Tailwind CSS 4 样式、Vitest + Vue Test Utils 测试与 Nuxt 3 SSR/SSG。
 
-本书的每一章都在前一章基础上加一层新能力,最终带你把零散的语法点串成可独立交付的项目工程。
+全书 42 章按四卷展开：基础篇补齐 ES6+ 前置语法并建立响应式心智模型；进阶篇讲透组件、插槽、组合式函数与 TypeScript 集成；综合能力篇覆盖路由、状态选型、表单与测试；项目实战篇完整交付两个相互独立的企业级项目——实验室管理系统（LIMS）与 SaaS 统一身份管理系统，覆盖 SSO 认证、RBAC 权限与流程状态机。Options API 仅作为「对照与旧代码阅读」简要呈现，读者从一开始就站在 Vue 2 停止维护之后的正确范式上。
+
+如果你有基础 HTML/CSS 和少量 JavaScript 经验，希望系统学习 Vue 并具备独立开发企业级应用的能力，这本书适合你：即将进入前端岗位或正在转行的求职者、需要补齐 Vue 技能的后端与移动端工程师、在校学生与培训学员，以及正在维护 Vue 2 老项目、需要迁移到 Vue 3 的存量开发者。
 
 ## 本书特点
 
-**第一,真实工程化体系。** 全书围绕一套可跑通的现代工程栈展开,不是孤立的 API 罗列,而是从构建、测试、部署到上线的完整链路。
+**第一，范式迁移导向。** 全程以 Composition API + `<script setup>` 为首选范式，讲清相对 Options API 的取舍，帮读者跳出已停止维护的 Vue 2 旧范式，不在两套写法之间摇摆。
 
-**第二,决策框架驱动。** 每个技术选型都给「什么时候用 / 为什么」的判断标准,帮助读者在真实项目中做权衡,不是死记最佳实践。
+**第二，决策导向。** `ref` vs `reactive`、Pinia vs 组件状态 vs `provide/inject`、`computed` vs `method`、`watch` vs `watchEffect`、CSR vs SSR/Nuxt——每个技术点都配适用场景与选择理由，建立可迁移的选型决策框架。
 
-**第三,Vue 核心能力全覆盖。** 响应式系统、组件化、路由、状态管理、测试 等关键模块都有专题讲解。
+**第三，TypeScript 全程贯穿。** TypeScript 不是附录式的一章，而是集成之后贯穿后续每一章的代码，`defineProps` 泛型与 `vue-tsc` 类型检查成为日常工程习惯。
 
-**第四,反例驱动教学。** 基础部分先展示错误写法、再讲透为什么错,帮助读者建立工程直觉。
+**第四，双栈对照学习。** 两个企业级项目复用姊妹篇《React 从入门到项目实践》同款的业务需求与接口契约，前端架构与生产级代码复杂度完全对等，可双栈对照学习。
 
-## 谁应该读这本书
+## 案例仓库
 
-如果你有少量编程经验,希望系统掌握 Vue 并最终能独立交付企业级项目,这本书适合你。你可能是：
+| 仓库名 | 说明 |
+| :--- | :--- |
+| [lab-management-system-vue](https://github.com/zcqiand/lab-management-system-vue) @ v0.3.40-20260925 | Vue 3.5 + TypeScript 5.7 + Vite 6 工程，Pinia 2 状态管理，@tanstack/vue-query 数据层，orval 生成的 API client，shadcn-vue（Reka UI）+ Tailwind v4 界面 |
+| [saas-identity-platform-vue](https://github.com/zcqiand/saas-identity-platform-vue) @ v0.3.55-20260925 | Vue 3.5 + TypeScript 5.7 + Vite 6 工程，Pinia 2 状态管理，@tanstack/vue-query 数据层，orval（vue-query 插件）生成的 API client，shadcn-vue（Reka UI）+ Tailwind v4 界面 |
 
-- 在互联网公司工作的工程师，希望建立完整的 Vue 3.5.x + TypeScript 5.x 知识体系
-- 独立开发者或小团队成员，需要一个人完成从前端到部署的全流程
-- 从其它框架迁移过来的转型工程师
+> 配套案例仓库为独立可跑工程，已冻结 tag，含完整测试与 CI，clone 即跑。
 
 ## 代码清单说明
 
-本目录包含从书籍章节中提取的 **413** 个代码片段文件,涵盖 Vue 3.5.x + TypeScript 5.x 全栈开发核心知识点。
+本书所有代码清单均收录于本目录，对应书稿中「代码清单 N-M」标题块。
 
-### 📊 代码统计
-
-- **总块数**: 413 个
-- **涉及章节**: 第 1-42 章（卷一至卷四）
-
-### 📋 按编程语言分类
-
-| 语言 | 块数 | 说明 |
-|------|------|------|
-| vue | 203 | 单文件组件 |
-| typescript | 175 | 类型定义 |
-| bash | 9 | 命令/脚本 |
-| javascript | 7 | JS 示例 |
-| ini | 5 |  |
-| json | 3 | 配置 |
-| nginx | 3 | Nginx 配置 |
-| ts | 2 | 类型定义 |
-| css | 2 | 样式 |
-| yaml | 2 | CI/配置 |
-| html | 1 | HTML |
-| dockerfile | 1 | Docker |
-
-### 📂 章节覆盖
-
-- **第 1-9 章**: 基础篇——核心语法、心智模型、组件化起点
-- **第 10-18 章**: 进阶篇——高级 API、TypeScript 深入、组件通信
-- **第 19-28 章**: 综合能力篇——路由、状态、测试、生态工具链
-- **第 29-42 章**: 项目实战篇——企业级案例
-
-### 🗂️ 配套案例仓库
-
-本书配套案例均为**独立可运行**的完整项目，代码即书正文对应的真实实现（已 tag、全量测试真绿，clone 即跑）：
-
-| 案例 | 技术栈 | 仓库地址 |
-|------|--------|---------|
-（未找到 case-import-registry.json）
-
-本目录（vue-book）是**章节代码摘录的索引**；上面的案例仓才是**完整可跑工程**。读者想看真实实现请去案例仓。
-
-## 如何使用代码
-
-每个代码文件都是从对应章节提取的代码片段，文件名格式为 `代码清单{章号}-{序号}_{描述}.{扩展名}`。
-
-## 重新生成 src/
+### 运行环境
 
 ```bash
-python .claude/scripts/extract_code.py output/xr-know-011
+# 本仓代码清单为 .vue/.ts 片段，需 Node.js 20 LTS 与 npm；建议用 create-vue 脚手架建工程运行
+npm create vue@latest my-app
+cd my-app
+npm install
+# 将本仓 src/ 下对应的代码清单文件复制进 src/ 后，启动开发服务器查看效果
+npm run dev
 ```
 
-## 配套资源
+### 目录结构
 
-- **读者交流**: 1282301776@qq.com
-
-## ⚠️ 注意事项
-
-1. **代码版本**: 基于 Vue 3.5.xx，API 可能随版本更新
-2. **依赖安装**: 完整项目运行请参考各案例仓库的 README
-3. **安全审查**: 生产环境使用前请审查代码，特别是认证和权限部分
-
----
-
-**最后更新**: 2026年07月19日
-**书籍版本**: Vue 3.5.x + TypeScript 5.x
-**代码来源**: [../../output/xr-know-011/chapters](../../output/xr-know-011/chapters)
+```
+src/
+├── 代码清单1-* … 代码清单42-*   # 第 1-42 章，共 413 个清单文件（命名「代码清单N-M_ 描述.扩展名」）
+└── extracted_code_manifest.json   # 全部清单索引（title/lang/chapter_file/line/extracted_file/source）
+```
